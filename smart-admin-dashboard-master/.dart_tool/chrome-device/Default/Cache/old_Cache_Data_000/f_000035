@@ -1,0 +1,847 @@
+define(['dart_sdk', 'packages/flutter/src/painting/basic_types.dart', 'packages/smooth_page_indicator/src/painters/worm_painter.dart', 'packages/smooth_page_indicator/src/effects/indicator_effect.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/painting/colors.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/widgets/page_view.dart', 'packages/flutter/src/animation/curves.dart', 'packages/flutter/src/widgets/implicit_animations.dart', 'packages/flutter/src/animation/listener_helpers.dart'], (function load__packages__smooth_page_indicator__src__smooth_page_indicator_dart(dart_sdk, packages__flutter__src__painting__basic_types$46dart, packages__smooth_page_indicator__src__painters__worm_painter$46dart, packages__smooth_page_indicator__src__effects__indicator_effect$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__painting__colors$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__widgets__page_view$46dart, packages__flutter__src__animation__curves$46dart, packages__flutter__src__widgets__implicit_animations$46dart, packages__flutter__src__animation__listener_helpers$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
+  const worm_effect = packages__smooth_page_indicator__src__painters__worm_painter$46dart.src__effects__worm_effect;
+  const indicator_effect = packages__smooth_page_indicator__src__effects__indicator_effect$46dart.src__effects__indicator_effect;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const colors$ = packages__flutter__src__painting__colors$46dart.src__painting__colors;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const transitions = packages__flutter__src__widgets__widget_span$46dart.src__widgets__transitions;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const gesture_detector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__gesture_detector;
+  const page_view = packages__flutter__src__widgets__page_view$46dart.src__widgets__page_view;
+  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
+  const implicit_animations = packages__flutter__src__widgets__implicit_animations$46dart.src__widgets__implicit_animations;
+  const tween = packages__flutter__src__animation__listener_helpers$46dart.src__animation__tween;
+  var smooth_page_indicator = Object.create(dart.library);
+  var $toDouble = dartx.toDouble;
+  var $toInt = dartx.toInt;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    TweenOfdouble: () => (T.TweenOfdouble = dart.constFn(tween.Tween$(core.double)))(),
+    dynamicToTweenOfdouble: () => (T.dynamicToTweenOfdouble = dart.constFn(dart.fnType(T.TweenOfdouble(), [dart.dynamic])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: basic_types.Axis.prototype,
+        [_name]: "Axis.horizontal",
+        index: 0
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: ui.PaintingStyle.prototype,
+        [_name$]: "PaintingStyle.fill",
+        index: 0
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4293454582.0
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4291152617.0
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4288653530.0
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4286154443.0
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4284246976.0
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4282339765.0
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4281944491.0
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4281352095.0
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4280825235.0
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4279903102.0
+      });
+    },
+    get C4() {
+      return C[4] = dart.constMap(core.int, ui.Color, [50, C[5] || CT.C5, 100, C[6] || CT.C6, 200, C[7] || CT.C7, 300, C[8] || CT.C8, 400, C[9] || CT.C9, 500, C[10] || CT.C10, 600, C[11] || CT.C11, 700, C[12] || CT.C12, 800, C[13] || CT.C13, 900, C[14] || CT.C14]);
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: colors.MaterialColor.prototype,
+        [Color_value]: 4282339765.0,
+        [ColorSwatch__swatch]: C[4] || CT.C4
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294638330.0
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294309365.0
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4293848814.0
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4292927712.0
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4292269782.0
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4290624957.0
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4288585374.0
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4285887861.0
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4284572001.0
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4282532418.0
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4281348144.0
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4280361249.0
+      });
+    },
+    get C16() {
+      return C[16] = dart.constMap(core.int, ui.Color, [50, C[17] || CT.C17, 100, C[18] || CT.C18, 200, C[19] || CT.C19, 300, C[20] || CT.C20, 350, C[21] || CT.C21, 400, C[22] || CT.C22, 500, C[23] || CT.C23, 600, C[24] || CT.C24, 700, C[25] || CT.C25, 800, C[26] || CT.C26, 850, C[27] || CT.C27, 900, C[28] || CT.C28]);
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: colors.MaterialColor.prototype,
+        [Color_value]: 4288585374.0,
+        [ColorSwatch__swatch]: C[16] || CT.C16
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: worm_effect.WormEffect.prototype,
+        [IndicatorEffect_strokeWidth]: 1,
+        [IndicatorEffect_paintStyle]: C[2] || CT.C2,
+        [IndicatorEffect_activeDotColor]: C[3] || CT.C3,
+        [IndicatorEffect_dotColor]: C[15] || CT.C15,
+        [IndicatorEffect_radius]: 16,
+        [IndicatorEffect_spacing]: 8,
+        [IndicatorEffect_dotHeight]: 16,
+        [IndicatorEffect_dotWidth]: 16
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "offset",
+        [_Location_column]: 7,
+        [_Location_line]: 47,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "count",
+        [_Location_column]: 7,
+        [_Location_line]: 48,
+        [_Location_file]: null
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "effect",
+        [_Location_column]: 7,
+        [_Location_line]: 49,
+        [_Location_file]: null
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textDirection",
+        [_Location_column]: 7,
+        [_Location_line]: 50,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "axisDirection",
+        [_Location_column]: 7,
+        [_Location_line]: 51,
+        [_Location_file]: null
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onDotClicked",
+        [_Location_column]: 7,
+        [_Location_line]: 52,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.constList([C[31] || CT.C31, C[32] || CT.C32, C[33] || CT.C33, C[34] || CT.C34, C[35] || CT.C35, C[36] || CT.C36], widget_inspector._Location);
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[30] || CT.C30,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 46,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/smooth_page_indicator-0.3.0-nullsafety.0/lib/src/smooth_page_indicator.dart"
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 11,
+        [_Location_line]: 116,
+        [_Location_file]: null
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "painter",
+        [_Location_column]: 11,
+        [_Location_line]: 118,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.constList([C[39] || CT.C39, C[40] || CT.C40], widget_inspector._Location);
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[38] || CT.C38,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 115,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/smooth_page_indicator-0.3.0-nullsafety.0/lib/src/smooth_page_indicator.dart"
+      });
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTapUp",
+        [_Location_column]: 9,
+        [_Location_line]: 114,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 115,
+        [_Location_file]: null
+      });
+    },
+    get C42() {
+      return C[42] = dart.constList([C[43] || CT.C43, C[44] || CT.C44], widget_inspector._Location);
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[42] || CT.C42,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 113,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/smooth_page_indicator-0.3.0-nullsafety.0/lib/src/smooth_page_indicator.dart"
+      });
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "quarterTurns",
+        [_Location_column]: 7,
+        [_Location_line]: 108,
+        [_Location_file]: null
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 113,
+        [_Location_file]: null
+      });
+    },
+    get C46() {
+      return C[46] = dart.constList([C[47] || CT.C47, C[48] || CT.C48], widget_inspector._Location);
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[46] || CT.C46,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 107,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/smooth_page_indicator-0.3.0-nullsafety.0/lib/src/smooth_page_indicator.dart"
+      });
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: curves.Cubic.prototype,
+        [Cubic_d]: 1,
+        [Cubic_c]: 0.58,
+        [Cubic_b]: 0,
+        [Cubic_a]: 0.42
+      });
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 300000
+      });
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "offset",
+        [_Location_column]: 7,
+        [_Location_line]: 200,
+        [_Location_file]: null
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "count",
+        [_Location_column]: 7,
+        [_Location_line]: 201,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "effect",
+        [_Location_column]: 7,
+        [_Location_line]: 202,
+        [_Location_file]: null
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textDirection",
+        [_Location_column]: 7,
+        [_Location_line]: 203,
+        [_Location_file]: null
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "axisDirection",
+        [_Location_column]: 7,
+        [_Location_line]: 204,
+        [_Location_file]: null
+      });
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onDotClicked",
+        [_Location_column]: 7,
+        [_Location_line]: 205,
+        [_Location_file]: null
+      });
+    },
+    get C52() {
+      return C[52] = dart.constList([C[53] || CT.C53, C[54] || CT.C54, C[55] || CT.C55, C[56] || CT.C56, C[57] || CT.C57, C[58] || CT.C58], widget_inspector._Location);
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[52] || CT.C52,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 199,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/smooth_page_indicator-0.3.0-nullsafety.0/lib/src/smooth_page_indicator.dart"
+      });
+    }
+  }, false);
+  var C = Array(59).fill(void 0);
+  var I = [
+    "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/smooth_page_indicator-0.3.0-nullsafety.0/lib/src/smooth_page_indicator.dart",
+    "package:smooth_page_indicator/src/smooth_page_indicator.dart"
+  ];
+  var controller$ = dart.privateName(smooth_page_indicator, "SmoothPageIndicator.controller");
+  var effect$ = dart.privateName(smooth_page_indicator, "SmoothPageIndicator.effect");
+  var axisDirection$ = dart.privateName(smooth_page_indicator, "SmoothPageIndicator.axisDirection");
+  var count$ = dart.privateName(smooth_page_indicator, "SmoothPageIndicator.count");
+  var textDirection$ = dart.privateName(smooth_page_indicator, "SmoothPageIndicator.textDirection");
+  var onDotClicked$ = dart.privateName(smooth_page_indicator, "SmoothPageIndicator.onDotClicked");
+  var _name = dart.privateName(basic_types, "_name");
+  var IndicatorEffect_strokeWidth = dart.privateName(indicator_effect, "IndicatorEffect.strokeWidth");
+  var _name$ = dart.privateName(ui, "_name");
+  var IndicatorEffect_paintStyle = dart.privateName(indicator_effect, "IndicatorEffect.paintStyle");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var ColorSwatch__swatch = dart.privateName(colors$, "ColorSwatch._swatch");
+  var IndicatorEffect_activeDotColor = dart.privateName(indicator_effect, "IndicatorEffect.activeDotColor");
+  var IndicatorEffect_dotColor = dart.privateName(indicator_effect, "IndicatorEffect.dotColor");
+  var IndicatorEffect_radius = dart.privateName(indicator_effect, "IndicatorEffect.radius");
+  var IndicatorEffect_spacing = dart.privateName(indicator_effect, "IndicatorEffect.spacing");
+  var IndicatorEffect_dotHeight = dart.privateName(indicator_effect, "IndicatorEffect.dotHeight");
+  var IndicatorEffect_dotWidth = dart.privateName(indicator_effect, "IndicatorEffect.dotWidth");
+  var _offset = dart.privateName(smooth_page_indicator, "_offset");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  smooth_page_indicator.SmoothPageIndicator = class SmoothPageIndicator extends transitions.AnimatedWidget {
+    get controller() {
+      return this[controller$];
+    }
+    set controller(value) {
+      super.controller = value;
+    }
+    get effect() {
+      return this[effect$];
+    }
+    set effect(value) {
+      super.effect = value;
+    }
+    get axisDirection() {
+      return this[axisDirection$];
+    }
+    set axisDirection(value) {
+      super.axisDirection = value;
+    }
+    get count() {
+      return this[count$];
+    }
+    set count(value) {
+      super.count = value;
+    }
+    get textDirection() {
+      return this[textDirection$];
+    }
+    set textDirection(value) {
+      super.textDirection = value;
+    }
+    get onDotClicked() {
+      return this[onDotClicked$];
+    }
+    set onDotClicked(value) {
+      super.onDotClicked = value;
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 45, 29, "context");
+      return new smooth_page_indicator.SmoothIndicator.new({offset: this[_offset], count: this.count, effect: this.effect, textDirection: this.textDirection, axisDirection: this.axisDirection, onDotClicked: this.onDotClicked, $creationLocationd_0dea112b090073317d4: C[29] || CT.C29});
+    }
+    get [_offset]() {
+      let t0;
+      try {
+        t0 = this.controller.page;
+        return t0 == null ? this.controller.initialPage[$toDouble]() : t0;
+      } catch (e) {
+        let _ = dart.getThrown(e);
+        if (core.Object.is(_)) {
+          return this.controller.initialPage[$toDouble]();
+        } else
+          throw e;
+      }
+    }
+  };
+  (smooth_page_indicator.SmoothPageIndicator.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let controller = opts && 'controller' in opts ? opts.controller : null;
+    if (controller == null) dart.nullFailed(I[0], 36, 19, "controller");
+    let count = opts && 'count' in opts ? opts.count : null;
+    if (count == null) dart.nullFailed(I[0], 37, 19, "count");
+    let axisDirection = opts && 'axisDirection' in opts ? opts.axisDirection : C[0] || CT.C0;
+    if (axisDirection == null) dart.nullFailed(I[0], 38, 10, "axisDirection");
+    let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+    let onDotClicked = opts && 'onDotClicked' in opts ? opts.onDotClicked : null;
+    let effect = opts && 'effect' in opts ? opts.effect : C[1] || CT.C1;
+    if (effect == null) dart.nullFailed(I[0], 41, 10, "effect");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[controller$] = controller;
+    this[count$] = count;
+    this[axisDirection$] = axisDirection;
+    this[textDirection$] = textDirection;
+    this[onDotClicked$] = onDotClicked;
+    this[effect$] = effect;
+    smooth_page_indicator.SmoothPageIndicator.__proto__.new.call(this, {key: key, listenable: controller, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = smooth_page_indicator.SmoothPageIndicator.prototype;
+  dart.addTypeTests(smooth_page_indicator.SmoothPageIndicator);
+  dart.addTypeCaches(smooth_page_indicator.SmoothPageIndicator);
+  dart.setMethodSignature(smooth_page_indicator.SmoothPageIndicator, () => ({
+    __proto__: dart.getMethods(smooth_page_indicator.SmoothPageIndicator.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setGetterSignature(smooth_page_indicator.SmoothPageIndicator, () => ({
+    __proto__: dart.getGetters(smooth_page_indicator.SmoothPageIndicator.__proto__),
+    [_offset]: core.double
+  }));
+  dart.setLibraryUri(smooth_page_indicator.SmoothPageIndicator, I[1]);
+  dart.setFieldSignature(smooth_page_indicator.SmoothPageIndicator, () => ({
+    __proto__: dart.getFields(smooth_page_indicator.SmoothPageIndicator.__proto__),
+    controller: dart.finalFieldType(page_view.PageController),
+    effect: dart.finalFieldType(indicator_effect.IndicatorEffect),
+    axisDirection: dart.finalFieldType(basic_types.Axis),
+    count: dart.finalFieldType(core.int),
+    textDirection: dart.finalFieldType(dart.nullable(ui.TextDirection)),
+    onDotClicked: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [core.int])))
+  }));
+  var offset$ = dart.privateName(smooth_page_indicator, "SmoothIndicator.offset");
+  var effect$0 = dart.privateName(smooth_page_indicator, "SmoothIndicator.effect");
+  var axisDirection$0 = dart.privateName(smooth_page_indicator, "SmoothIndicator.axisDirection");
+  var count$0 = dart.privateName(smooth_page_indicator, "SmoothIndicator.count");
+  var textDirection$0 = dart.privateName(smooth_page_indicator, "SmoothIndicator.textDirection");
+  var onDotClicked$0 = dart.privateName(smooth_page_indicator, "SmoothIndicator.onDotClicked");
+  var _size = dart.privateName(smooth_page_indicator, "_size");
+  var _onTap = dart.privateName(smooth_page_indicator, "_onTap");
+  smooth_page_indicator.SmoothIndicator = class SmoothIndicator extends framework.StatelessWidget {
+    get offset() {
+      return this[offset$];
+    }
+    set offset(value) {
+      super.offset = value;
+    }
+    get effect() {
+      return this[effect$0];
+    }
+    set effect(value) {
+      super.effect = value;
+    }
+    get axisDirection() {
+      return this[axisDirection$0];
+    }
+    set axisDirection(value) {
+      super.axisDirection = value;
+    }
+    get count() {
+      return this[count$0];
+    }
+    set count(value) {
+      super.count = value;
+    }
+    get textDirection() {
+      return this[textDirection$0];
+    }
+    set textDirection(value) {
+      super.textDirection = value;
+    }
+    get onDotClicked() {
+      return this[onDotClicked$0];
+    }
+    set onDotClicked(value) {
+      super.onDotClicked = value;
+    }
+    build(context) {
+      let t1;
+      if (context == null) dart.nullFailed(I[0], 102, 29, "context");
+      let isRTL = (t1 = this.textDirection, t1 == null ? basic.Directionality.of(context) : t1) == ui.TextDirection.rtl;
+      return new basic.RotatedBox.new({quarterTurns: this.axisDirection == basic_types.Axis.vertical ? 1 : isRTL ? 2 : 0, child: new gesture_detector.GestureDetector.new({onTapUp: dart.bind(this, _onTap), child: new basic.CustomPaint.new({size: this[_size], painter: this.effect.buildPainter(this.count, this.offset), $creationLocationd_0dea112b090073317d4: C[37] || CT.C37}), $creationLocationd_0dea112b090073317d4: C[41] || CT.C41}), $creationLocationd_0dea112b090073317d4: C[45] || CT.C45});
+    }
+    [_onTap](details) {
+      let t1;
+      if (this.onDotClicked != null) {
+        let index = this.effect.hitTestDots(core.double.as(dart.dload(dart.dload(details, 'localPosition'), 'dx')), this.count, this.offset);
+        if (index !== -1 && index !== this.offset[$toInt]()) {
+          t1 = this.onDotClicked;
+          t1 == null ? null : t1(index);
+        }
+      }
+    }
+  };
+  (smooth_page_indicator.SmoothIndicator.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let offset = opts && 'offset' in opts ? opts.offset : null;
+    if (offset == null) dart.nullFailed(I[0], 89, 19, "offset");
+    let count = opts && 'count' in opts ? opts.count : null;
+    if (count == null) dart.nullFailed(I[0], 90, 19, "count");
+    let axisDirection = opts && 'axisDirection' in opts ? opts.axisDirection : C[0] || CT.C0;
+    if (axisDirection == null) dart.nullFailed(I[0], 91, 10, "axisDirection");
+    let effect = opts && 'effect' in opts ? opts.effect : C[1] || CT.C1;
+    if (effect == null) dart.nullFailed(I[0], 92, 10, "effect");
+    let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+    let onDotClicked = opts && 'onDotClicked' in opts ? opts.onDotClicked : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[offset$] = offset;
+    this[count$0] = count;
+    this[axisDirection$0] = axisDirection;
+    this[effect$0] = effect;
+    this[textDirection$0] = textDirection;
+    this[onDotClicked$0] = onDotClicked;
+    this[_size] = effect.calculateSize(count);
+    smooth_page_indicator.SmoothIndicator.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = smooth_page_indicator.SmoothIndicator.prototype;
+  dart.addTypeTests(smooth_page_indicator.SmoothIndicator);
+  dart.addTypeCaches(smooth_page_indicator.SmoothIndicator);
+  dart.setMethodSignature(smooth_page_indicator.SmoothIndicator, () => ({
+    __proto__: dart.getMethods(smooth_page_indicator.SmoothIndicator.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext]),
+    [_onTap]: dart.fnType(dart.void, [dart.dynamic])
+  }));
+  dart.setLibraryUri(smooth_page_indicator.SmoothIndicator, I[1]);
+  dart.setFieldSignature(smooth_page_indicator.SmoothIndicator, () => ({
+    __proto__: dart.getFields(smooth_page_indicator.SmoothIndicator.__proto__),
+    offset: dart.finalFieldType(core.double),
+    effect: dart.finalFieldType(indicator_effect.IndicatorEffect),
+    axisDirection: dart.finalFieldType(basic_types.Axis),
+    count: dart.finalFieldType(core.int),
+    textDirection: dart.finalFieldType(dart.nullable(ui.TextDirection)),
+    onDotClicked: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [core.int]))),
+    [_size]: dart.finalFieldType(ui.Size)
+  }));
+  var activeIndex$ = dart.privateName(smooth_page_indicator, "AnimatedSmoothIndicator.activeIndex");
+  var effect$1 = dart.privateName(smooth_page_indicator, "AnimatedSmoothIndicator.effect");
+  var axisDirection$1 = dart.privateName(smooth_page_indicator, "AnimatedSmoothIndicator.axisDirection");
+  var count$1 = dart.privateName(smooth_page_indicator, "AnimatedSmoothIndicator.count");
+  var textDirection$1 = dart.privateName(smooth_page_indicator, "AnimatedSmoothIndicator.textDirection");
+  var onDotClicked$1 = dart.privateName(smooth_page_indicator, "AnimatedSmoothIndicator.onDotClicked");
+  var Cubic_d = dart.privateName(curves, "Cubic.d");
+  var Cubic_c = dart.privateName(curves, "Cubic.c");
+  var Cubic_b = dart.privateName(curves, "Cubic.b");
+  var Cubic_a = dart.privateName(curves, "Cubic.a");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  smooth_page_indicator.AnimatedSmoothIndicator = class AnimatedSmoothIndicator extends implicit_animations.ImplicitlyAnimatedWidget {
+    get activeIndex() {
+      return this[activeIndex$];
+    }
+    set activeIndex(value) {
+      super.activeIndex = value;
+    }
+    get effect() {
+      return this[effect$1];
+    }
+    set effect(value) {
+      super.effect = value;
+    }
+    get axisDirection() {
+      return this[axisDirection$1];
+    }
+    set axisDirection(value) {
+      super.axisDirection = value;
+    }
+    get count() {
+      return this[count$1];
+    }
+    set count(value) {
+      super.count = value;
+    }
+    get textDirection() {
+      return this[textDirection$1];
+    }
+    set textDirection(value) {
+      super.textDirection = value;
+    }
+    get onDotClicked() {
+      return this[onDotClicked$1];
+    }
+    set onDotClicked(value) {
+      super.onDotClicked = value;
+    }
+    createState() {
+      return new smooth_page_indicator._AnimatedSmoothIndicatorState.new();
+    }
+  };
+  (smooth_page_indicator.AnimatedSmoothIndicator.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let activeIndex = opts && 'activeIndex' in opts ? opts.activeIndex : null;
+    if (activeIndex == null) dart.nullFailed(I[0], 158, 19, "activeIndex");
+    let count = opts && 'count' in opts ? opts.count : null;
+    if (count == null) dart.nullFailed(I[0], 159, 19, "count");
+    let axisDirection = opts && 'axisDirection' in opts ? opts.axisDirection : C[0] || CT.C0;
+    if (axisDirection == null) dart.nullFailed(I[0], 160, 10, "axisDirection");
+    let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+    let onDotClicked = opts && 'onDotClicked' in opts ? opts.onDotClicked : null;
+    let effect = opts && 'effect' in opts ? opts.effect : C[1] || CT.C1;
+    if (effect == null) dart.nullFailed(I[0], 163, 10, "effect");
+    let curve = opts && 'curve' in opts ? opts.curve : C[49] || CT.C49;
+    if (curve == null) dart.nullFailed(I[0], 164, 11, "curve");
+    let duration = opts && 'duration' in opts ? opts.duration : C[50] || CT.C50;
+    if (duration == null) dart.nullFailed(I[0], 165, 14, "duration");
+    let onEnd = opts && 'onEnd' in opts ? opts.onEnd : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[activeIndex$] = activeIndex;
+    this[count$1] = count;
+    this[axisDirection$1] = axisDirection;
+    this[textDirection$1] = textDirection;
+    this[onDotClicked$1] = onDotClicked;
+    this[effect$1] = effect;
+    smooth_page_indicator.AnimatedSmoothIndicator.__proto__.new.call(this, {key: key, duration: duration, curve: curve, onEnd: onEnd, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = smooth_page_indicator.AnimatedSmoothIndicator.prototype;
+  dart.addTypeTests(smooth_page_indicator.AnimatedSmoothIndicator);
+  dart.addTypeCaches(smooth_page_indicator.AnimatedSmoothIndicator);
+  dart.setMethodSignature(smooth_page_indicator.AnimatedSmoothIndicator, () => ({
+    __proto__: dart.getMethods(smooth_page_indicator.AnimatedSmoothIndicator.__proto__),
+    createState: dart.fnType(smooth_page_indicator._AnimatedSmoothIndicatorState, [])
+  }));
+  dart.setLibraryUri(smooth_page_indicator.AnimatedSmoothIndicator, I[1]);
+  dart.setFieldSignature(smooth_page_indicator.AnimatedSmoothIndicator, () => ({
+    __proto__: dart.getFields(smooth_page_indicator.AnimatedSmoothIndicator.__proto__),
+    activeIndex: dart.finalFieldType(core.int),
+    effect: dart.finalFieldType(indicator_effect.IndicatorEffect),
+    axisDirection: dart.finalFieldType(basic_types.Axis),
+    count: dart.finalFieldType(core.int),
+    textDirection: dart.finalFieldType(dart.nullable(ui.TextDirection)),
+    onDotClicked: dart.finalFieldType(dart.nullable(dart.fnType(dart.dynamic, [core.int])))
+  }));
+  smooth_page_indicator._AnimatedSmoothIndicatorState = class _AnimatedSmoothIndicatorState extends implicit_animations.AnimatedWidgetBaseState$(smooth_page_indicator.AnimatedSmoothIndicator) {
+    forEachTween(visitor) {
+      if (visitor == null) dart.nullFailed(I[0], 184, 21, "visitor");
+      this[_offset] = T.TweenOfdouble().as(visitor(this[_offset], this.widget.activeIndex[$toDouble](), dart.fn(value => new (T.TweenOfdouble()).new({begin: core.double.as(value)}), T.dynamicToTweenOfdouble())));
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 193, 29, "context");
+      let offset = this[_offset];
+      if (offset == null) {
+        dart.throw("Offset has not been initialized");
+      }
+      return new smooth_page_indicator.SmoothIndicator.new({offset: offset.evaluate(this.animation), count: this.widget.count, effect: this.widget.effect, textDirection: this.widget.textDirection, axisDirection: this.widget.axisDirection, onDotClicked: this.widget.onDotClicked, $creationLocationd_0dea112b090073317d4: C[51] || CT.C51});
+    }
+  };
+  (smooth_page_indicator._AnimatedSmoothIndicatorState.new = function() {
+    this[_offset] = null;
+    smooth_page_indicator._AnimatedSmoothIndicatorState.__proto__.new.call(this);
+    ;
+  }).prototype = smooth_page_indicator._AnimatedSmoothIndicatorState.prototype;
+  dart.addTypeTests(smooth_page_indicator._AnimatedSmoothIndicatorState);
+  dart.addTypeCaches(smooth_page_indicator._AnimatedSmoothIndicatorState);
+  dart.setMethodSignature(smooth_page_indicator._AnimatedSmoothIndicatorState, () => ({
+    __proto__: dart.getMethods(smooth_page_indicator._AnimatedSmoothIndicatorState.__proto__),
+    forEachTween: dart.fnType(dart.void, [dart.fnType(dart.nullable(tween.Tween), [dart.nullable(tween.Tween), dart.dynamic, dart.fnType(tween.Tween, [dart.dynamic])])]),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(smooth_page_indicator._AnimatedSmoothIndicatorState, I[1]);
+  dart.setFieldSignature(smooth_page_indicator._AnimatedSmoothIndicatorState, () => ({
+    __proto__: dart.getFields(smooth_page_indicator._AnimatedSmoothIndicatorState.__proto__),
+    [_offset]: dart.fieldType(dart.nullable(tween.Tween$(core.double)))
+  }));
+  dart.trackLibraries("packages/smooth_page_indicator/src/smooth_page_indicator.dart", {
+    "package:smooth_page_indicator/src/smooth_page_indicator.dart": smooth_page_indicator
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["smooth_page_indicator.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAYuB;;;;;;IAGC;;;;;;IAOX;;;;;;IAGD;;;;;;IAGW;;;;;;IAGD;;;;;;;UAaM;AACxB,YAAO,wDACG,sBACD,oBACC,4BACO,mCACA,kCACD;IAElB;;;AAGE;AACE,aAAO,AAAW;cAAA,cAAQ,AAAW,AAAY;;YAC1C;AAAP;AACA,gBAAO,AAAW,AAAY;;;;IAElC;;;QA3BO;QACS;;QACA;;QACT;;QACA;QACA;QACA;;;IALS;IACA;IACT;IACA;IACA;IACA;AACF,6EAAW,GAAG,cAAc,UAAU;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAyB/B;;;;;;IAGS;;;;;;IAGX;;;;;;IAGD;;;;;;IAGW;;;;;;IAGD;;;;;;UAoBM;;;AAElB,kBAC4C,CAA/B,yBAAd,aAAgC,wBAAG,OAAO,WAAoB;AAEnE,YAAO,yCACS,AAAc,sBAAQ,4BAC9B,IACA,KAAK,GACD,IACA,UACH,6DACI,sBACF,iCACC,sBAEG,AAAO,yBAAa,YAAO;IAI5C;aAEY;;AACV,UAAI,AAAa;AACX,oBAAQ,AAAO,uCACK,WAAd,WAAR,OAAO,4BACP,YACA;AAEF,YAAI,AAAM,KAAD,KAAI,CAAC,KAAK,AAAM,KAAD,KAAI,AAAO;AACR,eAAzB;8BAAc,GAAK,KAAK;;;IAG9B;;;QA/CO;QACS;;QACA;;QACT;;QACA;;QACA;QACA;;IALS;IACA;IACT;IACA;IACA;IACA;IAIK,cAAE,AAAO,MAAD,eAAe,KAAK;AAClC,yEAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAwCX;;;;;;IAGY;;;;;;IAGX;;;;;;IAGD;;;;;;IAGW;;;;;;IAGM;;;;;;;AAsBvB;IAA+B;;;QAnB5B;QACS;;QACA;;QACT;;QACA;QACA;QACA;;QACC;;QACG;;QACK;;IARA;IACA;IACT;IACA;IACA;IACA;AAIF,iFACQ,GAAG,YACE,QAAQ,SACX,KAAK,SACL,KAAK;;EACb;;;;;;;;;;;;;;;;;;;UAYW;AAKE,MAJlB,gBAIE,qBAJQ,AAAO,OAAA,CACf,eACA,AAAO,AAAY,sCACnB,QAAS,SAAU,oCAA2B,eAAN,KAAK;IAEjD;;UAG0B;AAClB,mBAAS;AACf,UAAI,AAAO,MAAD;AAC+B,QAAvC,WAAM;;AAGR,YAAO,wDACG,AAAO,MAAD,UAAU,wBACjB,AAAO,2BACN,AAAO,mCACA,AAAO,0CACP,AAAO,yCACR,AAAO;IAEzB;;;IA1Be;;;EA2BjB","file":"../../../../../../../packages/smooth_page_indicator/src/smooth_page_indicator.dart.lib.js"}');
+  // Exports:
+  return {
+    src__smooth_page_indicator: smooth_page_indicator
+  };
+}));
+
+//# sourceMappingURL=smooth_page_indicator.dart.lib.js.map

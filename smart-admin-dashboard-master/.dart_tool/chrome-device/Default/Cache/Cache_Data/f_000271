@@ -1,0 +1,341 @@
+define(['dart_sdk', 'packages/smooth_page_indicator/src/effects/indicator_effect.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/painting/colors.dart'], (function load__packages__smooth_page_indicator__src__painters__expanding_dots_painter_dart(dart_sdk, packages__smooth_page_indicator__src__effects__indicator_effect$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__painting__colors$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const indicator_painter = packages__smooth_page_indicator__src__effects__indicator_effect$46dart.src__painters__indicator_painter;
+  const indicator_effect = packages__smooth_page_indicator__src__effects__indicator_effect$46dart.src__effects__indicator_effect;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const colors$ = packages__flutter__src__painting__colors$46dart.src__painting__colors;
+  var expanding_dots_painter = Object.create(dart.library);
+  var expanding_dots_effect = Object.create(dart.library);
+  var $floor = dartx.floor;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    _: () => T
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4293454582.0
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4291152617.0
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4288653530.0
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4286154443.0
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4284246976.0
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4282339765.0
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4281944491.0
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4281352095.0
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4280825235.0
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4279903102.0
+      });
+    },
+    get C1() {
+      return C[1] = dart.constMap(core.int, ui.Color, [50, C[2] || CT.C2, 100, C[3] || CT.C3, 200, C[4] || CT.C4, 300, C[5] || CT.C5, 400, C[6] || CT.C6, 500, C[7] || CT.C7, 600, C[8] || CT.C8, 700, C[9] || CT.C9, 800, C[10] || CT.C10, 900, C[11] || CT.C11]);
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: colors.MaterialColor.prototype,
+        [Color_value]: 4282339765.0,
+        [ColorSwatch__swatch]: C[1] || CT.C1
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294638330.0
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294309365.0
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4293848814.0
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4292927712.0
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4292269782.0
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4290624957.0
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4288585374.0
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4285887861.0
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4284572001.0
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4282532418.0
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4281348144.0
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4280361249.0
+      });
+    },
+    get C13() {
+      return C[13] = dart.constMap(core.int, ui.Color, [50, C[14] || CT.C14, 100, C[15] || CT.C15, 200, C[16] || CT.C16, 300, C[17] || CT.C17, 350, C[18] || CT.C18, 400, C[19] || CT.C19, 500, C[20] || CT.C20, 600, C[21] || CT.C21, 700, C[22] || CT.C22, 800, C[23] || CT.C23, 850, C[24] || CT.C24, 900, C[25] || CT.C25]);
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: colors.MaterialColor.prototype,
+        [Color_value]: 4288585374.0,
+        [ColorSwatch__swatch]: C[13] || CT.C13
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: ui.PaintingStyle.prototype,
+        [_name]: "PaintingStyle.fill",
+        index: 0
+      });
+    }
+  }, false);
+  var C = Array(27).fill(void 0);
+  var I = [
+    "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/smooth_page_indicator-0.3.0-nullsafety.0/lib/src/painters/expanding_dots_painter.dart",
+    "package:smooth_page_indicator/src/painters/expanding_dots_painter.dart",
+    "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/smooth_page_indicator-0.3.0-nullsafety.0/lib/src/effects/expanding_dots_effect.dart",
+    "package:smooth_page_indicator/src/effects/expanding_dots_effect.dart"
+  ];
+  var effect$ = dart.privateName(expanding_dots_painter, "ExpandingDotsPainter.effect");
+  expanding_dots_painter.ExpandingDotsPainter = class ExpandingDotsPainter extends indicator_painter.IndicatorPainter {
+    get effect() {
+      return this[effect$];
+    }
+    set effect(value) {
+      super.effect = value;
+    }
+    paint(canvas, size) {
+      let t0;
+      if (canvas == null) dart.nullFailed(I[0], 16, 21, "canvas");
+      if (size == null) dart.nullFailed(I[0], 16, 34, "size");
+      let current = this.offset[$floor]();
+      let drawingOffset = -dart.notNull(this.effect.spacing);
+      let dotOffset = dart.notNull(this.offset) - current;
+      for (let i = 0; i < dart.notNull(this.count); i = i + 1) {
+        let color = this.effect.dotColor;
+        let activeDotWidth = dart.notNull(this.effect.dotWidth) * dart.notNull(this.effect.expansionFactor);
+        let expansion = dotOffset / 2 * ((activeDotWidth - dart.notNull(this.effect.dotWidth)) / 0.5);
+        let xPos = dart.notNull(drawingOffset) + dart.notNull(this.effect.spacing);
+        let width = this.effect.dotWidth;
+        if (i === current) {
+          color = dart.nullCheck(ui.Color.lerp(this.effect.activeDotColor, this.effect.dotColor, dotOffset));
+          width = activeDotWidth - expansion;
+        } else if (i - 1 === current) {
+          width = dart.notNull(this.effect.dotWidth) + expansion;
+          color = dart.nullCheck(ui.Color.lerp(this.effect.activeDotColor, this.effect.dotColor, 1.0 - dotOffset));
+        }
+        let yPos = dart.notNull(size.height) / 2;
+        let rRect = new ui.RRect.fromLTRBR(xPos, yPos - dart.notNull(this.effect.dotHeight) / 2, xPos + dart.notNull(width), yPos + dart.notNull(this.effect.dotHeight) / 2, this.dotRadius);
+        drawingOffset = rRect.right;
+        canvas.drawRRect(rRect, (t0 = this.dotPaint, (() => {
+          t0.color = color;
+          return t0;
+        })()));
+      }
+    }
+  };
+  (expanding_dots_painter.ExpandingDotsPainter.new = function(opts) {
+    let offset = opts && 'offset' in opts ? opts.offset : null;
+    if (offset == null) dart.nullFailed(I[0], 10, 21, "offset");
+    let effect = opts && 'effect' in opts ? opts.effect : null;
+    if (effect == null) dart.nullFailed(I[0], 11, 19, "effect");
+    let count = opts && 'count' in opts ? opts.count : null;
+    if (count == null) dart.nullFailed(I[0], 12, 18, "count");
+    this[effect$] = effect;
+    expanding_dots_painter.ExpandingDotsPainter.__proto__.new.call(this, offset, count, effect);
+    ;
+  }).prototype = expanding_dots_painter.ExpandingDotsPainter.prototype;
+  dart.addTypeTests(expanding_dots_painter.ExpandingDotsPainter);
+  dart.addTypeCaches(expanding_dots_painter.ExpandingDotsPainter);
+  dart.setMethodSignature(expanding_dots_painter.ExpandingDotsPainter, () => ({
+    __proto__: dart.getMethods(expanding_dots_painter.ExpandingDotsPainter.__proto__),
+    paint: dart.fnType(dart.void, [ui.Canvas, ui.Size])
+  }));
+  dart.setLibraryUri(expanding_dots_painter.ExpandingDotsPainter, I[1]);
+  dart.setFieldSignature(expanding_dots_painter.ExpandingDotsPainter, () => ({
+    __proto__: dart.getFields(expanding_dots_painter.ExpandingDotsPainter.__proto__),
+    effect: dart.finalFieldType(expanding_dots_effect.ExpandingDotsEffect)
+  }));
+  var expansionFactor$ = dart.privateName(expanding_dots_effect, "ExpandingDotsEffect.expansionFactor");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var ColorSwatch__swatch = dart.privateName(colors$, "ColorSwatch._swatch");
+  var _name = dart.privateName(ui, "_name");
+  expanding_dots_effect.ExpandingDotsEffect = class ExpandingDotsEffect extends indicator_effect.IndicatorEffect {
+    get expansionFactor() {
+      return this[expansionFactor$];
+    }
+    set expansionFactor(value) {
+      super.expansionFactor = value;
+    }
+    calculateSize(count) {
+      if (count == null) dart.nullFailed(I[2], 35, 26, "count");
+      return new ui.Size.new((dart.notNull(this.dotWidth) + dart.notNull(this.spacing)) * (dart.notNull(count) - 1) + dart.notNull(this.expansionFactor) * dart.notNull(this.dotWidth), this.dotHeight);
+    }
+    buildPainter(count, offset) {
+      if (count == null) dart.nullFailed(I[2], 43, 37, "count");
+      if (offset == null) dart.nullFailed(I[2], 43, 51, "offset");
+      return new expanding_dots_painter.ExpandingDotsPainter.new({count: count, offset: offset, effect: this});
+    }
+    hitTestDots(dx, count, current) {
+      if (dx == null) dart.nullFailed(I[2], 48, 26, "dx");
+      if (count == null) dart.nullFailed(I[2], 48, 34, "count");
+      if (current == null) dart.nullFailed(I[2], 48, 48, "current");
+      let anchor = -dart.notNull(this.spacing) / 2;
+      for (let index = 0; index < dart.notNull(count); index = index + 1) {
+        let widthBound = dart.notNull(index === current ? dart.notNull(this.dotWidth) * dart.notNull(this.expansionFactor) : this.dotWidth) + dart.notNull(this.spacing);
+        if (dart.notNull(dx) <= (anchor = anchor + widthBound)) {
+          return index;
+        }
+      }
+      return -1;
+    }
+  };
+  (expanding_dots_effect.ExpandingDotsEffect.new = function(opts) {
+    let expansionFactor = opts && 'expansionFactor' in opts ? opts.expansionFactor : 3;
+    if (expansionFactor == null) dart.nullFailed(I[2], 13, 10, "expansionFactor");
+    let offset = opts && 'offset' in opts ? opts.offset : 0;
+    if (offset == null) dart.nullFailed(I[2], 14, 12, "offset");
+    let dotWidth = opts && 'dotWidth' in opts ? opts.dotWidth : 16;
+    if (dotWidth == null) dart.nullFailed(I[2], 15, 12, "dotWidth");
+    let dotHeight = opts && 'dotHeight' in opts ? opts.dotHeight : 16;
+    if (dotHeight == null) dart.nullFailed(I[2], 16, 12, "dotHeight");
+    let spacing = opts && 'spacing' in opts ? opts.spacing : 8;
+    if (spacing == null) dart.nullFailed(I[2], 17, 12, "spacing");
+    let radius = opts && 'radius' in opts ? opts.radius : 16;
+    if (radius == null) dart.nullFailed(I[2], 18, 12, "radius");
+    let activeDotColor = opts && 'activeDotColor' in opts ? opts.activeDotColor : C[0] || CT.C0;
+    if (activeDotColor == null) dart.nullFailed(I[2], 19, 11, "activeDotColor");
+    let dotColor = opts && 'dotColor' in opts ? opts.dotColor : C[12] || CT.C12;
+    if (dotColor == null) dart.nullFailed(I[2], 20, 11, "dotColor");
+    let strokeWidth = opts && 'strokeWidth' in opts ? opts.strokeWidth : 1;
+    if (strokeWidth == null) dart.nullFailed(I[2], 21, 12, "strokeWidth");
+    let paintStyle = opts && 'paintStyle' in opts ? opts.paintStyle : C[26] || CT.C26;
+    if (paintStyle == null) dart.nullFailed(I[2], 22, 19, "paintStyle");
+    this[expansionFactor$] = expansionFactor;
+    if (!(dart.notNull(expansionFactor) > 1)) dart.assertFailed(null, I[2], 23, 16, "expansionFactor > 1");
+    expanding_dots_effect.ExpandingDotsEffect.__proto__.new.call(this, {dotWidth: dotWidth, dotHeight: dotHeight, spacing: spacing, radius: radius, strokeWidth: strokeWidth, paintStyle: paintStyle, dotColor: dotColor, activeDotColor: activeDotColor});
+    ;
+  }).prototype = expanding_dots_effect.ExpandingDotsEffect.prototype;
+  dart.addTypeTests(expanding_dots_effect.ExpandingDotsEffect);
+  dart.addTypeCaches(expanding_dots_effect.ExpandingDotsEffect);
+  dart.setMethodSignature(expanding_dots_effect.ExpandingDotsEffect, () => ({
+    __proto__: dart.getMethods(expanding_dots_effect.ExpandingDotsEffect.__proto__),
+    buildPainter: dart.fnType(indicator_painter.IndicatorPainter, [core.int, core.double])
+  }));
+  dart.setLibraryUri(expanding_dots_effect.ExpandingDotsEffect, I[3]);
+  dart.setFieldSignature(expanding_dots_effect.ExpandingDotsEffect, () => ({
+    __proto__: dart.getFields(expanding_dots_effect.ExpandingDotsEffect.__proto__),
+    expansionFactor: dart.finalFieldType(core.double)
+  }));
+  dart.trackLibraries("packages/smooth_page_indicator/src/painters/expanding_dots_painter.dart", {
+    "package:smooth_page_indicator/src/painters/expanding_dots_painter.dart": expanding_dots_painter,
+    "package:smooth_page_indicator/src/effects/expanding_dots_effect.dart": expanding_dots_effect
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["expanding_dots_painter.dart","../effects/expanding_dots_effect.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAM4B;;;;;;UASR,QAAa;;UAAb;UAAa;AACvB,oBAAU,AAAO;AACnB,0BAAgB,cAAC,AAAO;AACtB,sBAAmB,aAAP,eAAS,OAAO;AAElC,eAAS,IAAI,GAAG,AAAE,CAAD,gBAAG,aAAO,IAAA,AAAC,CAAA;AACtB,oBAAQ,AAAO;AACb,6BAAiC,aAAhB,AAAO,qCAAW,AAAO;AAC1C,wBACD,AAAU,AAAI,SAAL,GAAG,KAAwC,CAAlC,AAAe,cAAD,gBAAG,AAAO,yBAAY;AACrD,mBAAqB,aAAd,aAAa,iBAAG,AAAO;AAChC,oBAAQ,AAAO;AACnB,YAAI,AAAE,CAAD,KAAI,OAAO;AAEwD,UAAtE,QAAqE,eAAvD,cAAK,AAAO,4BAAgB,AAAO,sBAAU,SAAS;AAClC,UAAlC,QAAQ,AAAe,cAAD,GAAG,SAAS;cAC7B,KAAI,AAAE,AAAI,CAAL,GAAG,MAAK,OAAO;AACU,UAAnC,QAAwB,aAAhB,AAAO,wBAAW,SAAS;AAG0B,UAD7D,QAC4D,eAD9C,cACV,AAAO,4BAAgB,AAAO,sBAAU,AAAI,MAAE,SAAS;;AAEvD,mBAAmB,aAAZ,AAAK,IAAD,WAAU;AACrB,oBAAc,uBAClB,IAAI,EACJ,AAAK,IAAD,GAAoB,aAAjB,AAAO,yBAAY,GAC1B,AAAK,IAAD,gBAAG,KAAK,GACZ,AAAK,IAAD,GAAoB,aAAjB,AAAO,yBAAY,GAC1B;AAEyB,QAA3B,gBAAgB,AAAM,KAAD;AAC2B,QAAhD,AAAO,MAAD,WAAW,KAAK,uBAAE;AAAU,qBAAQ,KAAK;;;;IAEnD;;;QAvCkB;;QACF;;QACD;;IADC;AAEX,yEAAM,MAAM,EAAE,KAAK,EAAE,MAAM;;EAAC;;;;;;;;;;;;;;;;;ICHpB;;;;;;;UAyBU;AAErB,YAAO,iBACmB,AAAe,CAA1B,aAAT,8BAAW,kBAAkB,aAAN,KAAK,IAAG,KAAuB,aAAhB,qCAAkB,gBAC1D;IACN;iBAGkC,OAAc;UAAd;UAAc;AAC9C,YAAO,6DAA4B,KAAK,UAAU,MAAM,UAAU;IACpE;gBAGuB,IAAQ,OAAc;UAAtB;UAAQ;UAAc;AACvC,mBAAS,AAAS,cAAR,gBAAU;AACxB,eAAS,QAAQ,GAAG,AAAM,KAAD,gBAAG,KAAK,GAAE,QAAA,AAAK,KAAA;AAClC,yBAC6D,aAA5D,AAAM,KAAD,KAAI,OAAO,GAAa,aAAT,8BAAW,wBAAmB,8BAC/C;AACR,YAAO,aAAH,EAAE,MAAK,SAAA,AAAO,MAAD,GAAI,UAAU;AAC7B,gBAAO,MAAK;;;AAGhB,YAAO,EAAC;IACV;;;QA9CO;;QACE;;QACA;;QACA;;QACA;;QACA;;QACD;;QACA;;QACC;;QACO;;IATT;UAUsB,aAAhB,eAAe,IAAG;AACzB,kFACc,QAAQ,aACP,SAAS,WACX,OAAO,UACR,MAAM,eACD,WAAW,cACZ,UAAU,YACZ,QAAQ,kBACF,cAAc;;EAAC","file":"../../../../../../../../packages/smooth_page_indicator/src/painters/expanding_dots_painter.dart.lib.js"}');
+  // Exports:
+  return {
+    src__painters__expanding_dots_painter: expanding_dots_painter,
+    src__effects__expanding_dots_effect: expanding_dots_effect
+  };
+}));
+
+//# sourceMappingURL=expanding_dots_painter.dart.lib.js.map

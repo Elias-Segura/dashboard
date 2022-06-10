@@ -1,0 +1,1257 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/material/material_state.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/semantics/semantics_event.dart', 'packages/flutter/src/scheduler/ticker.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/material/toggleable.dart'], (function load__packages__flutter__src__material__checkbox_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__material__material_state$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__semantics__semantics_event$46dart, packages__flutter__src__scheduler__ticker$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__material__toggleable$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const _internal = dart_sdk._internal;
+  const _js_helper = dart_sdk._js_helper;
+  const collection = dart_sdk.collection;
+  const math = dart_sdk.math;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const focus_manager = packages__flutter__src__widgets__widget_span$46dart.src__widgets__focus_manager;
+  const actions = packages__flutter__src__widgets__widget_span$46dart.src__widgets__actions;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const ticker_provider = packages__flutter__src__widgets__widget_span$46dart.src__widgets__ticker_provider;
+  const mouse_cursor = packages__flutter__src__rendering__layer$46dart.src__rendering__mouse_cursor;
+  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
+  const material_state = packages__flutter__src__material__material_state$46dart.src__material__material_state;
+  const theme_data = packages__flutter__src__material__icon_button$46dart.src__material__theme_data;
+  const theme = packages__flutter__src__material__icon_button$46dart.src__material__theme;
+  const debug = packages__flutter__src__material__icon_button$46dart.src__material__debug;
+  const semantics_event = packages__flutter__src__semantics__semantics_event$46dart.src__semantics__semantics_event;
+  const ticker = packages__flutter__src__scheduler__ticker$46dart.src__scheduler__ticker;
+  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
+  const toggleable = packages__flutter__src__material__toggleable$46dart.src__material__toggleable;
+  var checkbox = Object.create(dart.library);
+  var $abs = dartx.abs;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    CallbackActionOfActivateIntent: () => (T.CallbackActionOfActivateIntent = dart.constFn(actions.CallbackAction$(actions.ActivateIntent)))(),
+    ActionOfIntent: () => (T.ActionOfIntent = dart.constFn(actions.Action$(actions.Intent)))(),
+    LinkedMapOfType$ActionOfIntent: () => (T.LinkedMapOfType$ActionOfIntent = dart.constFn(_js_helper.LinkedMap$(core.Type, T.ActionOfIntent())))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    LinkedHashSetOfMaterialState: () => (T.LinkedHashSetOfMaterialState = dart.constFn(collection.LinkedHashSet$(material_state.MaterialState)))(),
+    ColorN: () => (T.ColorN = dart.constFn(dart.nullable(ui.Color)))(),
+    SetOfMaterialState: () => (T.SetOfMaterialState = dart.constFn(core.Set$(material_state.MaterialState)))(),
+    SetOfMaterialStateToColorN: () => (T.SetOfMaterialStateToColorN = dart.constFn(dart.fnType(T.ColorN(), [T.SetOfMaterialState()])))(),
+    SetOfMaterialStateToColor: () => (T.SetOfMaterialStateToColor = dart.constFn(dart.fnType(ui.Color, [T.SetOfMaterialState()])))(),
+    MouseCursorN: () => (T.MouseCursorN = dart.constFn(dart.nullable(mouse_cursor.MouseCursor)))(),
+    BuildContextTo_CheckboxRenderObjectWidget: () => (T.BuildContextTo_CheckboxRenderObjectWidget = dart.constFn(dart.fnType(checkbox._CheckboxRenderObjectWidget, [framework.BuildContext])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: semantics_event.TapSemanticEvent.prototype,
+        [SemanticsEvent_type]: "tap"
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: ui.Size.prototype,
+        [OffsetBase__dy]: 48,
+        [OffsetBase__dx]: 48
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: theme_data.MaterialTapTargetSize.prototype,
+        [_name]: "MaterialTapTargetSize.padded",
+        index: 0
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: ui.Size.prototype,
+        [OffsetBase__dy]: 40,
+        [OffsetBase__dx]: 40
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: theme_data.MaterialTapTargetSize.prototype,
+        [_name]: "MaterialTapTargetSize.shrinkWrap",
+        index: 1
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294967295.0
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "value",
+        [_Location_column]: 13,
+        [_Location_line]: 425,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "tristate",
+        [_Location_column]: 13,
+        [_Location_line]: 426,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "activeColor",
+        [_Location_column]: 13,
+        [_Location_line]: 427,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "checkColor",
+        [_Location_column]: 13,
+        [_Location_line]: 428,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "inactiveColor",
+        [_Location_column]: 13,
+        [_Location_line]: 429,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "focusColor",
+        [_Location_column]: 13,
+        [_Location_line]: 430,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "hoverColor",
+        [_Location_column]: 13,
+        [_Location_line]: 431,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "reactionColor",
+        [_Location_column]: 13,
+        [_Location_line]: 432,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "inactiveReactionColor",
+        [_Location_column]: 13,
+        [_Location_line]: 433,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "splashRadius",
+        [_Location_column]: 13,
+        [_Location_line]: 434,
+        [_Location_file]: null
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onChanged",
+        [_Location_column]: 13,
+        [_Location_line]: 435,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "additionalConstraints",
+        [_Location_column]: 13,
+        [_Location_line]: 436,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "vsync",
+        [_Location_column]: 13,
+        [_Location_line]: 437,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "hasFocus",
+        [_Location_column]: 13,
+        [_Location_line]: 438,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "hovering",
+        [_Location_column]: 13,
+        [_Location_line]: 439,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[8] || CT.C8, C[9] || CT.C9, C[10] || CT.C10, C[11] || CT.C11, C[12] || CT.C12, C[13] || CT.C13, C[14] || CT.C14, C[15] || CT.C15, C[16] || CT.C16, C[17] || CT.C17, C[18] || CT.C18, C[19] || CT.C19, C[20] || CT.C20, C[21] || CT.C21, C[22] || CT.C22], widget_inspector._Location);
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 424,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/checkbox.dart"
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 9,
+        [_Location_line]: 423,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.constList([C[25] || CT.C25], widget_inspector._Location);
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[24] || CT.C24,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 422,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/checkbox.dart"
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "actions",
+        [_Location_column]: 7,
+        [_Location_line]: 415,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "focusNode",
+        [_Location_column]: 7,
+        [_Location_line]: 416,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "autofocus",
+        [_Location_column]: 7,
+        [_Location_line]: 417,
+        [_Location_file]: null
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "enabled",
+        [_Location_column]: 7,
+        [_Location_line]: 418,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onShowFocusHighlight",
+        [_Location_column]: 7,
+        [_Location_line]: 419,
+        [_Location_file]: null
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onShowHoverHighlight",
+        [_Location_column]: 7,
+        [_Location_line]: 420,
+        [_Location_file]: null
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mouseCursor",
+        [_Location_column]: 7,
+        [_Location_line]: 421,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 422,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C[27] = dart.constList([C[28] || CT.C28, C[29] || CT.C29, C[30] || CT.C30, C[31] || CT.C31, C[32] || CT.C32, C[33] || CT.C33, C[34] || CT.C34, C[35] || CT.C35], widget_inspector._Location);
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[27] || CT.C27,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 414,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/checkbox.dart"
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 8.1,
+        [OffsetBase__dx]: 2.6999999999999997
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 12.6,
+        [OffsetBase__dx]: 7.2
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 4.5,
+        [OffsetBase__dx]: 15.299999999999999
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 9,
+        [OffsetBase__dx]: 3.6
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 9,
+        [OffsetBase__dx]: 9
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 9,
+        [OffsetBase__dx]: 14.4
+      });
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: ui.Size.prototype,
+        [OffsetBase__dy]: 18,
+        [OffsetBase__dx]: 18
+      });
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: ui.Radius.prototype,
+        [Radius_y]: 1,
+        [Radius_x]: 1
+      });
+    }
+  }, false);
+  var C = Array(44).fill(void 0);
+  var I = [
+    "file:///C:/flutter/packages/flutter/lib/src/material/checkbox.dart",
+    "package:flutter/src/material/checkbox.dart"
+  ];
+  var value$ = dart.privateName(checkbox, "Checkbox.value");
+  var onChanged$ = dart.privateName(checkbox, "Checkbox.onChanged");
+  var mouseCursor$ = dart.privateName(checkbox, "Checkbox.mouseCursor");
+  var activeColor$ = dart.privateName(checkbox, "Checkbox.activeColor");
+  var fillColor$ = dart.privateName(checkbox, "Checkbox.fillColor");
+  var checkColor$ = dart.privateName(checkbox, "Checkbox.checkColor");
+  var tristate$ = dart.privateName(checkbox, "Checkbox.tristate");
+  var materialTapTargetSize$ = dart.privateName(checkbox, "Checkbox.materialTapTargetSize");
+  var visualDensity$ = dart.privateName(checkbox, "Checkbox.visualDensity");
+  var focusColor$ = dart.privateName(checkbox, "Checkbox.focusColor");
+  var hoverColor$ = dart.privateName(checkbox, "Checkbox.hoverColor");
+  var overlayColor$ = dart.privateName(checkbox, "Checkbox.overlayColor");
+  var splashRadius$ = dart.privateName(checkbox, "Checkbox.splashRadius");
+  var focusNode$ = dart.privateName(checkbox, "Checkbox.focusNode");
+  var autofocus$ = dart.privateName(checkbox, "Checkbox.autofocus");
+  checkbox.Checkbox = class Checkbox extends framework.StatefulWidget {
+    get value() {
+      return this[value$];
+    }
+    set value(value) {
+      super.value = value;
+    }
+    get onChanged() {
+      return this[onChanged$];
+    }
+    set onChanged(value) {
+      super.onChanged = value;
+    }
+    get mouseCursor() {
+      return this[mouseCursor$];
+    }
+    set mouseCursor(value) {
+      super.mouseCursor = value;
+    }
+    get activeColor() {
+      return this[activeColor$];
+    }
+    set activeColor(value) {
+      super.activeColor = value;
+    }
+    get fillColor() {
+      return this[fillColor$];
+    }
+    set fillColor(value) {
+      super.fillColor = value;
+    }
+    get checkColor() {
+      return this[checkColor$];
+    }
+    set checkColor(value) {
+      super.checkColor = value;
+    }
+    get tristate() {
+      return this[tristate$];
+    }
+    set tristate(value) {
+      super.tristate = value;
+    }
+    get materialTapTargetSize() {
+      return this[materialTapTargetSize$];
+    }
+    set materialTapTargetSize(value) {
+      super.materialTapTargetSize = value;
+    }
+    get visualDensity() {
+      return this[visualDensity$];
+    }
+    set visualDensity(value) {
+      super.visualDensity = value;
+    }
+    get focusColor() {
+      return this[focusColor$];
+    }
+    set focusColor(value) {
+      super.focusColor = value;
+    }
+    get hoverColor() {
+      return this[hoverColor$];
+    }
+    set hoverColor(value) {
+      super.hoverColor = value;
+    }
+    get overlayColor() {
+      return this[overlayColor$];
+    }
+    set overlayColor(value) {
+      super.overlayColor = value;
+    }
+    get splashRadius() {
+      return this[splashRadius$];
+    }
+    set splashRadius(value) {
+      super.splashRadius = value;
+    }
+    get focusNode() {
+      return this[focusNode$];
+    }
+    set focusNode(value) {
+      super.focusNode = value;
+    }
+    get autofocus() {
+      return this[autofocus$];
+    }
+    set autofocus(value) {
+      super.autofocus = value;
+    }
+    createState() {
+      return new checkbox._CheckboxState.new();
+    }
+  };
+  (checkbox.Checkbox.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let value = opts && 'value' in opts ? opts.value : null;
+    let tristate = opts && 'tristate' in opts ? opts.tristate : false;
+    if (tristate == null) dart.nullFailed(I[0], 62, 10, "tristate");
+    let onChanged = opts && 'onChanged' in opts ? opts.onChanged : null;
+    let mouseCursor = opts && 'mouseCursor' in opts ? opts.mouseCursor : null;
+    let activeColor = opts && 'activeColor' in opts ? opts.activeColor : null;
+    let fillColor = opts && 'fillColor' in opts ? opts.fillColor : null;
+    let checkColor = opts && 'checkColor' in opts ? opts.checkColor : null;
+    let focusColor = opts && 'focusColor' in opts ? opts.focusColor : null;
+    let hoverColor = opts && 'hoverColor' in opts ? opts.hoverColor : null;
+    let overlayColor = opts && 'overlayColor' in opts ? opts.overlayColor : null;
+    let splashRadius = opts && 'splashRadius' in opts ? opts.splashRadius : null;
+    let materialTapTargetSize = opts && 'materialTapTargetSize' in opts ? opts.materialTapTargetSize : null;
+    let visualDensity = opts && 'visualDensity' in opts ? opts.visualDensity : null;
+    let focusNode = opts && 'focusNode' in opts ? opts.focusNode : null;
+    let autofocus = opts && 'autofocus' in opts ? opts.autofocus : false;
+    if (autofocus == null) dart.nullFailed(I[0], 75, 10, "autofocus");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[value$] = value;
+    this[tristate$] = tristate;
+    this[onChanged$] = onChanged;
+    this[mouseCursor$] = mouseCursor;
+    this[activeColor$] = activeColor;
+    this[fillColor$] = fillColor;
+    this[checkColor$] = checkColor;
+    this[focusColor$] = focusColor;
+    this[hoverColor$] = hoverColor;
+    this[overlayColor$] = overlayColor;
+    this[splashRadius$] = splashRadius;
+    this[materialTapTargetSize$] = materialTapTargetSize;
+    this[visualDensity$] = visualDensity;
+    this[focusNode$] = focusNode;
+    this[autofocus$] = autofocus;
+    if (!(tristate != null)) dart.assertFailed(null, I[0], 76, 15, "tristate != null");
+    if (!(dart.test(tristate) || value != null)) dart.assertFailed(null, I[0], 77, 15, "tristate || value != null");
+    if (!(autofocus != null)) dart.assertFailed(null, I[0], 78, 15, "autofocus != null");
+    checkbox.Checkbox.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = checkbox.Checkbox.prototype;
+  dart.addTypeTests(checkbox.Checkbox);
+  dart.addTypeCaches(checkbox.Checkbox);
+  dart.setMethodSignature(checkbox.Checkbox, () => ({
+    __proto__: dart.getMethods(checkbox.Checkbox.__proto__),
+    createState: dart.fnType(checkbox._CheckboxState, [])
+  }));
+  dart.setLibraryUri(checkbox.Checkbox, I[1]);
+  dart.setFieldSignature(checkbox.Checkbox, () => ({
+    __proto__: dart.getFields(checkbox.Checkbox.__proto__),
+    value: dart.finalFieldType(dart.nullable(core.bool)),
+    onChanged: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [dart.nullable(core.bool)]))),
+    mouseCursor: dart.finalFieldType(dart.nullable(mouse_cursor.MouseCursor)),
+    activeColor: dart.finalFieldType(dart.nullable(ui.Color)),
+    fillColor: dart.finalFieldType(dart.nullable(material_state.MaterialStateProperty$(dart.nullable(ui.Color)))),
+    checkColor: dart.finalFieldType(dart.nullable(ui.Color)),
+    tristate: dart.finalFieldType(core.bool),
+    materialTapTargetSize: dart.finalFieldType(dart.nullable(theme_data.MaterialTapTargetSize)),
+    visualDensity: dart.finalFieldType(dart.nullable(theme_data.VisualDensity)),
+    focusColor: dart.finalFieldType(dart.nullable(ui.Color)),
+    hoverColor: dart.finalFieldType(dart.nullable(ui.Color)),
+    overlayColor: dart.finalFieldType(dart.nullable(material_state.MaterialStateProperty$(dart.nullable(ui.Color)))),
+    splashRadius: dart.finalFieldType(dart.nullable(core.double)),
+    focusNode: dart.finalFieldType(dart.nullable(focus_manager.FocusNode)),
+    autofocus: dart.finalFieldType(core.bool)
+  }));
+  dart.defineLazy(checkbox.Checkbox, {
+    /*checkbox.Checkbox.width*/get width() {
+      return 18;
+    }
+  }, false);
+  var ___CheckboxState__actionMap = dart.privateName(checkbox, "_#_CheckboxState#_actionMap");
+  var _focused = dart.privateName(checkbox, "_focused");
+  var _hovering = dart.privateName(checkbox, "_hovering");
+  var _actionMap = dart.privateName(checkbox, "_actionMap");
+  var _actionHandler = dart.privateName(checkbox, "_actionHandler");
+  var SemanticsEvent_type = dart.privateName(semantics_event, "SemanticsEvent.type");
+  var _handleFocusHighlightChanged = dart.privateName(checkbox, "_handleFocusHighlightChanged");
+  var _handleHoverChanged = dart.privateName(checkbox, "_handleHoverChanged");
+  var _states = dart.privateName(checkbox, "_states");
+  var _widgetFillColor = dart.privateName(checkbox, "_widgetFillColor");
+  var _defaultFillColor = dart.privateName(checkbox, "_defaultFillColor");
+  var OffsetBase__dy = dart.privateName(ui, "OffsetBase._dy");
+  var OffsetBase__dx = dart.privateName(ui, "OffsetBase._dx");
+  var _name = dart.privateName(theme_data, "_name");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  const State_TickerProviderStateMixin$36 = class State_TickerProviderStateMixin extends framework.State$(checkbox.Checkbox) {};
+  (State_TickerProviderStateMixin$36.new = function() {
+    ticker_provider.TickerProviderStateMixin$(checkbox.Checkbox)[dart.mixinNew].call(this);
+    State_TickerProviderStateMixin$36.__proto__.new.call(this);
+  }).prototype = State_TickerProviderStateMixin$36.prototype;
+  dart.applyMixin(State_TickerProviderStateMixin$36, ticker_provider.TickerProviderStateMixin$(checkbox.Checkbox));
+  checkbox._CheckboxState = class _CheckboxState extends State_TickerProviderStateMixin$36 {
+    get enabled() {
+      return this.widget.onChanged != null;
+    }
+    get [_actionMap]() {
+      let t0;
+      t0 = this[___CheckboxState__actionMap];
+      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_actionMap")) : t0;
+    }
+    set [_actionMap](t0) {
+      if (t0 == null) dart.nullFailed(I[0], 277, 34, "null");
+      this[___CheckboxState__actionMap] = t0;
+    }
+    initState() {
+      super.initState();
+      this[_actionMap] = new (T.LinkedMapOfType$ActionOfIntent()).from([dart.wrapType(actions.ActivateIntent), new (T.CallbackActionOfActivateIntent()).new({onInvoke: dart.bind(this, _actionHandler)})]);
+    }
+    [_actionHandler](intent) {
+      if (intent == null) dart.nullFailed(I[0], 287, 38, "intent");
+      if (this.widget.onChanged != null) {
+        switch (this.widget.value) {
+          case false:
+          {
+            dart.nullCheck(this.widget.onChanged)(true);
+            break;
+          }
+          case true:
+          {
+            dart.nullCheck(this.widget.onChanged)(dart.test(this.widget.tristate) ? null : false);
+            break;
+          }
+          case null:
+          {
+            dart.nullCheck(this.widget.onChanged)(false);
+            break;
+          }
+        }
+      }
+      let renderObject = dart.nullCheck(this.context.findRenderObject());
+      renderObject.sendSemanticsEvent(C[0] || CT.C0);
+    }
+    [_handleFocusHighlightChanged](focused) {
+      if (focused == null) dart.nullFailed(I[0], 306, 42, "focused");
+      if (focused != this[_focused]) {
+        this.setState(dart.fn(() => {
+          this[_focused] = focused;
+        }, T.VoidTovoid()));
+      }
+    }
+    [_handleHoverChanged](hovering) {
+      if (hovering == null) dart.nullFailed(I[0], 313, 33, "hovering");
+      if (hovering != this[_hovering]) {
+        this.setState(dart.fn(() => {
+          this[_hovering] = hovering;
+        }, T.VoidTovoid()));
+      }
+    }
+    get [_states]() {
+      return (() => {
+        let t1 = T.LinkedHashSetOfMaterialState().new();
+        if (!dart.test(this.enabled)) t1.add(material_state.MaterialState.disabled);
+        if (dart.test(this[_hovering])) t1.add(material_state.MaterialState.hovered);
+        if (dart.test(this[_focused])) t1.add(material_state.MaterialState.focused);
+        if (this.widget.value == null || dart.nullCheck(this.widget.value)) t1.add(material_state.MaterialState.selected);
+        return t1;
+      })();
+    }
+    get [_widgetFillColor]() {
+      return material_state.MaterialStateProperty.resolveWith(T.ColorN(), dart.fn(states => {
+        if (states == null) dart.nullFailed(I[0], 327, 66, "states");
+        if (dart.test(states.contains(material_state.MaterialState.disabled))) {
+          return null;
+        }
+        if (dart.test(states.contains(material_state.MaterialState.selected))) {
+          return this.widget.activeColor;
+        }
+        return null;
+      }, T.SetOfMaterialStateToColorN()));
+    }
+    get [_defaultFillColor]() {
+      let themeData = theme.Theme.of(this.context);
+      return material_state.MaterialStateProperty.resolveWith(ui.Color, dart.fn(states => {
+        if (states == null) dart.nullFailed(I[0], 340, 66, "states");
+        if (dart.test(states.contains(material_state.MaterialState.disabled))) {
+          return themeData.disabledColor;
+        }
+        if (dart.test(states.contains(material_state.MaterialState.selected))) {
+          return themeData.toggleableActiveColor;
+        }
+        return themeData.unselectedWidgetColor;
+      }, T.SetOfMaterialStateToColor()));
+    }
+    build(context) {
+      let t2, t2$, t2$0, t2$1, t3, t2$2, t2$3, t2$4, t2$5, t2$6, t2$7, t3$, t2$8, t2$9, t2$10, t2$11, t3$0, t2$12, t2$13, t2$14, t2$15, t2$16, t3$1, t2$17, t2$18, t2$19, t2$20, t2$21, t3$2, t2$22, t2$23, t2$24, t2$25, t3$3, t2$26, t2$27, t2$28, t2$29, t3$4, t2$30, t2$31, t3$5, t2$32, t2$33;
+      if (context == null) dart.nullFailed(I[0], 352, 29, "context");
+      if (!dart.test(debug.debugCheckHasMaterial(context))) dart.assertFailed(null, I[0], 353, 12, "debugCheckHasMaterial(context)");
+      let themeData = theme.Theme.of(context);
+      let effectiveMaterialTapTargetSize = (t2$ = (t2 = this.widget.materialTapTargetSize, t2 == null ? themeData.checkboxTheme.materialTapTargetSize : t2), t2$ == null ? themeData.materialTapTargetSize : t2$);
+      let effectiveVisualDensity = (t2$1 = (t2$0 = this.widget.visualDensity, t2$0 == null ? themeData.checkboxTheme.visualDensity : t2$0), t2$1 == null ? themeData.visualDensity : t2$1);
+      let size = null;
+      switch (effectiveMaterialTapTargetSize) {
+        case C[2] || CT.C2:
+        {
+          size = C[1] || CT.C1;
+          break;
+        }
+        case C[4] || CT.C4:
+        {
+          size = C[3] || CT.C3;
+          break;
+        }
+      }
+      size = size['+'](effectiveVisualDensity.baseSizeAdjustment);
+      let additionalConstraints = new box.BoxConstraints.tight(size);
+      let effectiveMouseCursor = (t2$3 = (t2$2 = material_state.MaterialStateProperty.resolveAs(T.MouseCursorN(), this.widget.mouseCursor, this[_states]), t2$2 == null ? (t3 = themeData.checkboxTheme.mouseCursor, t3 == null ? null : t3.resolve(this[_states])) : t2$2), t2$3 == null ? material_state.MaterialStateProperty.resolveAs(mouse_cursor.MouseCursor, material_state.MaterialStateMouseCursor.clickable, this[_states]) : t2$3);
+      let activeStates = (t2$4 = this[_states], (() => {
+        t2$4.add(material_state.MaterialState.selected);
+        return t2$4;
+      })());
+      let inactiveStates = (t2$5 = this[_states], (() => {
+        t2$5.remove(material_state.MaterialState.selected);
+        return t2$5;
+      })());
+      let effectiveActiveColor = (t2$9 = (t2$8 = (t2$7 = (t2$6 = this.widget.fillColor, t2$6 == null ? null : t2$6.resolve(activeStates)), t2$7 == null ? this[_widgetFillColor].resolve(activeStates) : t2$7), t2$8 == null ? (t3$ = themeData.checkboxTheme.fillColor, t3$ == null ? null : t3$.resolve(activeStates)) : t2$8), t2$9 == null ? this[_defaultFillColor].resolve(activeStates) : t2$9);
+      let effectiveInactiveColor = (t2$13 = (t2$12 = (t2$11 = (t2$10 = this.widget.fillColor, t2$10 == null ? null : t2$10.resolve(inactiveStates)), t2$11 == null ? this[_widgetFillColor].resolve(inactiveStates) : t2$11), t2$12 == null ? (t3$0 = themeData.checkboxTheme.fillColor, t3$0 == null ? null : t3$0.resolve(inactiveStates)) : t2$12), t2$13 == null ? this[_defaultFillColor].resolve(inactiveStates) : t2$13);
+      let focusedStates = (t2$14 = this[_states], (() => {
+        t2$14.add(material_state.MaterialState.focused);
+        return t2$14;
+      })());
+      let effectiveFocusOverlayColor = (t2$18 = (t2$17 = (t2$16 = (t2$15 = this.widget.overlayColor, t2$15 == null ? null : t2$15.resolve(focusedStates)), t2$16 == null ? this.widget.focusColor : t2$16), t2$17 == null ? (t3$1 = themeData.checkboxTheme.overlayColor, t3$1 == null ? null : t3$1.resolve(focusedStates)) : t2$17), t2$18 == null ? themeData.focusColor : t2$18);
+      let hoveredStates = (t2$19 = this[_states], (() => {
+        t2$19.add(material_state.MaterialState.hovered);
+        return t2$19;
+      })());
+      let effectiveHoverOverlayColor = (t2$23 = (t2$22 = (t2$21 = (t2$20 = this.widget.overlayColor, t2$20 == null ? null : t2$20.resolve(hoveredStates)), t2$21 == null ? this.widget.hoverColor : t2$21), t2$22 == null ? (t3$2 = themeData.checkboxTheme.overlayColor, t3$2 == null ? null : t3$2.resolve(hoveredStates)) : t2$22), t2$23 == null ? themeData.hoverColor : t2$23);
+      let activePressedStates = (t2$24 = activeStates, (() => {
+        t2$24.add(material_state.MaterialState.pressed);
+        return t2$24;
+      })());
+      let effectiveActivePressedOverlayColor = (t2$27 = (t2$26 = (t2$25 = this.widget.overlayColor, t2$25 == null ? null : t2$25.resolve(activePressedStates)), t2$26 == null ? (t3$3 = themeData.checkboxTheme.overlayColor, t3$3 == null ? null : t3$3.resolve(activePressedStates)) : t2$26), t2$27 == null ? effectiveActiveColor.withAlpha(31) : t2$27);
+      let inactivePressedStates = (t2$28 = inactiveStates, (() => {
+        t2$28.add(material_state.MaterialState.pressed);
+        return t2$28;
+      })());
+      let effectiveInactivePressedOverlayColor = (t2$31 = (t2$30 = (t2$29 = this.widget.overlayColor, t2$29 == null ? null : t2$29.resolve(inactivePressedStates)), t2$30 == null ? (t3$4 = themeData.checkboxTheme.overlayColor, t3$4 == null ? null : t3$4.resolve(inactivePressedStates)) : t2$30), t2$31 == null ? effectiveActiveColor.withAlpha(31) : t2$31);
+      let effectiveCheckColor = (t2$33 = (t2$32 = this.widget.checkColor, t2$32 == null ? (t3$5 = themeData.checkboxTheme.checkColor, t3$5 == null ? null : t3$5.resolve(this[_states])) : t2$32), t2$33 == null ? C[5] || CT.C5 : t2$33);
+      return new actions.FocusableActionDetector.new({actions: this[_actionMap], focusNode: this.widget.focusNode, autofocus: this.widget.autofocus, enabled: this.enabled, onShowFocusHighlight: dart.bind(this, _handleFocusHighlightChanged), onShowHoverHighlight: dart.bind(this, _handleHoverChanged), mouseCursor: effectiveMouseCursor, child: new basic.Builder.new({builder: dart.fn(context => {
+            let t2, t2$;
+            if (context == null) dart.nullFailed(I[0], 423, 32, "context");
+            return new checkbox._CheckboxRenderObjectWidget.new({value: this.widget.value, tristate: this.widget.tristate, activeColor: effectiveActiveColor, checkColor: effectiveCheckColor, inactiveColor: effectiveInactiveColor, focusColor: effectiveFocusOverlayColor, hoverColor: effectiveHoverOverlayColor, reactionColor: effectiveActivePressedOverlayColor, inactiveReactionColor: effectiveInactivePressedOverlayColor, splashRadius: (t2$ = (t2 = this.widget.splashRadius, t2 == null ? themeData.checkboxTheme.splashRadius : t2), t2$ == null ? 20 : t2$), onChanged: this.widget.onChanged, additionalConstraints: additionalConstraints, vsync: this, hasFocus: this[_focused], hovering: this[_hovering], $creationLocationd_0dea112b090073317d4: C[6] || CT.C6});
+          }, T.BuildContextTo_CheckboxRenderObjectWidget()), $creationLocationd_0dea112b090073317d4: C[23] || CT.C23}), $creationLocationd_0dea112b090073317d4: C[26] || CT.C26});
+    }
+  };
+  (checkbox._CheckboxState.new = function() {
+    this[___CheckboxState__actionMap] = null;
+    this[_focused] = false;
+    this[_hovering] = false;
+    checkbox._CheckboxState.__proto__.new.call(this);
+    ;
+  }).prototype = checkbox._CheckboxState.prototype;
+  dart.addTypeTests(checkbox._CheckboxState);
+  dart.addTypeCaches(checkbox._CheckboxState);
+  dart.setMethodSignature(checkbox._CheckboxState, () => ({
+    __proto__: dart.getMethods(checkbox._CheckboxState.__proto__),
+    [_actionHandler]: dart.fnType(dart.void, [actions.ActivateIntent]),
+    [_handleFocusHighlightChanged]: dart.fnType(dart.void, [core.bool]),
+    [_handleHoverChanged]: dart.fnType(dart.void, [core.bool]),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setGetterSignature(checkbox._CheckboxState, () => ({
+    __proto__: dart.getGetters(checkbox._CheckboxState.__proto__),
+    enabled: core.bool,
+    [_actionMap]: core.Map$(core.Type, actions.Action$(actions.Intent)),
+    [_states]: core.Set$(material_state.MaterialState),
+    [_widgetFillColor]: material_state.MaterialStateProperty$(dart.nullable(ui.Color)),
+    [_defaultFillColor]: material_state.MaterialStateProperty$(ui.Color)
+  }));
+  dart.setSetterSignature(checkbox._CheckboxState, () => ({
+    __proto__: dart.getSetters(checkbox._CheckboxState.__proto__),
+    [_actionMap]: core.Map$(core.Type, actions.Action$(actions.Intent))
+  }));
+  dart.setLibraryUri(checkbox._CheckboxState, I[1]);
+  dart.setFieldSignature(checkbox._CheckboxState, () => ({
+    __proto__: dart.getFields(checkbox._CheckboxState.__proto__),
+    [___CheckboxState__actionMap]: dart.fieldType(dart.nullable(core.Map$(core.Type, actions.Action$(actions.Intent)))),
+    [_focused]: dart.fieldType(core.bool),
+    [_hovering]: dart.fieldType(core.bool)
+  }));
+  var value$0 = dart.privateName(checkbox, "_CheckboxRenderObjectWidget.value");
+  var tristate$0 = dart.privateName(checkbox, "_CheckboxRenderObjectWidget.tristate");
+  var hasFocus$ = dart.privateName(checkbox, "_CheckboxRenderObjectWidget.hasFocus");
+  var hovering$ = dart.privateName(checkbox, "_CheckboxRenderObjectWidget.hovering");
+  var activeColor$0 = dart.privateName(checkbox, "_CheckboxRenderObjectWidget.activeColor");
+  var checkColor$0 = dart.privateName(checkbox, "_CheckboxRenderObjectWidget.checkColor");
+  var inactiveColor$ = dart.privateName(checkbox, "_CheckboxRenderObjectWidget.inactiveColor");
+  var focusColor$0 = dart.privateName(checkbox, "_CheckboxRenderObjectWidget.focusColor");
+  var hoverColor$0 = dart.privateName(checkbox, "_CheckboxRenderObjectWidget.hoverColor");
+  var reactionColor$ = dart.privateName(checkbox, "_CheckboxRenderObjectWidget.reactionColor");
+  var inactiveReactionColor$ = dart.privateName(checkbox, "_CheckboxRenderObjectWidget.inactiveReactionColor");
+  var splashRadius$0 = dart.privateName(checkbox, "_CheckboxRenderObjectWidget.splashRadius");
+  var onChanged$0 = dart.privateName(checkbox, "_CheckboxRenderObjectWidget.onChanged");
+  var vsync$ = dart.privateName(checkbox, "_CheckboxRenderObjectWidget.vsync");
+  var additionalConstraints$ = dart.privateName(checkbox, "_CheckboxRenderObjectWidget.additionalConstraints");
+  checkbox._CheckboxRenderObjectWidget = class _CheckboxRenderObjectWidget extends framework.LeafRenderObjectWidget {
+    get value() {
+      return this[value$0];
+    }
+    set value(value) {
+      super.value = value;
+    }
+    get tristate() {
+      return this[tristate$0];
+    }
+    set tristate(value) {
+      super.tristate = value;
+    }
+    get hasFocus() {
+      return this[hasFocus$];
+    }
+    set hasFocus(value) {
+      super.hasFocus = value;
+    }
+    get hovering() {
+      return this[hovering$];
+    }
+    set hovering(value) {
+      super.hovering = value;
+    }
+    get activeColor() {
+      return this[activeColor$0];
+    }
+    set activeColor(value) {
+      super.activeColor = value;
+    }
+    get checkColor() {
+      return this[checkColor$0];
+    }
+    set checkColor(value) {
+      super.checkColor = value;
+    }
+    get inactiveColor() {
+      return this[inactiveColor$];
+    }
+    set inactiveColor(value) {
+      super.inactiveColor = value;
+    }
+    get focusColor() {
+      return this[focusColor$0];
+    }
+    set focusColor(value) {
+      super.focusColor = value;
+    }
+    get hoverColor() {
+      return this[hoverColor$0];
+    }
+    set hoverColor(value) {
+      super.hoverColor = value;
+    }
+    get reactionColor() {
+      return this[reactionColor$];
+    }
+    set reactionColor(value) {
+      super.reactionColor = value;
+    }
+    get inactiveReactionColor() {
+      return this[inactiveReactionColor$];
+    }
+    set inactiveReactionColor(value) {
+      super.inactiveReactionColor = value;
+    }
+    get splashRadius() {
+      return this[splashRadius$0];
+    }
+    set splashRadius(value) {
+      super.splashRadius = value;
+    }
+    get onChanged() {
+      return this[onChanged$0];
+    }
+    set onChanged(value) {
+      super.onChanged = value;
+    }
+    get vsync() {
+      return this[vsync$];
+    }
+    set vsync(value) {
+      super.vsync = value;
+    }
+    get additionalConstraints() {
+      return this[additionalConstraints$];
+    }
+    set additionalConstraints(value) {
+      super.additionalConstraints = value;
+    }
+    createRenderObject(context) {
+      if (context == null) dart.nullFailed(I[0], 489, 51, "context");
+      return new checkbox._RenderCheckbox.new({value: this.value, tristate: this.tristate, activeColor: this.activeColor, checkColor: this.checkColor, inactiveColor: this.inactiveColor, focusColor: this.focusColor, hoverColor: this.hoverColor, reactionColor: this.reactionColor, inactiveReactionColor: this.inactiveReactionColor, splashRadius: this.splashRadius, onChanged: this.onChanged, vsync: this.vsync, additionalConstraints: this.additionalConstraints, hasFocus: this.hasFocus, hovering: this.hovering});
+    }
+    updateRenderObject(context, renderObject) {
+      let t2;
+      if (context == null) dart.nullFailed(I[0], 508, 40, "context");
+      checkbox._RenderCheckbox.as(renderObject);
+      if (renderObject == null) dart.nullFailed(I[0], 508, 65, "renderObject");
+      t2 = renderObject;
+      (() => {
+        t2.tristate = this.tristate;
+        t2.value = this.value;
+        t2.activeColor = this.activeColor;
+        t2.checkColor = this.checkColor;
+        t2.inactiveColor = this.inactiveColor;
+        t2.focusColor = this.focusColor;
+        t2.hoverColor = this.hoverColor;
+        t2.reactionColor = this.reactionColor;
+        t2.inactiveReactionColor = this.inactiveReactionColor;
+        t2.splashRadius = this.splashRadius;
+        t2.onChanged = this.onChanged;
+        t2.additionalConstraints = this.additionalConstraints;
+        t2.vsync = this.vsync;
+        t2.hasFocus = this.hasFocus;
+        t2.hovering = this.hovering;
+        return t2;
+      })();
+    }
+  };
+  (checkbox._CheckboxRenderObjectWidget.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let value = opts && 'value' in opts ? opts.value : null;
+    let tristate = opts && 'tristate' in opts ? opts.tristate : null;
+    if (tristate == null) dart.nullFailed(I[0], 451, 19, "tristate");
+    let activeColor = opts && 'activeColor' in opts ? opts.activeColor : null;
+    if (activeColor == null) dart.nullFailed(I[0], 452, 19, "activeColor");
+    let checkColor = opts && 'checkColor' in opts ? opts.checkColor : null;
+    if (checkColor == null) dart.nullFailed(I[0], 453, 19, "checkColor");
+    let inactiveColor = opts && 'inactiveColor' in opts ? opts.inactiveColor : null;
+    if (inactiveColor == null) dart.nullFailed(I[0], 454, 19, "inactiveColor");
+    let focusColor = opts && 'focusColor' in opts ? opts.focusColor : null;
+    if (focusColor == null) dart.nullFailed(I[0], 455, 19, "focusColor");
+    let hoverColor = opts && 'hoverColor' in opts ? opts.hoverColor : null;
+    if (hoverColor == null) dart.nullFailed(I[0], 456, 19, "hoverColor");
+    let reactionColor = opts && 'reactionColor' in opts ? opts.reactionColor : null;
+    if (reactionColor == null) dart.nullFailed(I[0], 457, 19, "reactionColor");
+    let inactiveReactionColor = opts && 'inactiveReactionColor' in opts ? opts.inactiveReactionColor : null;
+    if (inactiveReactionColor == null) dart.nullFailed(I[0], 458, 19, "inactiveReactionColor");
+    let splashRadius = opts && 'splashRadius' in opts ? opts.splashRadius : null;
+    if (splashRadius == null) dart.nullFailed(I[0], 459, 19, "splashRadius");
+    let onChanged = opts && 'onChanged' in opts ? opts.onChanged : null;
+    let vsync = opts && 'vsync' in opts ? opts.vsync : null;
+    if (vsync == null) dart.nullFailed(I[0], 461, 19, "vsync");
+    let additionalConstraints = opts && 'additionalConstraints' in opts ? opts.additionalConstraints : null;
+    if (additionalConstraints == null) dart.nullFailed(I[0], 462, 19, "additionalConstraints");
+    let hasFocus = opts && 'hasFocus' in opts ? opts.hasFocus : null;
+    if (hasFocus == null) dart.nullFailed(I[0], 463, 19, "hasFocus");
+    let hovering = opts && 'hovering' in opts ? opts.hovering : null;
+    if (hovering == null) dart.nullFailed(I[0], 464, 19, "hovering");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[value$0] = value;
+    this[tristate$0] = tristate;
+    this[activeColor$0] = activeColor;
+    this[checkColor$0] = checkColor;
+    this[inactiveColor$] = inactiveColor;
+    this[focusColor$0] = focusColor;
+    this[hoverColor$0] = hoverColor;
+    this[reactionColor$] = reactionColor;
+    this[inactiveReactionColor$] = inactiveReactionColor;
+    this[splashRadius$0] = splashRadius;
+    this[onChanged$0] = onChanged;
+    this[vsync$] = vsync;
+    this[additionalConstraints$] = additionalConstraints;
+    this[hasFocus$] = hasFocus;
+    this[hovering$] = hovering;
+    if (!(tristate != null)) dart.assertFailed(null, I[0], 465, 15, "tristate != null");
+    if (!(dart.test(tristate) || value != null)) dart.assertFailed(null, I[0], 466, 15, "tristate || value != null");
+    if (!(activeColor != null)) dart.assertFailed(null, I[0], 467, 15, "activeColor != null");
+    if (!(inactiveColor != null)) dart.assertFailed(null, I[0], 468, 15, "inactiveColor != null");
+    if (!(vsync != null)) dart.assertFailed(null, I[0], 469, 15, "vsync != null");
+    checkbox._CheckboxRenderObjectWidget.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = checkbox._CheckboxRenderObjectWidget.prototype;
+  dart.addTypeTests(checkbox._CheckboxRenderObjectWidget);
+  dart.addTypeCaches(checkbox._CheckboxRenderObjectWidget);
+  dart.setMethodSignature(checkbox._CheckboxRenderObjectWidget, () => ({
+    __proto__: dart.getMethods(checkbox._CheckboxRenderObjectWidget.__proto__),
+    createRenderObject: dart.fnType(checkbox._RenderCheckbox, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(checkbox._CheckboxRenderObjectWidget, I[1]);
+  dart.setFieldSignature(checkbox._CheckboxRenderObjectWidget, () => ({
+    __proto__: dart.getFields(checkbox._CheckboxRenderObjectWidget.__proto__),
+    value: dart.finalFieldType(dart.nullable(core.bool)),
+    tristate: dart.finalFieldType(core.bool),
+    hasFocus: dart.finalFieldType(core.bool),
+    hovering: dart.finalFieldType(core.bool),
+    activeColor: dart.finalFieldType(ui.Color),
+    checkColor: dart.finalFieldType(ui.Color),
+    inactiveColor: dart.finalFieldType(ui.Color),
+    focusColor: dart.finalFieldType(ui.Color),
+    hoverColor: dart.finalFieldType(ui.Color),
+    reactionColor: dart.finalFieldType(ui.Color),
+    inactiveReactionColor: dart.finalFieldType(ui.Color),
+    splashRadius: dart.finalFieldType(core.double),
+    onChanged: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [dart.nullable(core.bool)]))),
+    vsync: dart.finalFieldType(ticker.TickerProvider),
+    additionalConstraints: dart.finalFieldType(box.BoxConstraints)
+  }));
+  var _oldValue = dart.privateName(checkbox, "_oldValue");
+  var _outerRectAt = dart.privateName(checkbox, "_outerRectAt");
+  var _colorAt = dart.privateName(checkbox, "_colorAt");
+  var _createStrokePaint = dart.privateName(checkbox, "_createStrokePaint");
+  var _drawBorder = dart.privateName(checkbox, "_drawBorder");
+  var _drawCheck = dart.privateName(checkbox, "_drawCheck");
+  var _drawDash = dart.privateName(checkbox, "_drawDash");
+  checkbox._RenderCheckbox = class _RenderCheckbox extends toggleable.RenderToggleable {
+    set value(newValue) {
+      if (newValue == this.value) return;
+      this[_oldValue] = this.value;
+      super.value = newValue;
+    }
+    get value() {
+      return super.value;
+    }
+    describeSemanticsConfiguration(config) {
+      if (config == null) dart.nullFailed(I[0], 581, 62, "config");
+      super.describeSemanticsConfiguration(config);
+      config.isChecked = this.value === true;
+    }
+    [_outerRectAt](origin, t) {
+      if (origin == null) dart.nullFailed(I[0], 590, 29, "origin");
+      if (t == null) dart.nullFailed(I[0], 590, 44, "t");
+      let inset = 1.0 - (dart.notNull(t) - 0.5)[$abs]() * 2.0;
+      let size = 18 - inset * 2;
+      let rect = new ui.Rect.fromLTWH(dart.notNull(origin.dx) + inset, dart.notNull(origin.dy) + inset, size, size);
+      return new ui.RRect.fromRectAndRadius(rect, checkbox._kEdgeRadius);
+    }
+    [_colorAt](t) {
+      if (t == null) dart.nullFailed(I[0], 599, 25, "t");
+      return dart.notNull(t) >= 0.25 ? this.activeColor : dart.nullCheck(ui.Color.lerp(this.inactiveColor, this.activeColor, dart.notNull(t) * 4.0));
+    }
+    [_createStrokePaint]() {
+      let t2;
+      t2 = ui.Paint.new();
+      return (() => {
+        t2.color = this.checkColor;
+        t2.style = ui.PaintingStyle.stroke;
+        t2.strokeWidth = 2;
+        return t2;
+      })();
+    }
+    [_drawBorder](canvas, outer, t, paint) {
+      if (canvas == null) dart.nullFailed(I[0], 612, 27, "canvas");
+      if (outer == null) dart.nullFailed(I[0], 612, 41, "outer");
+      if (t == null) dart.nullFailed(I[0], 612, 55, "t");
+      if (paint == null) dart.nullFailed(I[0], 612, 64, "paint");
+      if (!(dart.notNull(t) >= 0.0 && dart.notNull(t) <= 0.5)) dart.assertFailed(null, I[0], 613, 12, "t >= 0.0 && t <= 0.5");
+      let size = outer.width;
+      let inner = outer.deflate(math.min(core.double, dart.notNull(size) / 2.0, 2 + dart.notNull(size) * dart.notNull(t)));
+      canvas.drawDRRect(outer, inner, paint);
+    }
+    [_drawCheck](canvas, origin, t, paint) {
+      if (canvas == null) dart.nullFailed(I[0], 620, 26, "canvas");
+      if (origin == null) dart.nullFailed(I[0], 620, 41, "origin");
+      if (t == null) dart.nullFailed(I[0], 620, 56, "t");
+      if (paint == null) dart.nullFailed(I[0], 620, 65, "paint");
+      if (!(dart.notNull(t) >= 0.0 && dart.notNull(t) <= 1.0)) dart.assertFailed(null, I[0], 621, 12, "t >= 0.0 && t <= 1.0");
+      let path = ui.Path.new();
+      let start = C[36] || CT.C36;
+      let mid = C[37] || CT.C37;
+      let end = C[38] || CT.C38;
+      if (dart.notNull(t) < 0.5) {
+        let strokeT = dart.notNull(t) * 2.0;
+        let drawMid = dart.nullCheck(ui.Offset.lerp(start, mid, strokeT));
+        path.moveTo(dart.notNull(origin.dx) + dart.notNull(start.dx), dart.notNull(origin.dy) + dart.notNull(start.dy));
+        path.lineTo(dart.notNull(origin.dx) + dart.notNull(drawMid.dx), dart.notNull(origin.dy) + dart.notNull(drawMid.dy));
+      } else {
+        let strokeT = (dart.notNull(t) - 0.5) * 2.0;
+        let drawEnd = dart.nullCheck(ui.Offset.lerp(mid, end, strokeT));
+        path.moveTo(dart.notNull(origin.dx) + dart.notNull(start.dx), dart.notNull(origin.dy) + dart.notNull(start.dy));
+        path.lineTo(dart.notNull(origin.dx) + dart.notNull(mid.dx), dart.notNull(origin.dy) + dart.notNull(mid.dy));
+        path.lineTo(dart.notNull(origin.dx) + dart.notNull(drawEnd.dx), dart.notNull(origin.dy) + dart.notNull(drawEnd.dy));
+      }
+      canvas.drawPath(path, paint);
+    }
+    [_drawDash](canvas, origin, t, paint) {
+      if (canvas == null) dart.nullFailed(I[0], 643, 25, "canvas");
+      if (origin == null) dart.nullFailed(I[0], 643, 40, "origin");
+      if (t == null) dart.nullFailed(I[0], 643, 55, "t");
+      if (paint == null) dart.nullFailed(I[0], 643, 64, "paint");
+      if (!(dart.notNull(t) >= 0.0 && dart.notNull(t) <= 1.0)) dart.assertFailed(null, I[0], 644, 12, "t >= 0.0 && t <= 1.0");
+      let start = C[39] || CT.C39;
+      let mid = C[40] || CT.C40;
+      let end = C[41] || CT.C41;
+      let drawStart = dart.nullCheck(ui.Offset.lerp(start, mid, 1.0 - dart.notNull(t)));
+      let drawEnd = dart.nullCheck(ui.Offset.lerp(mid, end, t));
+      canvas.drawLine(origin['+'](drawStart), origin['+'](drawEnd), paint);
+    }
+    paint(context, offset) {
+      let t2, t2$;
+      if (context == null) dart.nullFailed(I[0], 656, 30, "context");
+      if (offset == null) dart.nullFailed(I[0], 656, 46, "offset");
+      let canvas = context.canvas;
+      this.paintRadialReaction(canvas, offset, this.size.center(ui.Offset.zero));
+      let strokePaint = this[_createStrokePaint]();
+      let origin = offset['+'](ui.Offset.as(this.size['/'](2.0)['-']((C[42] || CT.C42)['/'](2.0))));
+      let status = this.position.status;
+      let tNormalized = status == animation.AnimationStatus.forward || status == animation.AnimationStatus.completed ? this.position.value : 1.0 - dart.notNull(this.position.value);
+      if (this[_oldValue] === false || this.value === false) {
+        let t = this.value === false ? 1.0 - dart.notNull(tNormalized) : tNormalized;
+        let outer = this[_outerRectAt](origin, t);
+        let paint = (t2 = ui.Paint.new(), (() => {
+          t2.color = this[_colorAt](t);
+          return t2;
+        })());
+        if (dart.notNull(t) <= 0.5) {
+          this[_drawBorder](canvas, outer, t, paint);
+        } else {
+          canvas.drawRRect(outer, paint);
+          let tShrink = (dart.notNull(t) - 0.5) * 2.0;
+          if (this[_oldValue] == null || this.value == null)
+            this[_drawDash](canvas, origin, tShrink, strokePaint);
+          else
+            this[_drawCheck](canvas, origin, tShrink, strokePaint);
+        }
+      } else {
+        let outer = this[_outerRectAt](origin, 1.0);
+        let paint = (t2$ = ui.Paint.new(), (() => {
+          t2$.color = this[_colorAt](1.0);
+          return t2$;
+        })());
+        canvas.drawRRect(outer, paint);
+        if (dart.notNull(tNormalized) <= 0.5) {
+          let tShrink = 1.0 - dart.notNull(tNormalized) * 2.0;
+          if (this[_oldValue] === true)
+            this[_drawCheck](canvas, origin, tShrink, strokePaint);
+          else
+            this[_drawDash](canvas, origin, tShrink, strokePaint);
+        } else {
+          let tExpand = (dart.notNull(tNormalized) - 0.5) * 2.0;
+          if (this.value === true)
+            this[_drawCheck](canvas, origin, tExpand, strokePaint);
+          else
+            this[_drawDash](canvas, origin, tExpand, strokePaint);
+        }
+      }
+    }
+  };
+  (checkbox._RenderCheckbox.new = function(opts) {
+    let value = opts && 'value' in opts ? opts.value : null;
+    let tristate = opts && 'tristate' in opts ? opts.tristate : null;
+    if (tristate == null) dart.nullFailed(I[0], 537, 19, "tristate");
+    let activeColor = opts && 'activeColor' in opts ? opts.activeColor : null;
+    if (activeColor == null) dart.nullFailed(I[0], 538, 20, "activeColor");
+    let checkColor = opts && 'checkColor' in opts ? opts.checkColor : null;
+    if (checkColor == null) dart.nullFailed(I[0], 539, 19, "checkColor");
+    let inactiveColor = opts && 'inactiveColor' in opts ? opts.inactiveColor : null;
+    if (inactiveColor == null) dart.nullFailed(I[0], 540, 20, "inactiveColor");
+    let focusColor = opts && 'focusColor' in opts ? opts.focusColor : null;
+    let hoverColor = opts && 'hoverColor' in opts ? opts.hoverColor : null;
+    let reactionColor = opts && 'reactionColor' in opts ? opts.reactionColor : null;
+    let inactiveReactionColor = opts && 'inactiveReactionColor' in opts ? opts.inactiveReactionColor : null;
+    let splashRadius = opts && 'splashRadius' in opts ? opts.splashRadius : null;
+    if (splashRadius == null) dart.nullFailed(I[0], 545, 21, "splashRadius");
+    let additionalConstraints = opts && 'additionalConstraints' in opts ? opts.additionalConstraints : null;
+    if (additionalConstraints == null) dart.nullFailed(I[0], 546, 29, "additionalConstraints");
+    let onChanged = opts && 'onChanged' in opts ? opts.onChanged : null;
+    let hasFocus = opts && 'hasFocus' in opts ? opts.hasFocus : null;
+    if (hasFocus == null) dart.nullFailed(I[0], 548, 19, "hasFocus");
+    let hovering = opts && 'hovering' in opts ? opts.hovering : null;
+    if (hovering == null) dart.nullFailed(I[0], 549, 19, "hovering");
+    let vsync = opts && 'vsync' in opts ? opts.vsync : null;
+    if (vsync == null) dart.nullFailed(I[0], 550, 29, "vsync");
+    this.checkColor = checkColor;
+    this[_oldValue] = value;
+    checkbox._RenderCheckbox.__proto__.new.call(this, {value: value, tristate: tristate, activeColor: activeColor, inactiveColor: inactiveColor, focusColor: focusColor, hoverColor: hoverColor, reactionColor: reactionColor, inactiveReactionColor: inactiveReactionColor, splashRadius: splashRadius, onChanged: onChanged, additionalConstraints: additionalConstraints, vsync: vsync, hasFocus: hasFocus, hovering: hovering});
+    ;
+  }).prototype = checkbox._RenderCheckbox.prototype;
+  dart.addTypeTests(checkbox._RenderCheckbox);
+  dart.addTypeCaches(checkbox._RenderCheckbox);
+  dart.setMethodSignature(checkbox._RenderCheckbox, () => ({
+    __proto__: dart.getMethods(checkbox._RenderCheckbox.__proto__),
+    [_outerRectAt]: dart.fnType(ui.RRect, [ui.Offset, core.double]),
+    [_colorAt]: dart.fnType(ui.Color, [core.double]),
+    [_createStrokePaint]: dart.fnType(ui.Paint, []),
+    [_drawBorder]: dart.fnType(dart.void, [ui.Canvas, ui.RRect, core.double, ui.Paint]),
+    [_drawCheck]: dart.fnType(dart.void, [ui.Canvas, ui.Offset, core.double, ui.Paint]),
+    [_drawDash]: dart.fnType(dart.void, [ui.Canvas, ui.Offset, core.double, ui.Paint])
+  }));
+  dart.setLibraryUri(checkbox._RenderCheckbox, I[1]);
+  dart.setFieldSignature(checkbox._RenderCheckbox, () => ({
+    __proto__: dart.getFields(checkbox._RenderCheckbox.__proto__),
+    [_oldValue]: dart.fieldType(dart.nullable(core.bool)),
+    checkColor: dart.fieldType(ui.Color)
+  }));
+  var Radius_y = dart.privateName(ui, "Radius.y");
+  var Radius_x = dart.privateName(ui, "Radius.x");
+  dart.defineLazy(checkbox, {
+    /*checkbox._kEdgeSize*/get _kEdgeSize() {
+      return 18;
+    },
+    /*checkbox._kEdgeRadius*/get _kEdgeRadius() {
+      return C[43] || CT.C43;
+    },
+    /*checkbox._kStrokeWidth*/get _kStrokeWidth() {
+      return 2;
+    }
+  }, false);
+  dart.trackLibraries("packages/flutter/src/material/checkbox.dart", {
+    "package:flutter/src/material/checkbox.dart": checkbox
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["checkbox.dart"],"names":[],"mappings":"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","file":"../../../../../../packages/flutter/src/material/checkbox.dart.lib.js"}');
+  // Exports:
+  return {
+    src__material__checkbox: checkbox
+  };
+}));
+
+//# sourceMappingURL=checkbox.dart.lib.js.map

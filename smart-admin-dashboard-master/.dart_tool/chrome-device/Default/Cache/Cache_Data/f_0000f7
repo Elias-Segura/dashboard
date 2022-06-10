@@ -1,0 +1,376 @@
+define(['dart_sdk', 'packages/firebase_core_web/src/interop/core.dart', 'packages/firebase_core_platform_interface/firebase_core_platform_interface.dart', 'packages/firebase_core_web/src/interop/app.dart'], (function load__packages__firebase_core_web__firebase_core_web_dart(dart_sdk, packages__firebase_core_web__src__interop__core$46dart, packages__firebase_core_platform_interface__firebase_core_platform_interface$46dart, packages__firebase_core_web__src__interop__app$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const async = dart_sdk.async;
+  const js = dart_sdk.js;
+  const _interceptors = dart_sdk._interceptors;
+  const html = dart_sdk.html;
+  const _js_helper = dart_sdk._js_helper;
+  const js_util = dart_sdk.js_util;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const core$ = packages__firebase_core_web__src__interop__core$46dart.src__interop__core;
+  const firebase_core_platform_interface = packages__firebase_core_platform_interface__firebase_core_platform_interface$46dart.firebase_core_platform_interface;
+  const app = packages__firebase_core_web__src__interop__app$46dart.src__interop__app;
+  var firebase_core_web = Object.create(dart.library);
+  var $putIfAbsent = dartx.putIfAbsent;
+  var $toString = dartx.toString;
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  var $head = dartx.head;
+  var $append = dartx.append;
+  var $onLoad = dartx.onLoad;
+  var $values = dartx.values;
+  var $contains = dartx.contains;
+  var $add = dartx.add;
+  var $forEach = dartx.forEach;
+  var $split = dartx.split;
+  var $length = dartx.length;
+  var $_get = dartx._get;
+  var $replaceAll = dartx.replaceAll;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    FutureOfvoid: () => (T.FutureOfvoid = dart.constFn(async.Future$(dart.void)))(),
+    VoidToFirebaseWebService: () => (T.VoidToFirebaseWebService = dart.constFn(dart.fnType(firebase_core_web.FirebaseWebService, [])))(),
+    dynamicToString: () => (T.dynamicToString = dart.constFn(dart.fnType(core.String, [dart.dynamic])))(),
+    JSArrayOfString: () => (T.JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))(),
+    FirebaseWebServiceToFutureOfvoid: () => (T.FirebaseWebServiceToFutureOfvoid = dart.constFn(dart.fnType(T.FutureOfvoid(), [firebase_core_web.FirebaseWebService])))(),
+    IdentityMapOfString$String: () => (T.IdentityMapOfString$String = dart.constFn(_js_helper.IdentityMap$(core.String, core.String)))(),
+    MapOfString$String: () => (T.MapOfString$String = dart.constFn(core.Map$(core.String, core.String)))(),
+    IdentityMapOfString$MapOfString$String: () => (T.IdentityMapOfString$MapOfString$String = dart.constFn(_js_helper.IdentityMap$(core.String, T.MapOfString$String())))(),
+    FirebaseWebServiceTovoid: () => (T.FirebaseWebServiceTovoid = dart.constFn(dart.fnType(dart.void, [firebase_core_web.FirebaseWebService])))(),
+    dynamicToNull: () => (T.dynamicToNull = dart.constFn(dart.fnType(core.Null, [dart.dynamic])))(),
+    AppToFirebaseAppPlatform: () => (T.AppToFirebaseAppPlatform = dart.constFn(dart.fnType(firebase_core_platform_interface.FirebaseAppPlatform, [app.App])))(),
+    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
+    IdentityMapOfString$FirebaseWebService: () => (T.IdentityMapOfString$FirebaseWebService = dart.constFn(_js_helper.IdentityMap$(core.String, firebase_core_web.FirebaseWebService)))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.fn(firebase_core_web._createFromJsApp, T.AppToFirebaseAppPlatform());
+    }
+  }, false);
+  var C = [void 0];
+  var I = [
+    "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-1.6.0/lib/src/firebase_app_web.dart",
+    "package:firebase_core_web/firebase_core_web.dart",
+    "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-1.6.0/lib/src/firebase_core_web.dart",
+    "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-1.6.0/lib/firebase_core_web.dart"
+  ];
+  var _isAutomaticDataCollectionEnabled = dart.privateName(firebase_core_web, "_isAutomaticDataCollectionEnabled");
+  firebase_core_web.FirebaseAppWeb = class FirebaseAppWeb extends firebase_core_platform_interface.FirebaseAppPlatform {
+    delete() {
+      return async.async(dart.void, (function* $delete() {
+        yield core$.app(this.name).delete();
+      }).bind(this));
+    }
+    get isAutomaticDataCollectionEnabled() {
+      return this[_isAutomaticDataCollectionEnabled];
+    }
+    setAutomaticDataCollectionEnabled(enabled) {
+      if (enabled == null) dart.nullFailed(I[0], 41, 55, "enabled");
+      this[_isAutomaticDataCollectionEnabled] = enabled;
+      return T.FutureOfvoid().value();
+    }
+    setAutomaticResourceManagementEnabled(enabled) {
+      if (enabled == null) dart.nullFailed(I[0], 49, 59, "enabled");
+      return T.FutureOfvoid().value();
+    }
+  };
+  (firebase_core_web.FirebaseAppWeb.__ = function(name, options) {
+    if (name == null) dart.nullFailed(I[0], 17, 27, "name");
+    if (options == null) dart.nullFailed(I[0], 17, 49, "options");
+    this[_isAutomaticDataCollectionEnabled] = false;
+    firebase_core_web.FirebaseAppWeb.__proto__.new.call(this, name, options);
+    ;
+  }).prototype = firebase_core_web.FirebaseAppWeb.prototype;
+  dart.addTypeTests(firebase_core_web.FirebaseAppWeb);
+  dart.addTypeCaches(firebase_core_web.FirebaseAppWeb);
+  dart.setLibraryUri(firebase_core_web.FirebaseAppWeb, I[1]);
+  dart.setFieldSignature(firebase_core_web.FirebaseAppWeb, () => ({
+    __proto__: dart.getFields(firebase_core_web.FirebaseAppWeb.__proto__),
+    [_isAutomaticDataCollectionEnabled]: dart.fieldType(core.bool)
+  }));
+  var name$ = dart.privateName(firebase_core_web, "FirebaseWebService.name");
+  firebase_core_web.FirebaseWebService = class FirebaseWebService extends core.Object {
+    get name() {
+      return this[name$];
+    }
+    set name(value) {
+      this[name$] = value;
+    }
+  };
+  (firebase_core_web.FirebaseWebService.__ = function(name) {
+    if (name == null) dart.nullFailed(I[2], 14, 29, "name");
+    this[name$] = name;
+    ;
+  }).prototype = firebase_core_web.FirebaseWebService.prototype;
+  dart.addTypeTests(firebase_core_web.FirebaseWebService);
+  dart.addTypeCaches(firebase_core_web.FirebaseWebService);
+  dart.setLibraryUri(firebase_core_web.FirebaseWebService, I[1]);
+  dart.setFieldSignature(firebase_core_web.FirebaseWebService, () => ({
+    __proto__: dart.getFields(firebase_core_web.FirebaseWebService.__proto__),
+    name: dart.fieldType(core.String)
+  }));
+  var _isRequireJsDefined = dart.privateName(firebase_core_web, "_isRequireJsDefined");
+  var _firebaseSDKVersion = dart.privateName(firebase_core_web, "_firebaseSDKVersion");
+  var _ignoredServiceScripts = dart.privateName(firebase_core_web, "_ignoredServiceScripts");
+  var _injectSrcScript = dart.privateName(firebase_core_web, "_injectSrcScript");
+  var _initializeCore = dart.privateName(firebase_core_web, "_initializeCore");
+  var _initializeCoreRequireJs = dart.privateName(firebase_core_web, "_initializeCoreRequireJs");
+  firebase_core_web.FirebaseCoreWeb = class FirebaseCoreWeb extends firebase_core_platform_interface.FirebasePlatform {
+    static registerService(service) {
+      if (service == null) dart.nullFailed(I[2], 24, 38, "service");
+      firebase_core_web.FirebaseCoreWeb._services[$putIfAbsent](service, dart.fn(() => new firebase_core_web.FirebaseWebService.__(service), T.VoidToFirebaseWebService()));
+    }
+    static registerWith(registrar) {
+      if (registrar == null) dart.nullFailed(I[2], 29, 38, "registrar");
+      firebase_core_platform_interface.FirebasePlatform.instance = new firebase_core_web.FirebaseCoreWeb.new();
+    }
+    get [_isRequireJsDefined]() {
+      return js.context._get("require") != null;
+    }
+    get [_firebaseSDKVersion]() {
+      let t0;
+      return core.String.as((t0 = js.context._get("flutterfire_web_sdk_version"), t0 == null ? "8.10.1" : t0));
+    }
+    get [_ignoredServiceScripts]() {
+      try {
+        let ignored = js.JsObject.fromBrowserObject(core.Object.as(js.context._get("flutterfire_ignore_scripts")));
+        if (core.Iterable.is(ignored)) {
+          return core.Iterable.as(ignored)[$map](core.String, dart.fn(e => dart.toString(e), T.dynamicToString()))[$toList]({growable: false});
+        }
+      } catch (e$) {
+        let e = dart.getThrown(e$);
+        if (core.Object.is(e)) {
+        } else
+          throw e$;
+      }
+      return T.JSArrayOfString().of([]);
+    }
+    [_injectSrcScript](src) {
+      if (src == null) dart.nullFailed(I[2], 78, 40, "src");
+      return async.async(dart.void, function* _injectSrcScript() {
+        let script = html.ScriptElement.new();
+        script.type = "text/javascript";
+        script.src = src;
+        script.async = true;
+        if (!(html.document[$head] != null)) dart.assertFailed(null, I[2], 83, 12, "document.head != null");
+        dart.nullCheck(html.document[$head])[$append](script);
+        yield script[$onLoad].first;
+      });
+    }
+    [_initializeCore]() {
+      return async.async(dart.void, (function* _initializeCore() {
+        if (js.context._get("firebase") != null) {
+          return;
+        }
+        let version = this[_firebaseSDKVersion];
+        let ignored = this[_ignoredServiceScripts];
+        yield this[_injectSrcScript]("https://www.gstatic.com/firebasejs/" + dart.str(version) + "/firebase-app.js");
+        yield async.Future.wait(dart.void, firebase_core_web.FirebaseCoreWeb._services[$values][$map](T.FutureOfvoid(), dart.fn(service => {
+          if (service == null) dart.nullFailed(I[2], 106, 29, "service");
+          if (dart.test(ignored[$contains](service.name))) {
+            return async.Future.value();
+          }
+          return this[_injectSrcScript]("https://www.gstatic.com/firebasejs/" + dart.str(version) + "/firebase-" + dart.str(service.name) + ".js");
+        }, T.FirebaseWebServiceToFutureOfvoid())));
+      }).bind(this));
+    }
+    [_initializeCoreRequireJs]() {
+      return async.async(dart.void, (function* _initializeCoreRequireJs() {
+        if (js.context._get("firebase") != null) {
+          return;
+        }
+        let version = this[_firebaseSDKVersion];
+        let ignored = this[_ignoredServiceScripts];
+        let require = js.JsObject.fromBrowserObject(core.Object.as(js.context._get("require")));
+        require.callMethod("config", [js.JsObject.jsify(new (T.IdentityMapOfString$MapOfString$String()).from(["paths", new (T.IdentityMapOfString$String()).from(["@firebase/app", "https://www.gstatic.com/firebasejs/" + dart.str(version) + "/firebase-app", "@firebase/analytics", "https://www.gstatic.com/firebasejs/" + dart.str(version) + "/firebase-analytics", "@firebase/app-check", "https://www.gstatic.com/firebasejs/" + dart.str(version) + "/firebase-app-check", "@firebase/auth", "https://www.gstatic.com/firebasejs/" + dart.str(version) + "/firebase-auth", "@firebase/firestore", "https://www.gstatic.com/firebasejs/" + dart.str(version) + "/firebase-firestore", "@firebase/functions", "https://www.gstatic.com/firebasejs/" + dart.str(version) + "/firebase-functions", "@firebase/messaging", "https://www.gstatic.com/firebasejs/" + dart.str(version) + "/firebase-messaging", "@firebase/storage", "https://www.gstatic.com/firebasejs/" + dart.str(version) + "/firebase-storage", "@firebase/database", "https://www.gstatic.com/firebasejs/" + dart.str(version) + "/firebase-database", "@firebase/remote-config", "https://www.gstatic.com/firebasejs/" + dart.str(version) + "/firebase-remote-config", "@firebase/performance", "https://www.gstatic.com/firebasejs/" + dart.str(version) + "/firebase-performance", "@firebase/installations", "https://www.gstatic.com/firebasejs/" + dart.str(version) + "/firebase-installations"])]))]);
+        let completer = async.Completer.new();
+        let services = T.JSArrayOfString().of(["@firebase/app"]);
+        firebase_core_web.FirebaseCoreWeb._services[$values][$forEach](dart.fn(service => {
+          if (service == null) dart.nullFailed(I[2], 169, 31, "service");
+          if (!dart.test(ignored[$contains](service.name))) {
+            services[$add]("@firebase/" + dart.str(service.name));
+          }
+        }, T.FirebaseWebServiceTovoid()));
+        js.context.callMethod("require", [js.JsObject.jsify(services), dart.fn(app => {
+            js.context._set("firebase", app);
+            completer.complete();
+          }, T.dynamicToNull())]);
+        yield completer.future;
+      }).bind(this));
+    }
+    get apps() {
+      return core$.apps[$map](firebase_core_platform_interface.FirebaseAppPlatform, C[0] || CT.C0)[$toList]({growable: false});
+    }
+    initializeApp(opts) {
+      let name = opts && 'name' in opts ? opts.name : null;
+      let options = opts && 'options' in opts ? opts.options : null;
+      return async.async(firebase_core_platform_interface.FirebaseAppPlatform, (function* initializeApp() {
+        if (!dart.test(this[_isRequireJsDefined])) {
+          yield this[_initializeCore]();
+        } else {
+          yield this[_initializeCoreRequireJs]();
+        }
+        try {
+          dart.global.firebase.SDK_VERSION;
+        } catch (e$) {
+          let e = dart.getThrown(e$);
+          if (core.Object.is(e)) {
+            if (dart.toString(e)[$contains]("Cannot read property 'SDK_VERSION' of undefined")) {
+              dart.throw(firebase_core_platform_interface.coreNotInitialized());
+            }
+          } else
+            throw e$;
+        }
+        if (!dart.test(dart.fn(() => {
+          if (dart.global.firebase.SDK_VERSION !== "8.10.1") {
+            core.print("            WARNING: FlutterFire for Web is explicitly tested against Firebase JS SDK version \"" + "8.10.1" + "\"\n            but your currently specifying \"" + dart.str(dart.global.firebase.SDK_VERSION) + "\" by either the imported Firebase JS SDKs in your web/index.html\n            file or by providing an override - this may lead to unexpected issues in your application. It is recommended that you change all of the versions of the\n            Firebase JS SDK version \"" + "8.10.1" + "\":\n\n            If you override the version manully:\n              change:\n                <script>window.flutterfire_web_sdk_version = '" + dart.str(dart.global.firebase.SDK_VERSION) + "';</script>\n              to:\n                <script>window.flutterfire_web_sdk_version = '" + "8.10.1" + "';</script>\n\n            If you import the Firebase scripts in index.html, instead allow FlutterFire to manage this for you by removing\n            any Firebase scripts in your web/index.html file:\n                e.g. remove: <script src=\"https://www.gstatic.com/firebasejs/" + dart.str(dart.global.firebase.SDK_VERSION) + "/firebase-app.js\"></script>\n          ");
+          }
+          return true;
+        }, T.VoidTobool())())) dart.assertFailed(null, I[2], 219, 7, "() {\n        if (firebase.SDK_VERSION != supportedFirebaseJsSdkVersion) {\n          // ignore: avoid_print\n          print(\n            '''\n            WARNING: FlutterFire for Web is explicitly tested against Firebase JS SDK version \"$supportedFirebaseJsSdkVersion\"\n            but your currently specifying \"${firebase.SDK_VERSION}\" by either the imported Firebase JS SDKs in your web/index.html\n            file or by providing an override - this may lead to unexpected issues in your application. It is recommended that you change all of the versions of the\n            Firebase JS SDK version \"$supportedFirebaseJsSdkVersion\":\n\n            If you override the version manully:\n              change:\n                <script>window.flutterfire_web_sdk_version = '${firebase.SDK_VERSION}';</script>\n              to:\n                <script>window.flutterfire_web_sdk_version = '$supportedFirebaseJsSdkVersion';</script>\n\n            If you import the Firebase scripts in index.html, instead allow FlutterFire to manage this for you by removing\n            any Firebase scripts in your web/index.html file:\n                e.g. remove: <script src=\"https://www.gstatic.com/firebasejs/${firebase.SDK_VERSION}/firebase-app.js\"></script>\n          ''',\n          );\n        }\n\n        return true;\n      }()");
+        let app = null;
+        if (name == null || name === "[DEFAULT]") {
+          let defaultAppExists = false;
+          try {
+            app = core$.app();
+            defaultAppExists = true;
+          } catch (e$0) {
+            let e = dart.getThrown(e$0);
+            if (core.Object.is(e)) {
+            } else
+              throw e$0;
+          }
+          if (defaultAppExists) {
+            if (options != null) {
+              if (options.apiKey != dart.nullCheck(app).options.apiKey || options.databaseURL != app.options.databaseURL || options.storageBucket != app.options.storageBucket) {
+                dart.throw(firebase_core_platform_interface.duplicateApp("[DEFAULT]"));
+              }
+            }
+          } else {
+            if (!(options != null)) dart.assertFailed("FirebaseOptions cannot be null when creating the default app.", I[2], 273, 11, "options != null");
+            app = core$.initializeApp({apiKey: dart.nullCheck(options).apiKey, authDomain: options.authDomain, databaseURL: options.databaseURL, projectId: options.projectId, storageBucket: options.storageBucket, messagingSenderId: options.messagingSenderId, appId: options.appId, measurementId: options.measurementId});
+          }
+        }
+        if (name != null && name !== "[DEFAULT]") {
+          if (!(options != null)) dart.assertFailed("FirebaseOptions cannot be null when creating a secondary Firebase app.", I[2], 295, 9, "options != null");
+          try {
+            app = core$.initializeApp({name: name, apiKey: dart.nullCheck(options).apiKey, authDomain: options.authDomain, databaseURL: options.databaseURL, projectId: options.projectId, storageBucket: options.storageBucket, messagingSenderId: options.messagingSenderId, appId: options.appId, measurementId: options.measurementId});
+          } catch (e$1) {
+            let e = dart.getThrown(e$1);
+            if (core.Object.is(e)) {
+              if (firebase_core_web._getJSErrorCode(e) === "app/duplicate-app") {
+                dart.throw(firebase_core_platform_interface.duplicateApp(name));
+              }
+              dart.throw(firebase_core_web._catchJSError(e));
+            } else
+              throw e$1;
+          }
+        }
+        return firebase_core_web._createFromJsApp(dart.nullCheck(app));
+      }).bind(this));
+    }
+    app(name = "[DEFAULT]") {
+      if (name == null) dart.nullFailed(I[2], 328, 35, "name");
+      let app = null;
+      try {
+        app = core$.app(name);
+      } catch (e$) {
+        let e = dart.getThrown(e$);
+        if (core.Object.is(e)) {
+          if ((dart.toString(e)[$contains]("Cannot read property") || dart.toString(e)[$contains]("Cannot read properties")) && dart.toString(e)[$contains]("'app'")) {
+            dart.throw(firebase_core_platform_interface.coreNotInitialized());
+          }
+          if (firebase_core_web._getJSErrorCode(e) === "app/no-app") {
+            dart.throw(firebase_core_platform_interface.noAppExists(name));
+          }
+          dart.throw(firebase_core_web._catchJSError(e));
+        } else
+          throw e$;
+      }
+      return firebase_core_web._createFromJsApp(app);
+    }
+  };
+  (firebase_core_web.FirebaseCoreWeb.new = function() {
+    firebase_core_web.FirebaseCoreWeb.__proto__.new.call(this);
+    ;
+  }).prototype = firebase_core_web.FirebaseCoreWeb.prototype;
+  dart.addTypeTests(firebase_core_web.FirebaseCoreWeb);
+  dart.addTypeCaches(firebase_core_web.FirebaseCoreWeb);
+  dart.setMethodSignature(firebase_core_web.FirebaseCoreWeb, () => ({
+    __proto__: dart.getMethods(firebase_core_web.FirebaseCoreWeb.__proto__),
+    [_injectSrcScript]: dart.fnType(async.Future$(dart.void), [core.String]),
+    [_initializeCore]: dart.fnType(async.Future$(dart.void), []),
+    [_initializeCoreRequireJs]: dart.fnType(async.Future$(dart.void), [])
+  }));
+  dart.setGetterSignature(firebase_core_web.FirebaseCoreWeb, () => ({
+    __proto__: dart.getGetters(firebase_core_web.FirebaseCoreWeb.__proto__),
+    [_isRequireJsDefined]: core.bool,
+    [_firebaseSDKVersion]: core.String,
+    [_ignoredServiceScripts]: core.List$(core.String)
+  }));
+  dart.setLibraryUri(firebase_core_web.FirebaseCoreWeb, I[1]);
+  dart.defineLazy(firebase_core_web.FirebaseCoreWeb, {
+    /*firebase_core_web.FirebaseCoreWeb._services*/get _services() {
+      return new (T.IdentityMapOfString$FirebaseWebService()).new();
+    },
+    set _services(_) {}
+  }, false);
+  firebase_core_web._createFromJsApp = function _createFromJsApp(jsApp) {
+    if (jsApp == null) dart.nullFailed(I[3], 22, 51, "jsApp");
+    return new firebase_core_web.FirebaseAppWeb.__(jsApp.name, firebase_core_web._createFromJsOptions(jsApp.options));
+  };
+  firebase_core_web._createFromJsOptions = function _createFromJsOptions(options) {
+    if (options == null) dart.nullFailed(I[3], 27, 63, "options");
+    return new firebase_core_platform_interface.FirebaseOptions.new({apiKey: options.apiKey, authDomain: options.authDomain, databaseURL: options.databaseURL, projectId: options.projectId, storageBucket: options.storageBucket, messagingSenderId: options.messagingSenderId, appId: options.appId, measurementId: options.measurementId});
+  };
+  firebase_core_web._getJSErrorCode = function _getJSErrorCode(e) {
+    let t5;
+    if (dart.equals(js_util.getProperty(core.Object.as(e), "name"), "FirebaseError")) {
+      return core.String.as((t5 = js_util.getProperty(core.Object.as(e), "code"), t5 == null ? "" : t5));
+    }
+    return "";
+  };
+  firebase_core_web._catchJSError = function _catchJSError(e) {
+    let t5;
+    if (dart.equals(js_util.getProperty(core.Object.as(e), "name"), "FirebaseError")) {
+      let rawCode = core.String.as(js_util.getProperty(core.Object.as(e), "code"));
+      let code = rawCode;
+      let message = core.String.as((t5 = js_util.getProperty(core.Object.as(e), "message"), t5 == null ? "" : t5));
+      if (code[$contains]("/")) {
+        let chunks = code[$split]("/");
+        code = chunks[$_get](dart.notNull(chunks[$length]) - 1);
+      }
+      return new firebase_core_platform_interface.FirebaseException.new({plugin: "core", code: code, message: message[$replaceAll](" (" + dart.str(rawCode) + ")", "")});
+    }
+    dart.throw(e);
+  };
+  dart.defineLazy(firebase_core_web, {
+    /*firebase_core_web.supportedFirebaseJsSdkVersion*/get supportedFirebaseJsSdkVersion() {
+      return "8.10.1";
+    }
+  }, false);
+  dart.trackLibraries("packages/firebase_core_web/firebase_core_web.dart", {
+    "package:firebase_core_web/firebase_core_web.dart": firebase_core_web
+  }, {
+    "package:firebase_core_web/firebase_core_web.dart": ["src/firebase_app_web.dart", "src/firebase_sdk_version.dart", "src/firebase_core_web.dart"]
+  }, '{"version":3,"sourceRoot":"","sources":["src/firebase_app_web.dart","src/firebase_core_web.dart","firebase_core_web.dart","src/firebase_sdk_version.dart"],"names":[],"mappings":"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","file":"../../../../../../packages/firebase_core_web/firebase_core_web.dart.lib.js"}');
+  // Exports:
+  return {
+    firebase_core_web: firebase_core_web
+  };
+}));
+
+//# sourceMappingURL=firebase_core_web.dart.lib.js.map

@@ -1,0 +1,772 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/smart_admin_dashboard/responsive.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/material/icons.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/flutter/src/widgets/spacer.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/smart_admin_dashboard/core/constants/color_constants.dart', 'packages/flutter/src/painting/border_radius.dart', 'packages/flutter/src/painting/box_border.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/material/circle_avatar.dart', 'packages/flutter/src/painting/image_resolution.dart', 'packages/flutter/src/material/text_field.dart', 'packages/flutter/src/material/input_border.dart', 'packages/flutter/src/painting/borders.dart', 'packages/flutter_svg/svg.dart'], (function load__packages__smart_admin_dashboard__screens__dashboard__components__header_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__smart_admin_dashboard__responsive$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__material__icons$46dart, packages__flutter__src__rendering__flex$46dart, packages__flutter__src__widgets__spacer$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__smart_admin_dashboard__core__constants__color_constants$46dart, packages__flutter__src__painting__border_radius$46dart, packages__flutter__src__painting__box_border$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__material__circle_avatar$46dart, packages__flutter__src__painting__image_resolution$46dart, packages__flutter__src__material__text_field$46dart, packages__flutter__src__material__input_border$46dart, packages__flutter__src__painting__borders$46dart, packages__flutter_svg__svg$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const ui = dart_sdk.ui;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const responsive = packages__smart_admin_dashboard__responsive$46dart.responsive;
+  const icon_button = packages__flutter__src__material__icon_button$46dart.src__material__icon_button;
+  const theme = packages__flutter__src__material__icon_button$46dart.src__material__theme;
+  const input_decorator = packages__flutter__src__material__icon_button$46dart.src__material__input_decorator;
+  const ink_well = packages__flutter__src__material__icon_button$46dart.src__material__ink_well;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const spacer = packages__flutter__src__widgets__spacer$46dart.src__widgets__spacer;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
+  const color_constants = packages__smart_admin_dashboard__core__constants__color_constants$46dart.core__constants__color_constants;
+  const border_radius = packages__flutter__src__painting__border_radius$46dart.src__painting__border_radius;
+  const box_border = packages__flutter__src__painting__box_border$46dart.src__painting__box_border;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const circle_avatar = packages__flutter__src__material__circle_avatar$46dart.src__material__circle_avatar;
+  const image_resolution = packages__flutter__src__painting__image_resolution$46dart.src__painting__image_resolution;
+  const text_field = packages__flutter__src__material__text_field$46dart.src__material__text_field;
+  const input_border = packages__flutter__src__material__input_border$46dart.src__material__input_border;
+  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
+  const svg = packages__flutter_svg__svg$46dart.svg;
+  var header = Object.create(dart.library);
+  var $add = dartx.add;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 30,
+        [_Location_line]: 17,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2], widget_inspector._Location);
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 17,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 13,
+        [_Location_line]: 17,
+        [_Location_file]: null
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 13,
+        [_Location_line]: 18,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[5] || CT.C5, C[6] || CT.C6], widget_inspector._Location);
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[4] || CT.C4,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 16,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 17,
+        [_Location_line]: 26,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 17,
+        [_Location_line]: 27,
+        [_Location_file]: null
+      });
+    },
+    get C8() {
+      return C[8] = dart.constList([C[9] || CT.C9, C[10] || CT.C10], widget_inspector._Location);
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[8] || CT.C8,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 25,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 17,
+        [_Location_line]: 30,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.constList([C[13] || CT.C13], widget_inspector._Location);
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[12] || CT.C12,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 29,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 17,
+        [_Location_line]: 33,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 17,
+        [_Location_line]: 34,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.constList([C[16] || CT.C16, C[17] || CT.C17], widget_inspector._Location);
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[15] || CT.C15,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 32,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 13,
+        [_Location_line]: 22,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 13,
+        [_Location_line]: 23,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 13,
+        [_Location_line]: 24,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.constList([C[20] || CT.C20, C[21] || CT.C21, C[22] || CT.C22], widget_inspector._Location);
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[19] || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 21,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "flex",
+        [_Location_column]: 18,
+        [_Location_line]: 39,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.constList([C[25] || CT.C25], widget_inspector._Location);
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[24] || CT.C24,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 39,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    },
+    get C27() {
+      return C[27] = dart.constList([], widget_inspector._Location);
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[27] || CT.C27,
+        [_Location_name]: null,
+        [_Location_column]: 25,
+        [_Location_line]: 40,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 18,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.constList([C[30] || CT.C30], widget_inspector._Location);
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[29] || CT.C29,
+        [_Location_name]: null,
+        [_Location_column]: 9,
+        [_Location_line]: 40,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[27] || CT.C27,
+        [_Location_name]: null,
+        [_Location_column]: 9,
+        [_Location_line]: 41,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 7,
+        [_Location_line]: 14,
+        [_Location_file]: null
+      });
+    },
+    get C33() {
+      return C[33] = dart.constList([C[34] || CT.C34], widget_inspector._Location);
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[33] || CT.C33,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 13,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: ui.Radius.prototype,
+        [Radius_y]: 10,
+        [Radius_x]: 10
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: border_radius.BorderRadius.prototype,
+        [BorderRadius_bottomRight]: C[36] || CT.C36,
+        [BorderRadius_bottomLeft]: C[36] || CT.C36,
+        [BorderRadius_topRight]: C[36] || CT.C36,
+        [BorderRadius_topLeft]: C[36] || CT.C36
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundImage",
+        [_Location_column]: 13,
+        [_Location_line]: 68,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.constList([C[39] || CT.C39], widget_inspector._Location);
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[38] || CT.C38,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 67,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 8,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 8
+      });
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 27,
+        [_Location_line]: 74,
+        [_Location_file]: null
+      });
+    },
+    get C42() {
+      return C[42] = dart.constList([C[43] || CT.C43], widget_inspector._Location);
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[42] || CT.C42,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 74,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 15,
+        [_Location_line]: 72,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 74,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.constList([C[46] || CT.C46, C[47] || CT.C47], widget_inspector._Location);
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[45] || CT.C45,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 71,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 22,
+        [_Location_line]: 76,
+        [_Location_file]: null
+      });
+    },
+    get C49() {
+      return C[49] = dart.constList([C[50] || CT.C50], widget_inspector._Location);
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[49] || CT.C49,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 76,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 9,
+        [_Location_line]: 66,
+        [_Location_file]: null
+      });
+    },
+    get C52() {
+      return C[52] = dart.constList([C[53] || CT.C53], widget_inspector._Location);
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[52] || CT.C52,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 65,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 7,
+        [_Location_line]: 55,
+        [_Location_file]: null
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 7,
+        [_Location_line]: 56,
+        [_Location_file]: null
+      });
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 7,
+        [_Location_line]: 60,
+        [_Location_file]: null
+      });
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 65,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C[55] = dart.constList([C[56] || CT.C56, C[57] || CT.C57, C[58] || CT.C58, C[59] || CT.C59], widget_inspector._Location);
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[55] || CT.C55,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 54,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "assetName",
+        [_Location_column]: 15,
+        [_Location_line]: 109,
+        [_Location_file]: null
+      });
+    },
+    get C61() {
+      return C[61] = dart.constList([C[62] || CT.C62], widget_inspector._Location);
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[61] || CT.C61,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 108,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    },
+    get C65() {
+      return C[65] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 13,
+        [_Location_line]: 102,
+        [_Location_file]: null
+      });
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 13,
+        [_Location_line]: 103,
+        [_Location_file]: null
+      });
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 13,
+        [_Location_line]: 104,
+        [_Location_file]: null
+      });
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 108,
+        [_Location_file]: null
+      });
+    },
+    get C64() {
+      return C[64] = dart.constList([C[65] || CT.C65, C[66] || CT.C66, C[67] || CT.C67, C[68] || CT.C68], widget_inspector._Location);
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[64] || CT.C64,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 101,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 11,
+        [_Location_line]: 100,
+        [_Location_file]: null
+      });
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 101,
+        [_Location_file]: null
+      });
+    },
+    get C70() {
+      return C[70] = dart.constList([C[71] || CT.C71, C[72] || CT.C72], widget_inspector._Location);
+    },
+    get C69() {
+      return C[69] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[70] || CT.C70,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 99,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 7,
+        [_Location_line]: 91,
+        [_Location_file]: null
+      });
+    },
+    get C74() {
+      return C[74] = dart.constList([C[75] || CT.C75], widget_inspector._Location);
+    },
+    get C73() {
+      return C[73] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[74] || CT.C74,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 90,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart"
+      });
+    }
+  }, false);
+  var C = Array(76).fill(void 0);
+  var I = [
+    "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/header.dart",
+    "package:smart_admin_dashboard/screens/dashboard/components/header.dart"
+  ];
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  header.Header = class Header extends framework.StatelessWidget {
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 12, 29, "context");
+      return new basic.Row.new({children: (() => {
+          let t0 = T.JSArrayOfWidget().of([]);
+          if (!dart.test(responsive.Responsive.isDesktop(context))) t0[$add](new icon_button.IconButton.new({icon: new icon.Icon.new(icons.Icons.menu, {$creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), onPressed: dart.fn(() => {
+            }, T.VoidTovoid()), $creationLocationd_0dea112b090073317d4: C[3] || CT.C3}));
+          if (!dart.test(responsive.Responsive.isMobile(context))) t0[$add](new basic.Column.new({mainAxisAlignment: flex.MainAxisAlignment.start, crossAxisAlignment: flex.CrossAxisAlignment.start, children: T.JSArrayOfWidget().of([new text.Text.new("Hello, Deniz 👋", {style: theme.Theme.of(context).textTheme.headline6, $creationLocationd_0dea112b090073317d4: C[7] || CT.C7}), new basic.SizedBox.new({height: 8.0, $creationLocationd_0dea112b090073317d4: C[11] || CT.C11}), new text.Text.new("Wellcome to your dashboard", {style: theme.Theme.of(context).textTheme.subtitle2, $creationLocationd_0dea112b090073317d4: C[14] || CT.C14})]), $creationLocationd_0dea112b090073317d4: C[18] || CT.C18}));
+          if (!dart.test(responsive.Responsive.isMobile(context))) t0[$add](new spacer.Spacer.new({flex: dart.test(responsive.Responsive.isDesktop(context)) ? 2 : 1, $creationLocationd_0dea112b090073317d4: C[23] || CT.C23}));
+          t0[$add](new basic.Expanded.new({child: new header.SearchField.new({$creationLocationd_0dea112b090073317d4: C[26] || CT.C26}), $creationLocationd_0dea112b090073317d4: C[28] || CT.C28}));
+          t0[$add](new header.ProfileCard.new({$creationLocationd_0dea112b090073317d4: C[31] || CT.C31}));
+          return t0;
+        })(), $creationLocationd_0dea112b090073317d4: C[32] || CT.C32});
+    }
+  };
+  (header.Header.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    header.Header.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = header.Header.prototype;
+  dart.addTypeTests(header.Header);
+  dart.addTypeCaches(header.Header);
+  dart.setMethodSignature(header.Header, () => ({
+    __proto__: dart.getMethods(header.Header.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(header.Header, I[1]);
+  var Radius_y = dart.privateName(ui, "Radius.y");
+  var Radius_x = dart.privateName(ui, "Radius.x");
+  var BorderRadius_bottomRight = dart.privateName(border_radius, "BorderRadius.bottomRight");
+  var BorderRadius_bottomLeft = dart.privateName(border_radius, "BorderRadius.bottomLeft");
+  var BorderRadius_topRight = dart.privateName(border_radius, "BorderRadius.topRight");
+  var BorderRadius_topLeft = dart.privateName(border_radius, "BorderRadius.topLeft");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  header.ProfileCard = class ProfileCard extends framework.StatelessWidget {
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 53, 29, "context");
+      return new container.Container.new({margin: new edge_insets.EdgeInsets.only({left: 16}), padding: new edge_insets.EdgeInsets.symmetric({horizontal: 16, vertical: 16 / 2}), decoration: new box_decoration.BoxDecoration.new({color: color_constants.secondaryColor, borderRadius: C[35] || CT.C35, border: box_border.Border.all({color: colors.Colors.white10})}), child: new basic.Row.new({children: (() => {
+            let t1 = T.JSArrayOfWidget().of([new circle_avatar.CircleAvatar.new({backgroundImage: new image_resolution.AssetImage.new("assets/images/profile_pic.png"), $creationLocationd_0dea112b090073317d4: C[37] || CT.C37})]);
+            if (!dart.test(responsive.Responsive.isMobile(context))) t1[$add](new basic.Padding.new({padding: C[40] || CT.C40, child: new text.Text.new("Deniz Çolak", {$creationLocationd_0dea112b090073317d4: C[41] || CT.C41}), $creationLocationd_0dea112b090073317d4: C[44] || CT.C44}));
+            t1[$add](new icon.Icon.new(icons.Icons.keyboard_arrow_down, {$creationLocationd_0dea112b090073317d4: C[48] || CT.C48}));
+            return t1;
+          })(), $creationLocationd_0dea112b090073317d4: C[51] || CT.C51}), $creationLocationd_0dea112b090073317d4: C[54] || CT.C54});
+    }
+  };
+  (header.ProfileCard.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    header.ProfileCard.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = header.ProfileCard.prototype;
+  dart.addTypeTests(header.ProfileCard);
+  dart.addTypeCaches(header.ProfileCard);
+  dart.setMethodSignature(header.ProfileCard, () => ({
+    __proto__: dart.getMethods(header.ProfileCard.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(header.ProfileCard, I[1]);
+  header.SearchField = class SearchField extends framework.StatelessWidget {
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 89, 29, "context");
+      return new text_field.TextField.new({decoration: new input_decorator.InputDecoration.new({hintText: "Search", fillColor: color_constants.secondaryColor, filled: true, border: new input_border.OutlineInputBorder.new({borderSide: borders.BorderSide.none, borderRadius: C[35] || CT.C35}), suffixIcon: new ink_well.InkWell.new({onTap: dart.fn(() => {
+            }, T.VoidTovoid()), child: new container.Container.new({padding: new edge_insets.EdgeInsets.all(16 * 0.75), margin: new edge_insets.EdgeInsets.symmetric({horizontal: 16 / 2}), decoration: new box_decoration.BoxDecoration.new({color: color_constants.greenColor, borderRadius: C[35] || CT.C35}), child: new svg.SvgPicture.asset("assets/icons/Search.svg", {$creationLocationd_0dea112b090073317d4: C[60] || CT.C60}), $creationLocationd_0dea112b090073317d4: C[63] || CT.C63}), $creationLocationd_0dea112b090073317d4: C[69] || CT.C69})}), $creationLocationd_0dea112b090073317d4: C[73] || CT.C73});
+    }
+  };
+  (header.SearchField.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    header.SearchField.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = header.SearchField.prototype;
+  dart.addTypeTests(header.SearchField);
+  dart.addTypeCaches(header.SearchField);
+  dart.setMethodSignature(header.SearchField, () => ({
+    __proto__: dart.getMethods(header.SearchField.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(header.SearchField, I[1]);
+  dart.trackLibraries("packages/smart_admin_dashboard/screens/dashboard/components/header.dart", {
+    "package:smart_admin_dashboard/screens/dashboard/components/header.dart": header
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["header.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAW4B;AACxB,YAAO,8BACK;;AACR,yBAAgB,gCAAU,OAAO,IAC/B,+CACQ,kBAAW,uFACN;;AAEf,yBAAgB,+BAAS,OAAO,IAC9B,kDACuC,kDACE,yCAC7B,wBACR,kBACE,0BACa,AAAY,AAAU,eAAnB,OAAO,gFAEzB,gCACU,gEAEV,kBACE,sCACa,AAAY,AAAU,eAAnB,OAAO;AAI/B,yBAAgB,+BAAS,OAAO,IAC9B,gDAAwB,gCAAU,OAAO,KAAI,IAAI;AACnD,kDAAgB;AAChB;;;IAGN;;;QApCO;;AACF,iDAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;UA4CM;AACxB,YAAO,sCACc,sDACC,gEAEO,KAAE,iBAEjB,6CACH,uEAEQ,8BAAkB,kCAE5B,6BACK;6CACR,qDACmB,oCAAW;AAE9B,2BAAgB,+BAAS,OAAO,IAC9B,iEAGS,kBAAK;AAEhB,uCAAW;;;IAInB;;;QA/BO;;AACF,sDAAW,GAAG;;EAAC;;;;;;;;;;UAuCM;AACxB,YAAO,2CACO,mDACA,qBACC,wCACH,cACA,qDACiB,sEAGb,iCACH;uCACA,sCACe,+BAAmB,KAAE,eACtB,kDAAqC,KAAE,iBAC9C,6CACH,oEAGS,yBAChB;IAMZ;;;QA9BO;;AACF,sDAAW,GAAG;;EAAC","file":"../../../../../../../../../packages/smart_admin_dashboard/screens/dashboard/components/header.dart.lib.js"}');
+  // Exports:
+  return {
+    screens__dashboard__components__header: header
+  };
+}));
+
+//# sourceMappingURL=header.dart.lib.js.map

@@ -1,0 +1,652 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/smart_admin_dashboard/core/models/data.dart', 'packages/table_calendar/src/shared/utils.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/smart_admin_dashboard/core/constants/color_constants.dart', 'packages/flutter/src/painting/border_radius.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/intl/src/intl/date_format.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/material/icons.dart', 'packages/table_calendar/src/table_calendar.dart', 'packages/table_calendar/src/customization/days_of_week_style.dart', 'packages/table_calendar/src/customization/calendar_style.dart', 'packages/flutter/src/painting/box_border.dart', 'packages/smart_admin_dashboard/screens/dashboard/components/calendar_list_widget.dart'], (function load__packages__smart_admin_dashboard__screens__dashboard__components__calendart_widget_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__smart_admin_dashboard__core__models__data$46dart, packages__table_calendar__src__shared__utils$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__smart_admin_dashboard__core__constants__color_constants$46dart, packages__flutter__src__painting__border_radius$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__rendering__flex$46dart, packages__intl__src__intl__date_format$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__material__icons$46dart, packages__table_calendar__src__table_calendar$46dart, packages__table_calendar__src__customization__days_of_week_style$46dart, packages__table_calendar__src__customization__calendar_style$46dart, packages__flutter__src__painting__box_border$46dart, packages__smart_admin_dashboard__screens__dashboard__components__calendar_list_widget$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const ui = dart_sdk.ui;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const data = packages__smart_admin_dashboard__core__models__data$46dart.core__models__data;
+  const utils = packages__table_calendar__src__shared__utils$46dart.src__shared__utils;
+  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
+  const color_constants = packages__smart_admin_dashboard__core__constants__color_constants$46dart.core__constants__color_constants;
+  const border_radius = packages__flutter__src__painting__border_radius$46dart.src__painting__border_radius;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const date_format = packages__intl__src__intl__date_format$46dart.src__intl__date_format;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const ink_well = packages__flutter__src__material__icon_button$46dart.src__material__ink_well;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  const table_calendar = packages__table_calendar__src__table_calendar$46dart.src__table_calendar;
+  const days_of_week_style = packages__table_calendar__src__customization__days_of_week_style$46dart.src__customization__days_of_week_style;
+  const calendar_style = packages__table_calendar__src__customization__calendar_style$46dart.src__customization__calendar_style;
+  const box_border = packages__flutter__src__painting__box_border$46dart.src__painting__box_border;
+  const calendar_list_widget = packages__smart_admin_dashboard__screens__dashboard__components__calendar_list_widget$46dart.screens__dashboard__components__calendar_list_widget;
+  var calendart_widget = Object.create(dart.library);
+  var $where = dartx.where;
+  var $toList = dartx.toList;
+  var $toUpperCase = dartx.toUpperCase;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    JSArrayOfCalendarData: () => (T.JSArrayOfCalendarData = dart.constFn(_interceptors.JSArray$(data.CalendarData)))(),
+    CalendarDataTobool: () => (T.CalendarDataTobool = dart.constFn(dart.fnType(core.bool, [data.CalendarData])))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
+    TableCalendarOfCalendarData: () => (T.TableCalendarOfCalendarData = dart.constFn(table_calendar.TableCalendar$(data.CalendarData)))(),
+    DateTimeTobool: () => (T.DateTimeTobool = dart.constFn(dart.fnType(core.bool, [core.DateTime])))(),
+    CalendarFormatTovoid: () => (T.CalendarFormatTovoid = dart.constFn(dart.fnType(dart.void, [utils.CalendarFormat])))(),
+    DateTimeAnddynamicToString: () => (T.DateTimeAnddynamicToString = dart.constFn(dart.fnType(core.String, [core.DateTime, dart.dynamic])))(),
+    DateTimeTovoid: () => (T.DateTimeTovoid = dart.constFn(dart.fnType(dart.void, [core.DateTime])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 65,
+        [_Location_line]: 51,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 17,
+        [_Location_line]: 52,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3], widget_inspector._Location);
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 50,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendart_widget.dart"
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 29,
+        [_Location_line]: 64,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 23,
+        [_Location_line]: 65,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.constList([C[6] || CT.C6, C[7] || CT.C7], widget_inspector._Location);
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[5] || CT.C5,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 63,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendart_widget.dart"
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 21,
+        [_Location_line]: 57,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 63,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.constList([C[10] || CT.C10, C[11] || CT.C11], widget_inspector._Location);
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[9] || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 56,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendart_widget.dart"
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 29,
+        [_Location_line]: 77,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 23,
+        [_Location_line]: 78,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[14] || CT.C14, C[15] || CT.C15], widget_inspector._Location);
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[13] || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 76,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendart_widget.dart"
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 21,
+        [_Location_line]: 69,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 76,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.constList([C[18] || CT.C18, C[19] || CT.C19], widget_inspector._Location);
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[17] || CT.C17,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 68,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendart_widget.dart"
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 17,
+        [_Location_line]: 55,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.constList([C[22] || CT.C22], widget_inspector._Location);
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[21] || CT.C21,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 54,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendart_widget.dart"
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 13,
+        [_Location_line]: 48,
+        [_Location_file]: null
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 13,
+        [_Location_line]: 49,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.constList([C[25] || CT.C25, C[26] || CT.C26], widget_inspector._Location);
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[24] || CT.C24,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 47,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendart_widget.dart"
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 13,
+        [_Location_line]: 86,
+        [_Location_file]: null
+      });
+    },
+    get C28() {
+      return C[28] = dart.constList([C[29] || CT.C29], widget_inspector._Location);
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[28] || CT.C28,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 85,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendart_widget.dart"
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "selectedDayPredicate",
+        [_Location_column]: 15,
+        [_Location_line]: 89,
+        [_Location_file]: null
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "focusedDay",
+        [_Location_column]: 15,
+        [_Location_line]: 90,
+        [_Location_file]: null
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "firstDay",
+        [_Location_column]: 15,
+        [_Location_line]: 91,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "lastDay",
+        [_Location_column]: 15,
+        [_Location_line]: 92,
+        [_Location_file]: null
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "headerVisible",
+        [_Location_column]: 15,
+        [_Location_line]: 93,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onDaySelected",
+        [_Location_column]: 15,
+        [_Location_line]: 94,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onFormatChanged",
+        [_Location_column]: 15,
+        [_Location_line]: 95,
+        [_Location_file]: null
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "daysOfWeekStyle",
+        [_Location_column]: 15,
+        [_Location_line]: 96,
+        [_Location_file]: null
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPageChanged",
+        [_Location_column]: 15,
+        [_Location_line]: 103,
+        [_Location_file]: null
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "calendarStyle",
+        [_Location_column]: 15,
+        [_Location_line]: 107,
+        [_Location_file]: null
+      });
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "eventLoader",
+        [_Location_column]: 15,
+        [_Location_line]: 117,
+        [_Location_file]: null
+      });
+    },
+    get C31() {
+      return C[31] = dart.constList([C[32] || CT.C32, C[33] || CT.C33, C[34] || CT.C34, C[35] || CT.C35, C[36] || CT.C36, C[37] || CT.C37, C[38] || CT.C38, C[39] || CT.C39, C[40] || CT.C40, C[41] || CT.C41, C[42] || CT.C42], widget_inspector._Location);
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[31] || CT.C31,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 88,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendart_widget.dart"
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 13,
+        [_Location_line]: 119,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.constList([C[45] || CT.C45], widget_inspector._Location);
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[44] || CT.C44,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 118,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendart_widget.dart"
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "datas",
+        [_Location_column]: 25,
+        [_Location_line]: 121,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.constList([C[48] || CT.C48], widget_inspector._Location);
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[47] || CT.C47,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 121,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendart_widget.dart"
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 9,
+        [_Location_line]: 46,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.constList([C[51] || CT.C51], widget_inspector._Location);
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[50] || CT.C50,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 45,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendart_widget.dart"
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 7,
+        [_Location_line]: 42,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 7,
+        [_Location_line]: 44,
+        [_Location_file]: null
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C53() {
+      return C[53] = dart.constList([C[54] || CT.C54, C[55] || CT.C55, C[56] || CT.C56], widget_inspector._Location);
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[53] || CT.C53,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 41,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendart_widget.dart"
+      });
+    }
+  }, false);
+  var C = Array(57).fill(void 0);
+  var I = [
+    "package:smart_admin_dashboard/screens/dashboard/components/calendart_widget.dart",
+    "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendart_widget.dart"
+  ];
+  calendart_widget.CalendarWidget = class CalendarWidget extends framework.StatefulWidget {
+    createState() {
+      return new calendart_widget._CalendarWidgetState.new();
+    }
+  };
+  (calendart_widget.CalendarWidget.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    calendart_widget.CalendarWidget.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = calendart_widget.CalendarWidget.prototype;
+  dart.addTypeTests(calendart_widget.CalendarWidget);
+  dart.addTypeCaches(calendart_widget.CalendarWidget);
+  dart.setMethodSignature(calendart_widget.CalendarWidget, () => ({
+    __proto__: dart.getMethods(calendart_widget.CalendarWidget.__proto__),
+    createState: dart.fnType(calendart_widget._CalendarWidgetState, [])
+  }));
+  dart.setLibraryUri(calendart_widget.CalendarWidget, I[0]);
+  var _selectedDate = dart.privateName(calendart_widget, "_selectedDate");
+  var _focusedDay = dart.privateName(calendart_widget, "_focusedDay");
+  var _selectedDay = dart.privateName(calendart_widget, "_selectedDay");
+  var _eventLoader = dart.privateName(calendart_widget, "_eventLoader");
+  var _onDaySelected = dart.privateName(calendart_widget, "_onDaySelected");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  calendart_widget._CalendarWidgetState = class _CalendarWidgetState extends framework.State$(calendart_widget.CalendarWidget) {
+    [_eventLoader](date) {
+      if (date == null) dart.nullFailed(I[1], 21, 44, "date");
+      return data.calendarData[$where](dart.fn(element => {
+        if (element == null) dart.nullFailed(I[1], 23, 17, "element");
+        return utils.isSameDay(date, element.date);
+      }, T.CalendarDataTobool()))[$toList]();
+    }
+    [_onDaySelected](selectedDay, focusedDay) {
+      if (selectedDay == null) dart.nullFailed(I[1], 27, 32, "selectedDay");
+      if (focusedDay == null) dart.nullFailed(I[1], 27, 54, "focusedDay");
+      if (!dart.test(utils.isSameDay(this[_selectedDay], selectedDay))) {
+        this.setState(dart.fn(() => {
+          this[_selectedDay] = selectedDay;
+          this[_focusedDay] = focusedDay;
+          this[_selectedDate] = data.calendarData[$where](dart.fn(element => {
+            if (element == null) dart.nullFailed(I[1], 33, 21, "element");
+            return utils.isSameDay(selectedDay, element.date);
+          }, T.CalendarDataTobool()))[$toList]();
+        }, T.VoidTovoid()));
+      }
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[1], 40, 29, "context");
+      return new container.Container.new({decoration: new box_decoration.BoxDecoration.new({color: color_constants.secondaryColor, borderRadius: new border_radius.BorderRadius.circular(10.0)}), padding: new edge_insets.EdgeInsets.all(10.0), child: new basic.Column.new({children: T.JSArrayOfWidget().of([new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.spaceBetween, children: T.JSArrayOfWidget().of([new text.Text.new(dart.str(new date_format.DateFormat.new("MMM, yyyy").format(this[_focusedDay])), {style: new text_style.TextStyle.new({fontWeight: ui.FontWeight.bold, fontSize: 16.0}), $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), new basic.Row.new({children: T.JSArrayOfWidget().of([new ink_well.InkWell.new({onTap: dart.fn(() => {
+                        this.setState(dart.fn(() => {
+                          this[_focusedDay] = new core.DateTime.new(this[_focusedDay].year, dart.notNull(this[_focusedDay].month) - 1);
+                        }, T.VoidTovoid()));
+                      }, T.VoidTovoid()), child: new icon.Icon.new(icons.Icons.chevron_left, {color: color_constants.greenColor, $creationLocationd_0dea112b090073317d4: C[4] || CT.C4}), $creationLocationd_0dea112b090073317d4: C[8] || CT.C8}), new ink_well.InkWell.new({onTap: dart.fn(() => {
+                        this.setState(dart.fn(() => {
+                          core.print(this[_focusedDay]);
+                          this[_focusedDay] = new core.DateTime.new(this[_focusedDay].year, dart.notNull(this[_focusedDay].month) + 1);
+                        }, T.VoidTovoid()));
+                      }, T.VoidTovoid()), child: new icon.Icon.new(icons.Icons.chevron_right, {color: color_constants.greenColor, $creationLocationd_0dea112b090073317d4: C[12] || CT.C12}), $creationLocationd_0dea112b090073317d4: C[16] || CT.C16})]), $creationLocationd_0dea112b090073317d4: C[20] || CT.C20})]), $creationLocationd_0dea112b090073317d4: C[23] || CT.C23}), new basic.SizedBox.new({height: 10.0, $creationLocationd_0dea112b090073317d4: C[27] || CT.C27}), new (T.TableCalendarOfCalendarData()).new({selectedDayPredicate: dart.fn(day => {
+                if (day == null) dart.nullFailed(I[1], 89, 38, "day");
+                return utils.isSameDay(this[_focusedDay], day);
+              }, T.DateTimeTobool()), focusedDay: this[_focusedDay], firstDay: new core.DateTime.utc(2018), lastDay: new core.DateTime.utc(2025), headerVisible: false, onDaySelected: dart.bind(this, _onDaySelected), onFormatChanged: dart.fn(result => {
+                if (result == null) dart.nullFailed(I[1], 95, 33, "result");
+              }, T.CalendarFormatTovoid()), daysOfWeekStyle: new days_of_week_style.DaysOfWeekStyle.new({dowTextFormatter: dart.fn((date, locale) => {
+                  if (date == null) dart.nullFailed(I[1], 97, 36, "date");
+                  return new date_format.DateFormat.new("EEE").format(date)[$toUpperCase]();
+                }, T.DateTimeAnddynamicToString()), weekendStyle: new text_style.TextStyle.new({fontWeight: ui.FontWeight.bold}), weekdayStyle: new text_style.TextStyle.new({fontWeight: ui.FontWeight.bold})}), onPageChanged: dart.fn(day => {
+                if (day == null) dart.nullFailed(I[1], 103, 31, "day");
+                this[_focusedDay] = day;
+                this.setState(dart.fn(() => {
+                }, T.VoidTovoid()));
+              }, T.DateTimeTovoid()), calendarStyle: new calendar_style.CalendarStyle.new({todayDecoration: new box_decoration.BoxDecoration.new({color: color_constants.greenColor, shape: box_border.BoxShape.circle}), markerDecoration: new box_decoration.BoxDecoration.new({color: color_constants.greenColor, shape: box_border.BoxShape.circle})}), eventLoader: dart.bind(this, _eventLoader), $creationLocationd_0dea112b090073317d4: C[30] || CT.C30}), new basic.SizedBox.new({height: 8.0, $creationLocationd_0dea112b090073317d4: C[43] || CT.C43}), new calendar_list_widget.CalendartList.new({datas: this[_selectedDate], $creationLocationd_0dea112b090073317d4: C[46] || CT.C46})]), $creationLocationd_0dea112b090073317d4: C[49] || CT.C49}), $creationLocationd_0dea112b090073317d4: C[52] || CT.C52});
+    }
+  };
+  (calendart_widget._CalendarWidgetState.new = function() {
+    this[_selectedDate] = T.JSArrayOfCalendarData().of([]);
+    this[_focusedDay] = new core.DateTime.now();
+    this[_selectedDay] = new core.DateTime.now();
+    calendart_widget._CalendarWidgetState.__proto__.new.call(this);
+    ;
+  }).prototype = calendart_widget._CalendarWidgetState.prototype;
+  dart.addTypeTests(calendart_widget._CalendarWidgetState);
+  dart.addTypeCaches(calendart_widget._CalendarWidgetState);
+  dart.setMethodSignature(calendart_widget._CalendarWidgetState, () => ({
+    __proto__: dart.getMethods(calendart_widget._CalendarWidgetState.__proto__),
+    [_eventLoader]: dart.fnType(core.List$(data.CalendarData), [core.DateTime]),
+    [_onDaySelected]: dart.fnType(dart.void, [core.DateTime, core.DateTime]),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(calendart_widget._CalendarWidgetState, I[0]);
+  dart.setFieldSignature(calendart_widget._CalendarWidgetState, () => ({
+    __proto__: dart.getFields(calendart_widget._CalendarWidgetState.__proto__),
+    [_selectedDate]: dart.fieldType(core.List$(data.CalendarData)),
+    [_focusedDay]: dart.fieldType(core.DateTime),
+    [_selectedDay]: dart.fieldType(core.DateTime)
+  }));
+  dart.trackLibraries("packages/smart_admin_dashboard/screens/dashboard/components/calendart_widget.dart", {
+    "package:smart_admin_dashboard/screens/dashboard/components/calendart_widget.dart": calendart_widget
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["calendart_widget.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAWwC;IAAsB;;;;;;EAC9D;;;;;;;;;;;;;;;;;;;;UAQ2C;AACvC,YAAO,AACF,AACA,2BADM;YAAC;AAAY,+BAAU,IAAI,EAAE,AAAQ,OAAD;;IAEjD;qBAE6B,aAAsB;UAAtB;UAAsB;AACjD,qBAAK,gBAAU,oBAAc,WAAW;AAOpC,QANF,cAAS;AACmB,UAA1B,qBAAe,WAAW;AACF,UAAxB,oBAAc,UAAU;AAGX,UAFb,sBAAgB,AACX,AACA,0BADM;gBAAC;AAAY,mCAAU,WAAW,EAAE,AAAQ,OAAD;;;;IAI5D;;UAG0B;AACxB,YAAO,0CACO,6CACD,8CAA2C,wCAAS,kBAC3C,+BAAI,cACjB,gCACK,wBACR,sCACuC,+CAC3B,wBACR,kBACkD,SAA7C,AAAwB,+BAAb,oBAAoB,6BAC3B,0CAAiC,8BAAgB,iEAE1D,6BACY,wBACR,iCACS;AAIH,wBAHF,cAAS;AAE8C,0BADrD,oBACI,sBAAS,AAAY,wBAAwB,aAAlB,AAAY,2BAAQ;;iDAGhD,kBACC,kCACC,8IAGX,iCACS;AAKH,wBAJF,cAAS;AACW,0BAAlB,WAAM;AAE+C,0BADrD,oBACI,sBAAS,AAAY,wBAAwB,aAAlB,AAAY,2BAAQ;;iDAGhD,kBACC,mCACC,4QAOnB,gCACU,iEAEV,iEAC0B;oBAAC;AAAQ,uCAAU,mBAAa,GAAG;kDAC7C,6BACO,sBAAI,gBACL,sBAAI,sBACP,gCACA,wCACE;oBAAC;6DACD,8DACG,SAAC,MAAM;sBAAN;AACjB,wBAAO,AAAkB,AAAa,gCAApB,cAAc,IAAI;kEAExB,0CAAiC,oCACjC,0CAAiC,uCAElC;oBAAC;AACG,gBAAjB,oBAAc,GAAG;AACF,gBAAf,cAAS;;qDAEI,uDACI,6CACR,mCACS,gDAEA,6CACT,mCACS,uDAGP,gFACjB,gCACU,gEAEV,mDAAqB;IAI7B;;;IA7GmB,sBAAgB;IAE1B,oBAAuB;IACvB,qBAAwB;;;EA2GnC","file":"../../../../../../../../../packages/smart_admin_dashboard/screens/dashboard/components/calendart_widget.dart.lib.js"}');
+  // Exports:
+  return {
+    screens__dashboard__components__calendart_widget: calendart_widget
+  };
+}));
+
+//# sourceMappingURL=calendart_widget.dart.lib.js.map

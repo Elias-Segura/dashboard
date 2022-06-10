@@ -1,0 +1,504 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/smart_admin_dashboard/core/models/data.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/smart_admin_dashboard/core/widgets/wrapper.dart', 'packages/smart_admin_dashboard/screens/dashboard/components/list_calendar_data.dart'], (function load__packages__smart_admin_dashboard__screens__dashboard__components__calendar_list_widget_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__smart_admin_dashboard__core__models__data$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__rendering__flex$46dart, packages__smart_admin_dashboard__core__widgets__wrapper$46dart, packages__smart_admin_dashboard__screens__dashboard__components__list_calendar_data$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const data = packages__smart_admin_dashboard__core__models__data$46dart.core__models__data;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const wrapper = packages__smart_admin_dashboard__core__widgets__wrapper$46dart.core__widgets__wrapper;
+  const list_calendar_data = packages__smart_admin_dashboard__screens__dashboard__components__list_calendar_data$46dart.screens__dashboard__components__list_calendar_data;
+  var calendar_list_widget = Object.create(dart.library);
+  var $isEmpty = dartx.isEmpty;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C1() {
+      return C[1] = dart.constList([], widget_inspector._Location);
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 15,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendar_list_widget.dart"
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "list",
+        [_Location_column]: 47,
+        [_Location_line]: 15,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.constList([C[4] || CT.C4], widget_inspector._Location);
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[3] || CT.C3,
+        [_Location_name]: null,
+        [_Location_column]: 41,
+        [_Location_line]: 15,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendar_list_widget.dart"
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 15,
+        [_Location_file]: null
+      });
+    },
+    get C6() {
+      return C[6] = dart.constList([C[7] || CT.C7], widget_inspector._Location);
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[6] || CT.C6,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 14,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendar_list_widget.dart"
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 24,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.constList([C[11] || CT.C11], widget_inspector._Location);
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[10] || CT.C10,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 23,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendar_list_widget.dart"
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 9,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 9,
+        [_Location_line]: 26,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.constList([C[15] || CT.C15, C[16] || CT.C16], widget_inspector._Location);
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[14] || CT.C14,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 24,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendar_list_widget.dart"
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: null,
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: null,
+        [TextStyle_decorationColor]: null,
+        [TextStyle_decoration]: null,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: null,
+        [TextStyle_fontWeight]: null,
+        [TextStyle_fontSize]: 14,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: null,
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: null,
+        [TextStyle_inherit]: true
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: text.Text.prototype,
+        [Widget__location]: C[13] || CT.C13,
+        [Widget_key]: null,
+        [Text_textHeightBehavior]: null,
+        [Text_textWidthBasis]: null,
+        [Text_semanticsLabel]: null,
+        [Text_maxLines]: null,
+        [Text_textScaleFactor]: null,
+        [Text_overflow]: null,
+        [Text_softWrap]: null,
+        [Text_locale]: null,
+        [Text_textDirection]: null,
+        [Text_textAlign]: null,
+        [Text_strutStyle]: null,
+        [Text_style]: C[17] || CT.C17,
+        [Text_textSpan]: null,
+        [Text_data]: "There are no interviews."
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [Alignment_y]: 0,
+        [Alignment_x]: 0
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: basic.Center.prototype,
+        [Widget__location]: C[9] || CT.C9,
+        [Widget_key]: null,
+        [SingleChildRenderObjectWidget_child]: C[12] || CT.C12,
+        [Align_heightFactor]: null,
+        [Align_widthFactor]: null,
+        [Align_alignment]: C[18] || CT.C18
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 14,
+        [_Location_line]: 43,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.constList([C[21] || CT.C21], widget_inspector._Location);
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[20] || CT.C20,
+        [_Location_name]: null,
+        [_Location_column]: 9,
+        [_Location_line]: 43,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendar_list_widget.dart"
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 11,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.constList([C[24] || CT.C24], widget_inspector._Location);
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[23] || CT.C23,
+        [_Location_name]: null,
+        [_Location_column]: 9,
+        [_Location_line]: 44,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendar_list_widget.dart"
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "calendarData",
+        [_Location_column]: 35,
+        [_Location_line]: 48,
+        [_Location_file]: null
+      });
+    },
+    get C26() {
+      return C[26] = dart.constList([C[27] || CT.C27], widget_inspector._Location);
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[26] || CT.C26,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 48,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendar_list_widget.dart"
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 48,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.constList([C[30] || CT.C30], widget_inspector._Location);
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[29] || CT.C29,
+        [_Location_name]: null,
+        [_Location_column]: 9,
+        [_Location_line]: 47,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendar_list_widget.dart"
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 7,
+        [_Location_line]: 40,
+        [_Location_file]: null
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 7,
+        [_Location_line]: 41,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 7,
+        [_Location_line]: 42,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.constList([C[33] || CT.C33, C[34] || CT.C34, C[35] || CT.C35], widget_inspector._Location);
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[32] || CT.C32,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 39,
+        [_Location_file]: "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendar_list_widget.dart"
+      });
+    }
+  }, false);
+  var C = Array(36).fill(void 0);
+  var I = [
+    "file:///C:/Users/Elias/Downloads/smart-admin-dashboard-master/smart-admin-dashboard-master/lib/screens/dashboard/components/calendar_list_widget.dart",
+    "package:smart_admin_dashboard/screens/dashboard/components/calendar_list_widget.dart"
+  ];
+  var datas$ = dart.privateName(calendar_list_widget, "CalendartList.datas");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  calendar_list_widget.CalendartList = class CalendartList extends framework.StatelessWidget {
+    get datas() {
+      return this[datas$];
+    }
+    set datas(value) {
+      super.datas = value;
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 13, 29, "context");
+      return new container.Container.new({child: dart.test(this.datas[$isEmpty]) ? new calendar_list_widget._Empty.new({$creationLocationd_0dea112b090073317d4: C[0] || CT.C0}) : new calendar_list_widget._List.new({list: this.datas, $creationLocationd_0dea112b090073317d4: C[2] || CT.C2}), $creationLocationd_0dea112b090073317d4: C[5] || CT.C5});
+    }
+  };
+  (calendar_list_widget.CalendartList.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let datas = opts && 'datas' in opts ? opts.datas : null;
+    if (datas == null) dart.nullFailed(I[0], 10, 48, "datas");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[datas$] = datas;
+    calendar_list_widget.CalendartList.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = calendar_list_widget.CalendartList.prototype;
+  dart.addTypeTests(calendar_list_widget.CalendartList);
+  dart.addTypeCaches(calendar_list_widget.CalendartList);
+  dart.setMethodSignature(calendar_list_widget.CalendartList, () => ({
+    __proto__: dart.getMethods(calendar_list_widget.CalendartList.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(calendar_list_widget.CalendartList, I[1]);
+  dart.setFieldSignature(calendar_list_widget.CalendartList, () => ({
+    __proto__: dart.getFields(calendar_list_widget.CalendartList.__proto__),
+    datas: dart.finalFieldType(core.List$(data.CalendarData))
+  }));
+  var Widget__location = dart.privateName(framework, "Widget._location");
+  var Widget_key = dart.privateName(framework, "Widget.key");
+  var Text_textHeightBehavior = dart.privateName(text, "Text.textHeightBehavior");
+  var Text_textWidthBasis = dart.privateName(text, "Text.textWidthBasis");
+  var Text_semanticsLabel = dart.privateName(text, "Text.semanticsLabel");
+  var Text_maxLines = dart.privateName(text, "Text.maxLines");
+  var Text_textScaleFactor = dart.privateName(text, "Text.textScaleFactor");
+  var Text_overflow = dart.privateName(text, "Text.overflow");
+  var Text_softWrap = dart.privateName(text, "Text.softWrap");
+  var Text_locale = dart.privateName(text, "Text.locale");
+  var Text_textDirection = dart.privateName(text, "Text.textDirection");
+  var Text_textAlign = dart.privateName(text, "Text.textAlign");
+  var Text_strutStyle = dart.privateName(text, "Text.strutStyle");
+  var TextStyle_fontFeatures = dart.privateName(text_style, "TextStyle.fontFeatures");
+  var TextStyle_shadows = dart.privateName(text_style, "TextStyle.shadows");
+  var TextStyle_debugLabel = dart.privateName(text_style, "TextStyle.debugLabel");
+  var TextStyle_decorationThickness = dart.privateName(text_style, "TextStyle.decorationThickness");
+  var TextStyle_decorationStyle = dart.privateName(text_style, "TextStyle.decorationStyle");
+  var TextStyle_decorationColor = dart.privateName(text_style, "TextStyle.decorationColor");
+  var TextStyle_decoration = dart.privateName(text_style, "TextStyle.decoration");
+  var TextStyle_background = dart.privateName(text_style, "TextStyle.background");
+  var TextStyle_foreground = dart.privateName(text_style, "TextStyle.foreground");
+  var TextStyle_locale = dart.privateName(text_style, "TextStyle.locale");
+  var TextStyle_height = dart.privateName(text_style, "TextStyle.height");
+  var TextStyle_textBaseline = dart.privateName(text_style, "TextStyle.textBaseline");
+  var TextStyle_wordSpacing = dart.privateName(text_style, "TextStyle.wordSpacing");
+  var TextStyle_letterSpacing = dart.privateName(text_style, "TextStyle.letterSpacing");
+  var TextStyle_fontStyle = dart.privateName(text_style, "TextStyle.fontStyle");
+  var TextStyle_fontWeight = dart.privateName(text_style, "TextStyle.fontWeight");
+  var TextStyle_fontSize = dart.privateName(text_style, "TextStyle.fontSize");
+  var TextStyle__package = dart.privateName(text_style, "TextStyle._package");
+  var TextStyle__fontFamilyFallback = dart.privateName(text_style, "TextStyle._fontFamilyFallback");
+  var TextStyle_fontFamily = dart.privateName(text_style, "TextStyle.fontFamily");
+  var TextStyle_backgroundColor = dart.privateName(text_style, "TextStyle.backgroundColor");
+  var TextStyle_color = dart.privateName(text_style, "TextStyle.color");
+  var TextStyle_inherit = dart.privateName(text_style, "TextStyle.inherit");
+  var Text_style = dart.privateName(text, "Text.style");
+  var Text_textSpan = dart.privateName(text, "Text.textSpan");
+  var Text_data = dart.privateName(text, "Text.data");
+  var SingleChildRenderObjectWidget_child = dart.privateName(framework, "SingleChildRenderObjectWidget.child");
+  var Align_heightFactor = dart.privateName(basic, "Align.heightFactor");
+  var Align_widthFactor = dart.privateName(basic, "Align.widthFactor");
+  var Alignment_y = dart.privateName(alignment, "Alignment.y");
+  var Alignment_x = dart.privateName(alignment, "Alignment.x");
+  var Align_alignment = dart.privateName(basic, "Align.alignment");
+  calendar_list_widget._Empty = class _Empty extends framework.StatelessWidget {
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 22, 29, "context");
+      return C[8] || CT.C8;
+    }
+  };
+  (calendar_list_widget._Empty.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    calendar_list_widget._Empty.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = calendar_list_widget._Empty.prototype;
+  dart.addTypeTests(calendar_list_widget._Empty);
+  dart.addTypeCaches(calendar_list_widget._Empty);
+  dart.setMethodSignature(calendar_list_widget._Empty, () => ({
+    __proto__: dart.getMethods(calendar_list_widget._Empty.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(calendar_list_widget._Empty, I[1]);
+  var list$ = dart.privateName(calendar_list_widget, "_List.list");
+  calendar_list_widget._List = class _List extends framework.StatelessWidget {
+    get list() {
+      return this[list$];
+    }
+    set list(value) {
+      super.list = value;
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 38, 29, "context");
+      return new basic.Column.new({mainAxisAlignment: flex.MainAxisAlignment.start, crossAxisAlignment: flex.CrossAxisAlignment.start, children: T.JSArrayOfWidget().of([new text.Text.new("🔥 Upcoming events", {$creationLocationd_0dea112b090073317d4: C[19] || CT.C19}), new basic.SizedBox.new({height: 8.0, $creationLocationd_0dea112b090073317d4: C[22] || CT.C22}), new wrapper.Wrapper.new({child: new list_calendar_data.ListCalendarData.new({calendarData: this.list, $creationLocationd_0dea112b090073317d4: C[25] || CT.C25}), $creationLocationd_0dea112b090073317d4: C[28] || CT.C28})]), $creationLocationd_0dea112b090073317d4: C[31] || CT.C31});
+    }
+  };
+  (calendar_list_widget._List.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let list = opts && 'list' in opts ? opts.list : null;
+    if (list == null) dart.nullFailed(I[0], 35, 40, "list");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[list$] = list;
+    calendar_list_widget._List.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = calendar_list_widget._List.prototype;
+  dart.addTypeTests(calendar_list_widget._List);
+  dart.addTypeCaches(calendar_list_widget._List);
+  dart.setMethodSignature(calendar_list_widget._List, () => ({
+    __proto__: dart.getMethods(calendar_list_widget._List.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(calendar_list_widget._List, I[1]);
+  dart.setFieldSignature(calendar_list_widget._List, () => ({
+    __proto__: dart.getFields(calendar_list_widget._List.__proto__),
+    list: dart.finalFieldType(core.List$(data.CalendarData))
+  }));
+  dart.trackLibraries("packages/smart_admin_dashboard/screens/dashboard/components/calendar_list_widget.dart", {
+    "package:smart_admin_dashboard/screens/dashboard/components/calendar_list_widget.dart": calendar_list_widget
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["calendar_list_widget.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAO2B;;;;;;;UAKC;AACxB,YAAO,+CACE,AAAM,wBAAU,+FAAW,0CAAY;IAElD;;;QAP0B;QAAmB;;;;AAAU,sEAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAY5C;AACxB;IAMF;;;;;;EACF;;;;;;;;;;IAG2B;;;;;;;UAKC;AACxB,YAAO,0CACgC,kDACE,yCAC7B,wBACR,kBAAK,iFACL,gCACU,gEAEV,gCACS,2DAA+B;IAI9C;;;QAjBkB;QAAmB;;;;AAAS,8DAAW,GAAG;;EAAC","file":"../../../../../../../../../packages/smart_admin_dashboard/screens/dashboard/components/calendar_list_widget.dart.lib.js"}');
+  // Exports:
+  return {
+    screens__dashboard__components__calendar_list_widget: calendar_list_widget
+  };
+}));
+
+//# sourceMappingURL=calendar_list_widget.dart.lib.js.map

@@ -1,0 +1,941 @@
+define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/flutter/src/painting/box_border.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/painting/borders.dart', 'packages/flutter/src/painting/decoration.dart'], (function load__packages__table_calendar__src__customization__calendar_style_dart(dart_sdk, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__flutter__src__painting__box_border$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__painting__borders$46dart, packages__flutter__src__painting__decoration$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
+  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
+  const box_border = packages__flutter__src__painting__box_border$46dart.src__painting__box_border;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
+  const decoration = packages__flutter__src__painting__decoration$46dart.src__painting__decoration;
+  var calendar_style = Object.create(dart.library);
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    _: () => T
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 0.3,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 0.3
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [Alignment_y]: 1,
+        [Alignment_x]: 0
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 6,
+        [EdgeInsets_right]: 6,
+        [EdgeInsets_top]: 6,
+        [EdgeInsets_left]: 6
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: calendar_style.PositionedOffset.prototype,
+        [PositionedOffset_end]: null,
+        [PositionedOffset_start]: null,
+        [PositionedOffset_bottom]: null,
+        [PositionedOffset_top]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4290502143.0
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: box_border.BoxShape.prototype,
+        [_name]: "BoxShape.circle",
+        index: 1
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4280693304.0
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: box_decoration.BoxDecoration.prototype,
+        [BoxDecoration_shape]: C[6] || CT.C6,
+        [BoxDecoration_backgroundBlendMode]: null,
+        [BoxDecoration_gradient]: null,
+        [BoxDecoration_boxShadow]: null,
+        [BoxDecoration_borderRadius]: null,
+        [BoxDecoration_border]: null,
+        [BoxDecoration_image]: null,
+        [BoxDecoration_color]: C[7] || CT.C7
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294638330.0
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: null,
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: null,
+        [TextStyle_decorationColor]: null,
+        [TextStyle_decoration]: null,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: null,
+        [TextStyle_fontWeight]: null,
+        [TextStyle_fontSize]: 16,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: null,
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: C[9] || CT.C9,
+        [TextStyle_inherit]: true
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4288653530.0
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: box_decoration.BoxDecoration.prototype,
+        [BoxDecoration_shape]: C[6] || CT.C6,
+        [BoxDecoration_backgroundBlendMode]: null,
+        [BoxDecoration_gradient]: null,
+        [BoxDecoration_boxShadow]: null,
+        [BoxDecoration_borderRadius]: null,
+        [BoxDecoration_border]: null,
+        [BoxDecoration_image]: null,
+        [BoxDecoration_color]: C[11] || CT.C11
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4284246976.0
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: box_decoration.BoxDecoration.prototype,
+        [BoxDecoration_shape]: C[6] || CT.C6,
+        [BoxDecoration_backgroundBlendMode]: null,
+        [BoxDecoration_gradient]: null,
+        [BoxDecoration_boxShadow]: null,
+        [BoxDecoration_borderRadius]: null,
+        [BoxDecoration_border]: null,
+        [BoxDecoration_image]: null,
+        [BoxDecoration_color]: C[13] || CT.C13
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4284914175.0
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: box_decoration.BoxDecoration.prototype,
+        [BoxDecoration_shape]: C[6] || CT.C6,
+        [BoxDecoration_backgroundBlendMode]: null,
+        [BoxDecoration_gradient]: null,
+        [BoxDecoration_boxShadow]: null,
+        [BoxDecoration_borderRadius]: null,
+        [BoxDecoration_border]: null,
+        [BoxDecoration_image]: null,
+        [BoxDecoration_color]: C[15] || CT.C15
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: null,
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: null,
+        [TextStyle_decorationColor]: null,
+        [TextStyle_decoration]: null,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: null,
+        [TextStyle_fontWeight]: null,
+        [TextStyle_fontSize]: null,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: null,
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: null,
+        [TextStyle_inherit]: true
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: box_decoration.BoxDecoration.prototype,
+        [BoxDecoration_shape]: C[6] || CT.C6,
+        [BoxDecoration_backgroundBlendMode]: null,
+        [BoxDecoration_gradient]: null,
+        [BoxDecoration_boxShadow]: null,
+        [BoxDecoration_borderRadius]: null,
+        [BoxDecoration_border]: null,
+        [BoxDecoration_image]: null,
+        [BoxDecoration_color]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4289638062.0
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: null,
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: null,
+        [TextStyle_decorationColor]: null,
+        [TextStyle_decoration]: null,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: null,
+        [TextStyle_fontWeight]: null,
+        [TextStyle_fontSize]: null,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: null,
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: C[19] || CT.C19,
+        [TextStyle_inherit]: true
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4290756543.0
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: null,
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: null,
+        [TextStyle_decorationColor]: null,
+        [TextStyle_decoration]: null,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: null,
+        [TextStyle_fontWeight]: null,
+        [TextStyle_fontSize]: null,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: null,
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: C[21] || CT.C21,
+        [TextStyle_inherit]: true
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: null,
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: null,
+        [TextStyle_decorationColor]: null,
+        [TextStyle_decoration]: null,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: null,
+        [TextStyle_fontWeight]: null,
+        [TextStyle_fontSize]: null,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: null,
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: C[13] || CT.C13,
+        [TextStyle_inherit]: true
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: borders.BorderStyle.prototype,
+        [_name$]: "BorderStyle.solid",
+        index: 1
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: borders.BorderSide.prototype,
+        [BorderSide_style]: C[26] || CT.C26,
+        [BorderSide_width]: 1.4,
+        [BorderSide_color]: C[11] || CT.C11
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: box_border.Border.prototype,
+        [Border_left]: C[25] || CT.C25,
+        [Border_bottom]: C[25] || CT.C25,
+        [Border_right]: C[25] || CT.C25,
+        [Border_top]: C[25] || CT.C25
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: box_decoration.BoxDecoration.prototype,
+        [BoxDecoration_shape]: C[6] || CT.C6,
+        [BoxDecoration_backgroundBlendMode]: null,
+        [BoxDecoration_gradient]: null,
+        [BoxDecoration_boxShadow]: null,
+        [BoxDecoration_borderRadius]: null,
+        [BoxDecoration_border]: C[24] || CT.C24,
+        [BoxDecoration_image]: null,
+        [BoxDecoration_color]: null
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4284111450.0
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: null,
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: null,
+        [TextStyle_decorationColor]: null,
+        [TextStyle_decoration]: null,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: null,
+        [TextStyle_fontWeight]: null,
+        [TextStyle_fontSize]: null,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: null,
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: C[28] || CT.C28,
+        [TextStyle_inherit]: true
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: box_border.BoxShape.prototype,
+        [_name]: "BoxShape.rectangle",
+        index: 0
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: box_decoration.BoxDecoration.prototype,
+        [BoxDecoration_shape]: C[30] || CT.C30,
+        [BoxDecoration_backgroundBlendMode]: null,
+        [BoxDecoration_gradient]: null,
+        [BoxDecoration_boxShadow]: null,
+        [BoxDecoration_borderRadius]: null,
+        [BoxDecoration_border]: null,
+        [BoxDecoration_image]: null,
+        [BoxDecoration_color]: null
+      });
+    }
+  }, false);
+  var C = Array(31).fill(void 0);
+  var I = [
+    "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/table_calendar-3.0.0/lib/src/customization/calendar_style.dart",
+    "package:table_calendar/src/customization/calendar_style.dart"
+  ];
+  var markersMaxCount$ = dart.privateName(calendar_style, "CalendarStyle.markersMaxCount");
+  var canMarkersOverflow$ = dart.privateName(calendar_style, "CalendarStyle.canMarkersOverflow");
+  var markersAutoAligned$ = dart.privateName(calendar_style, "CalendarStyle.markersAutoAligned");
+  var markersAnchor$ = dart.privateName(calendar_style, "CalendarStyle.markersAnchor");
+  var markerSize$ = dart.privateName(calendar_style, "CalendarStyle.markerSize");
+  var markerSizeScale$ = dart.privateName(calendar_style, "CalendarStyle.markerSizeScale");
+  var markersOffset$ = dart.privateName(calendar_style, "CalendarStyle.markersOffset");
+  var markersAlignment$ = dart.privateName(calendar_style, "CalendarStyle.markersAlignment");
+  var markerDecoration$ = dart.privateName(calendar_style, "CalendarStyle.markerDecoration");
+  var markerMargin$ = dart.privateName(calendar_style, "CalendarStyle.markerMargin");
+  var cellMargin$ = dart.privateName(calendar_style, "CalendarStyle.cellMargin");
+  var rangeHighlightScale$ = dart.privateName(calendar_style, "CalendarStyle.rangeHighlightScale");
+  var rangeHighlightColor$ = dart.privateName(calendar_style, "CalendarStyle.rangeHighlightColor");
+  var outsideDaysVisible$ = dart.privateName(calendar_style, "CalendarStyle.outsideDaysVisible");
+  var isTodayHighlighted$ = dart.privateName(calendar_style, "CalendarStyle.isTodayHighlighted");
+  var todayTextStyle$ = dart.privateName(calendar_style, "CalendarStyle.todayTextStyle");
+  var todayDecoration$ = dart.privateName(calendar_style, "CalendarStyle.todayDecoration");
+  var selectedTextStyle$ = dart.privateName(calendar_style, "CalendarStyle.selectedTextStyle");
+  var selectedDecoration$ = dart.privateName(calendar_style, "CalendarStyle.selectedDecoration");
+  var rangeStartTextStyle$ = dart.privateName(calendar_style, "CalendarStyle.rangeStartTextStyle");
+  var rangeStartDecoration$ = dart.privateName(calendar_style, "CalendarStyle.rangeStartDecoration");
+  var rangeEndTextStyle$ = dart.privateName(calendar_style, "CalendarStyle.rangeEndTextStyle");
+  var rangeEndDecoration$ = dart.privateName(calendar_style, "CalendarStyle.rangeEndDecoration");
+  var withinRangeTextStyle$ = dart.privateName(calendar_style, "CalendarStyle.withinRangeTextStyle");
+  var withinRangeDecoration$ = dart.privateName(calendar_style, "CalendarStyle.withinRangeDecoration");
+  var outsideTextStyle$ = dart.privateName(calendar_style, "CalendarStyle.outsideTextStyle");
+  var outsideDecoration$ = dart.privateName(calendar_style, "CalendarStyle.outsideDecoration");
+  var disabledTextStyle$ = dart.privateName(calendar_style, "CalendarStyle.disabledTextStyle");
+  var disabledDecoration$ = dart.privateName(calendar_style, "CalendarStyle.disabledDecoration");
+  var holidayTextStyle$ = dart.privateName(calendar_style, "CalendarStyle.holidayTextStyle");
+  var holidayDecoration$ = dart.privateName(calendar_style, "CalendarStyle.holidayDecoration");
+  var weekendTextStyle$ = dart.privateName(calendar_style, "CalendarStyle.weekendTextStyle");
+  var weekendDecoration$ = dart.privateName(calendar_style, "CalendarStyle.weekendDecoration");
+  var defaultTextStyle$ = dart.privateName(calendar_style, "CalendarStyle.defaultTextStyle");
+  var defaultDecoration$ = dart.privateName(calendar_style, "CalendarStyle.defaultDecoration");
+  var rowDecoration$ = dart.privateName(calendar_style, "CalendarStyle.rowDecoration");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  var Alignment_y = dart.privateName(alignment, "Alignment.y");
+  var Alignment_x = dart.privateName(alignment, "Alignment.x");
+  var PositionedOffset_end = dart.privateName(calendar_style, "PositionedOffset.end");
+  var PositionedOffset_start = dart.privateName(calendar_style, "PositionedOffset.start");
+  var PositionedOffset_bottom = dart.privateName(calendar_style, "PositionedOffset.bottom");
+  var PositionedOffset_top = dart.privateName(calendar_style, "PositionedOffset.top");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var _name = dart.privateName(box_border, "_name");
+  var BoxDecoration_shape = dart.privateName(box_decoration, "BoxDecoration.shape");
+  var BoxDecoration_backgroundBlendMode = dart.privateName(box_decoration, "BoxDecoration.backgroundBlendMode");
+  var BoxDecoration_gradient = dart.privateName(box_decoration, "BoxDecoration.gradient");
+  var BoxDecoration_boxShadow = dart.privateName(box_decoration, "BoxDecoration.boxShadow");
+  var BoxDecoration_borderRadius = dart.privateName(box_decoration, "BoxDecoration.borderRadius");
+  var BoxDecoration_border = dart.privateName(box_decoration, "BoxDecoration.border");
+  var BoxDecoration_image = dart.privateName(box_decoration, "BoxDecoration.image");
+  var BoxDecoration_color = dart.privateName(box_decoration, "BoxDecoration.color");
+  var TextStyle_fontFeatures = dart.privateName(text_style, "TextStyle.fontFeatures");
+  var TextStyle_shadows = dart.privateName(text_style, "TextStyle.shadows");
+  var TextStyle_debugLabel = dart.privateName(text_style, "TextStyle.debugLabel");
+  var TextStyle_decorationThickness = dart.privateName(text_style, "TextStyle.decorationThickness");
+  var TextStyle_decorationStyle = dart.privateName(text_style, "TextStyle.decorationStyle");
+  var TextStyle_decorationColor = dart.privateName(text_style, "TextStyle.decorationColor");
+  var TextStyle_decoration = dart.privateName(text_style, "TextStyle.decoration");
+  var TextStyle_background = dart.privateName(text_style, "TextStyle.background");
+  var TextStyle_foreground = dart.privateName(text_style, "TextStyle.foreground");
+  var TextStyle_locale = dart.privateName(text_style, "TextStyle.locale");
+  var TextStyle_height = dart.privateName(text_style, "TextStyle.height");
+  var TextStyle_textBaseline = dart.privateName(text_style, "TextStyle.textBaseline");
+  var TextStyle_wordSpacing = dart.privateName(text_style, "TextStyle.wordSpacing");
+  var TextStyle_letterSpacing = dart.privateName(text_style, "TextStyle.letterSpacing");
+  var TextStyle_fontStyle = dart.privateName(text_style, "TextStyle.fontStyle");
+  var TextStyle_fontWeight = dart.privateName(text_style, "TextStyle.fontWeight");
+  var TextStyle_fontSize = dart.privateName(text_style, "TextStyle.fontSize");
+  var TextStyle__package = dart.privateName(text_style, "TextStyle._package");
+  var TextStyle__fontFamilyFallback = dart.privateName(text_style, "TextStyle._fontFamilyFallback");
+  var TextStyle_fontFamily = dart.privateName(text_style, "TextStyle.fontFamily");
+  var TextStyle_backgroundColor = dart.privateName(text_style, "TextStyle.backgroundColor");
+  var TextStyle_color = dart.privateName(text_style, "TextStyle.color");
+  var TextStyle_inherit = dart.privateName(text_style, "TextStyle.inherit");
+  var _name$ = dart.privateName(borders, "_name");
+  var BorderSide_style = dart.privateName(borders, "BorderSide.style");
+  var BorderSide_width = dart.privateName(borders, "BorderSide.width");
+  var BorderSide_color = dart.privateName(borders, "BorderSide.color");
+  var Border_left = dart.privateName(box_border, "Border.left");
+  var Border_bottom = dart.privateName(box_border, "Border.bottom");
+  var Border_right = dart.privateName(box_border, "Border.right");
+  var Border_top = dart.privateName(box_border, "Border.top");
+  calendar_style.CalendarStyle = class CalendarStyle extends core.Object {
+    get markersMaxCount() {
+      return this[markersMaxCount$];
+    }
+    set markersMaxCount(value) {
+      super.markersMaxCount = value;
+    }
+    get canMarkersOverflow() {
+      return this[canMarkersOverflow$];
+    }
+    set canMarkersOverflow(value) {
+      super.canMarkersOverflow = value;
+    }
+    get markersAutoAligned() {
+      return this[markersAutoAligned$];
+    }
+    set markersAutoAligned(value) {
+      super.markersAutoAligned = value;
+    }
+    get markersAnchor() {
+      return this[markersAnchor$];
+    }
+    set markersAnchor(value) {
+      super.markersAnchor = value;
+    }
+    get markerSize() {
+      return this[markerSize$];
+    }
+    set markerSize(value) {
+      super.markerSize = value;
+    }
+    get markerSizeScale() {
+      return this[markerSizeScale$];
+    }
+    set markerSizeScale(value) {
+      super.markerSizeScale = value;
+    }
+    get markersOffset() {
+      return this[markersOffset$];
+    }
+    set markersOffset(value) {
+      super.markersOffset = value;
+    }
+    get markersAlignment() {
+      return this[markersAlignment$];
+    }
+    set markersAlignment(value) {
+      super.markersAlignment = value;
+    }
+    get markerDecoration() {
+      return this[markerDecoration$];
+    }
+    set markerDecoration(value) {
+      super.markerDecoration = value;
+    }
+    get markerMargin() {
+      return this[markerMargin$];
+    }
+    set markerMargin(value) {
+      super.markerMargin = value;
+    }
+    get cellMargin() {
+      return this[cellMargin$];
+    }
+    set cellMargin(value) {
+      super.cellMargin = value;
+    }
+    get rangeHighlightScale() {
+      return this[rangeHighlightScale$];
+    }
+    set rangeHighlightScale(value) {
+      super.rangeHighlightScale = value;
+    }
+    get rangeHighlightColor() {
+      return this[rangeHighlightColor$];
+    }
+    set rangeHighlightColor(value) {
+      super.rangeHighlightColor = value;
+    }
+    get outsideDaysVisible() {
+      return this[outsideDaysVisible$];
+    }
+    set outsideDaysVisible(value) {
+      super.outsideDaysVisible = value;
+    }
+    get isTodayHighlighted() {
+      return this[isTodayHighlighted$];
+    }
+    set isTodayHighlighted(value) {
+      super.isTodayHighlighted = value;
+    }
+    get todayTextStyle() {
+      return this[todayTextStyle$];
+    }
+    set todayTextStyle(value) {
+      super.todayTextStyle = value;
+    }
+    get todayDecoration() {
+      return this[todayDecoration$];
+    }
+    set todayDecoration(value) {
+      super.todayDecoration = value;
+    }
+    get selectedTextStyle() {
+      return this[selectedTextStyle$];
+    }
+    set selectedTextStyle(value) {
+      super.selectedTextStyle = value;
+    }
+    get selectedDecoration() {
+      return this[selectedDecoration$];
+    }
+    set selectedDecoration(value) {
+      super.selectedDecoration = value;
+    }
+    get rangeStartTextStyle() {
+      return this[rangeStartTextStyle$];
+    }
+    set rangeStartTextStyle(value) {
+      super.rangeStartTextStyle = value;
+    }
+    get rangeStartDecoration() {
+      return this[rangeStartDecoration$];
+    }
+    set rangeStartDecoration(value) {
+      super.rangeStartDecoration = value;
+    }
+    get rangeEndTextStyle() {
+      return this[rangeEndTextStyle$];
+    }
+    set rangeEndTextStyle(value) {
+      super.rangeEndTextStyle = value;
+    }
+    get rangeEndDecoration() {
+      return this[rangeEndDecoration$];
+    }
+    set rangeEndDecoration(value) {
+      super.rangeEndDecoration = value;
+    }
+    get withinRangeTextStyle() {
+      return this[withinRangeTextStyle$];
+    }
+    set withinRangeTextStyle(value) {
+      super.withinRangeTextStyle = value;
+    }
+    get withinRangeDecoration() {
+      return this[withinRangeDecoration$];
+    }
+    set withinRangeDecoration(value) {
+      super.withinRangeDecoration = value;
+    }
+    get outsideTextStyle() {
+      return this[outsideTextStyle$];
+    }
+    set outsideTextStyle(value) {
+      super.outsideTextStyle = value;
+    }
+    get outsideDecoration() {
+      return this[outsideDecoration$];
+    }
+    set outsideDecoration(value) {
+      super.outsideDecoration = value;
+    }
+    get disabledTextStyle() {
+      return this[disabledTextStyle$];
+    }
+    set disabledTextStyle(value) {
+      super.disabledTextStyle = value;
+    }
+    get disabledDecoration() {
+      return this[disabledDecoration$];
+    }
+    set disabledDecoration(value) {
+      super.disabledDecoration = value;
+    }
+    get holidayTextStyle() {
+      return this[holidayTextStyle$];
+    }
+    set holidayTextStyle(value) {
+      super.holidayTextStyle = value;
+    }
+    get holidayDecoration() {
+      return this[holidayDecoration$];
+    }
+    set holidayDecoration(value) {
+      super.holidayDecoration = value;
+    }
+    get weekendTextStyle() {
+      return this[weekendTextStyle$];
+    }
+    set weekendTextStyle(value) {
+      super.weekendTextStyle = value;
+    }
+    get weekendDecoration() {
+      return this[weekendDecoration$];
+    }
+    set weekendDecoration(value) {
+      super.weekendDecoration = value;
+    }
+    get defaultTextStyle() {
+      return this[defaultTextStyle$];
+    }
+    set defaultTextStyle(value) {
+      super.defaultTextStyle = value;
+    }
+    get defaultDecoration() {
+      return this[defaultDecoration$];
+    }
+    set defaultDecoration(value) {
+      super.defaultDecoration = value;
+    }
+    get rowDecoration() {
+      return this[rowDecoration$];
+    }
+    set rowDecoration(value) {
+      super.rowDecoration = value;
+    }
+  };
+  (calendar_style.CalendarStyle.new = function(opts) {
+    let isTodayHighlighted = opts && 'isTodayHighlighted' in opts ? opts.isTodayHighlighted : true;
+    if (isTodayHighlighted == null) dart.nullFailed(I[0], 141, 10, "isTodayHighlighted");
+    let canMarkersOverflow = opts && 'canMarkersOverflow' in opts ? opts.canMarkersOverflow : true;
+    if (canMarkersOverflow == null) dart.nullFailed(I[0], 142, 10, "canMarkersOverflow");
+    let outsideDaysVisible = opts && 'outsideDaysVisible' in opts ? opts.outsideDaysVisible : true;
+    if (outsideDaysVisible == null) dart.nullFailed(I[0], 143, 10, "outsideDaysVisible");
+    let markersAutoAligned = opts && 'markersAutoAligned' in opts ? opts.markersAutoAligned : true;
+    if (markersAutoAligned == null) dart.nullFailed(I[0], 144, 10, "markersAutoAligned");
+    let markerSize = opts && 'markerSize' in opts ? opts.markerSize : null;
+    let markerSizeScale = opts && 'markerSizeScale' in opts ? opts.markerSizeScale : 0.2;
+    if (markerSizeScale == null) dart.nullFailed(I[0], 146, 10, "markerSizeScale");
+    let markersAnchor = opts && 'markersAnchor' in opts ? opts.markersAnchor : 0.7;
+    if (markersAnchor == null) dart.nullFailed(I[0], 147, 10, "markersAnchor");
+    let rangeHighlightScale = opts && 'rangeHighlightScale' in opts ? opts.rangeHighlightScale : 1;
+    if (rangeHighlightScale == null) dart.nullFailed(I[0], 148, 10, "rangeHighlightScale");
+    let markerMargin = opts && 'markerMargin' in opts ? opts.markerMargin : C[0] || CT.C0;
+    if (markerMargin == null) dart.nullFailed(I[0], 149, 10, "markerMargin");
+    let markersAlignment = opts && 'markersAlignment' in opts ? opts.markersAlignment : C[1] || CT.C1;
+    if (markersAlignment == null) dart.nullFailed(I[0], 150, 10, "markersAlignment");
+    let markersMaxCount = opts && 'markersMaxCount' in opts ? opts.markersMaxCount : 4;
+    if (markersMaxCount == null) dart.nullFailed(I[0], 151, 10, "markersMaxCount");
+    let cellMargin = opts && 'cellMargin' in opts ? opts.cellMargin : C[2] || CT.C2;
+    if (cellMargin == null) dart.nullFailed(I[0], 152, 10, "cellMargin");
+    let markersOffset = opts && 'markersOffset' in opts ? opts.markersOffset : C[3] || CT.C3;
+    if (markersOffset == null) dart.nullFailed(I[0], 153, 10, "markersOffset");
+    let rangeHighlightColor = opts && 'rangeHighlightColor' in opts ? opts.rangeHighlightColor : C[4] || CT.C4;
+    if (rangeHighlightColor == null) dart.nullFailed(I[0], 154, 10, "rangeHighlightColor");
+    let markerDecoration = opts && 'markerDecoration' in opts ? opts.markerDecoration : C[5] || CT.C5;
+    if (markerDecoration == null) dart.nullFailed(I[0], 155, 10, "markerDecoration");
+    let todayTextStyle = opts && 'todayTextStyle' in opts ? opts.todayTextStyle : C[8] || CT.C8;
+    if (todayTextStyle == null) dart.nullFailed(I[0], 159, 10, "todayTextStyle");
+    let todayDecoration = opts && 'todayDecoration' in opts ? opts.todayDecoration : C[10] || CT.C10;
+    if (todayDecoration == null) dart.nullFailed(I[0], 163, 10, "todayDecoration");
+    let selectedTextStyle = opts && 'selectedTextStyle' in opts ? opts.selectedTextStyle : C[8] || CT.C8;
+    if (selectedTextStyle == null) dart.nullFailed(I[0], 167, 10, "selectedTextStyle");
+    let selectedDecoration = opts && 'selectedDecoration' in opts ? opts.selectedDecoration : C[12] || CT.C12;
+    if (selectedDecoration == null) dart.nullFailed(I[0], 171, 10, "selectedDecoration");
+    let rangeStartTextStyle = opts && 'rangeStartTextStyle' in opts ? opts.rangeStartTextStyle : C[8] || CT.C8;
+    if (rangeStartTextStyle == null) dart.nullFailed(I[0], 175, 10, "rangeStartTextStyle");
+    let rangeStartDecoration = opts && 'rangeStartDecoration' in opts ? opts.rangeStartDecoration : C[14] || CT.C14;
+    if (rangeStartDecoration == null) dart.nullFailed(I[0], 179, 10, "rangeStartDecoration");
+    let rangeEndTextStyle = opts && 'rangeEndTextStyle' in opts ? opts.rangeEndTextStyle : C[8] || CT.C8;
+    if (rangeEndTextStyle == null) dart.nullFailed(I[0], 183, 10, "rangeEndTextStyle");
+    let rangeEndDecoration = opts && 'rangeEndDecoration' in opts ? opts.rangeEndDecoration : C[14] || CT.C14;
+    if (rangeEndDecoration == null) dart.nullFailed(I[0], 187, 10, "rangeEndDecoration");
+    let withinRangeTextStyle = opts && 'withinRangeTextStyle' in opts ? opts.withinRangeTextStyle : C[16] || CT.C16;
+    if (withinRangeTextStyle == null) dart.nullFailed(I[0], 191, 10, "withinRangeTextStyle");
+    let withinRangeDecoration = opts && 'withinRangeDecoration' in opts ? opts.withinRangeDecoration : C[17] || CT.C17;
+    if (withinRangeDecoration == null) dart.nullFailed(I[0], 192, 10, "withinRangeDecoration");
+    let outsideTextStyle = opts && 'outsideTextStyle' in opts ? opts.outsideTextStyle : C[18] || CT.C18;
+    if (outsideTextStyle == null) dart.nullFailed(I[0], 193, 10, "outsideTextStyle");
+    let outsideDecoration = opts && 'outsideDecoration' in opts ? opts.outsideDecoration : C[17] || CT.C17;
+    if (outsideDecoration == null) dart.nullFailed(I[0], 194, 10, "outsideDecoration");
+    let disabledTextStyle = opts && 'disabledTextStyle' in opts ? opts.disabledTextStyle : C[20] || CT.C20;
+    if (disabledTextStyle == null) dart.nullFailed(I[0], 195, 10, "disabledTextStyle");
+    let disabledDecoration = opts && 'disabledDecoration' in opts ? opts.disabledDecoration : C[17] || CT.C17;
+    if (disabledDecoration == null) dart.nullFailed(I[0], 196, 10, "disabledDecoration");
+    let holidayTextStyle = opts && 'holidayTextStyle' in opts ? opts.holidayTextStyle : C[22] || CT.C22;
+    if (holidayTextStyle == null) dart.nullFailed(I[0], 197, 10, "holidayTextStyle");
+    let holidayDecoration = opts && 'holidayDecoration' in opts ? opts.holidayDecoration : C[23] || CT.C23;
+    if (holidayDecoration == null) dart.nullFailed(I[0], 198, 10, "holidayDecoration");
+    let weekendTextStyle = opts && 'weekendTextStyle' in opts ? opts.weekendTextStyle : C[27] || CT.C27;
+    if (weekendTextStyle == null) dart.nullFailed(I[0], 204, 10, "weekendTextStyle");
+    let weekendDecoration = opts && 'weekendDecoration' in opts ? opts.weekendDecoration : C[17] || CT.C17;
+    if (weekendDecoration == null) dart.nullFailed(I[0], 205, 10, "weekendDecoration");
+    let defaultTextStyle = opts && 'defaultTextStyle' in opts ? opts.defaultTextStyle : C[16] || CT.C16;
+    if (defaultTextStyle == null) dart.nullFailed(I[0], 206, 10, "defaultTextStyle");
+    let defaultDecoration = opts && 'defaultDecoration' in opts ? opts.defaultDecoration : C[17] || CT.C17;
+    if (defaultDecoration == null) dart.nullFailed(I[0], 207, 10, "defaultDecoration");
+    let rowDecoration = opts && 'rowDecoration' in opts ? opts.rowDecoration : C[29] || CT.C29;
+    if (rowDecoration == null) dart.nullFailed(I[0], 208, 10, "rowDecoration");
+    this[isTodayHighlighted$] = isTodayHighlighted;
+    this[canMarkersOverflow$] = canMarkersOverflow;
+    this[outsideDaysVisible$] = outsideDaysVisible;
+    this[markersAutoAligned$] = markersAutoAligned;
+    this[markerSize$] = markerSize;
+    this[markerSizeScale$] = markerSizeScale;
+    this[markersAnchor$] = markersAnchor;
+    this[rangeHighlightScale$] = rangeHighlightScale;
+    this[markerMargin$] = markerMargin;
+    this[markersAlignment$] = markersAlignment;
+    this[markersMaxCount$] = markersMaxCount;
+    this[cellMargin$] = cellMargin;
+    this[markersOffset$] = markersOffset;
+    this[rangeHighlightColor$] = rangeHighlightColor;
+    this[markerDecoration$] = markerDecoration;
+    this[todayTextStyle$] = todayTextStyle;
+    this[todayDecoration$] = todayDecoration;
+    this[selectedTextStyle$] = selectedTextStyle;
+    this[selectedDecoration$] = selectedDecoration;
+    this[rangeStartTextStyle$] = rangeStartTextStyle;
+    this[rangeStartDecoration$] = rangeStartDecoration;
+    this[rangeEndTextStyle$] = rangeEndTextStyle;
+    this[rangeEndDecoration$] = rangeEndDecoration;
+    this[withinRangeTextStyle$] = withinRangeTextStyle;
+    this[withinRangeDecoration$] = withinRangeDecoration;
+    this[outsideTextStyle$] = outsideTextStyle;
+    this[outsideDecoration$] = outsideDecoration;
+    this[disabledTextStyle$] = disabledTextStyle;
+    this[disabledDecoration$] = disabledDecoration;
+    this[holidayTextStyle$] = holidayTextStyle;
+    this[holidayDecoration$] = holidayDecoration;
+    this[weekendTextStyle$] = weekendTextStyle;
+    this[weekendDecoration$] = weekendDecoration;
+    this[defaultTextStyle$] = defaultTextStyle;
+    this[defaultDecoration$] = defaultDecoration;
+    this[rowDecoration$] = rowDecoration;
+    ;
+  }).prototype = calendar_style.CalendarStyle.prototype;
+  dart.addTypeTests(calendar_style.CalendarStyle);
+  dart.addTypeCaches(calendar_style.CalendarStyle);
+  dart.setLibraryUri(calendar_style.CalendarStyle, I[1]);
+  dart.setFieldSignature(calendar_style.CalendarStyle, () => ({
+    __proto__: dart.getFields(calendar_style.CalendarStyle.__proto__),
+    markersMaxCount: dart.finalFieldType(core.int),
+    canMarkersOverflow: dart.finalFieldType(core.bool),
+    markersAutoAligned: dart.finalFieldType(core.bool),
+    markersAnchor: dart.finalFieldType(core.double),
+    markerSize: dart.finalFieldType(dart.nullable(core.double)),
+    markerSizeScale: dart.finalFieldType(core.double),
+    markersOffset: dart.finalFieldType(calendar_style.PositionedOffset),
+    markersAlignment: dart.finalFieldType(alignment.AlignmentGeometry),
+    markerDecoration: dart.finalFieldType(decoration.Decoration),
+    markerMargin: dart.finalFieldType(edge_insets.EdgeInsets),
+    cellMargin: dart.finalFieldType(edge_insets.EdgeInsets),
+    rangeHighlightScale: dart.finalFieldType(core.double),
+    rangeHighlightColor: dart.finalFieldType(ui.Color),
+    outsideDaysVisible: dart.finalFieldType(core.bool),
+    isTodayHighlighted: dart.finalFieldType(core.bool),
+    todayTextStyle: dart.finalFieldType(text_style.TextStyle),
+    todayDecoration: dart.finalFieldType(decoration.Decoration),
+    selectedTextStyle: dart.finalFieldType(text_style.TextStyle),
+    selectedDecoration: dart.finalFieldType(decoration.Decoration),
+    rangeStartTextStyle: dart.finalFieldType(text_style.TextStyle),
+    rangeStartDecoration: dart.finalFieldType(decoration.Decoration),
+    rangeEndTextStyle: dart.finalFieldType(text_style.TextStyle),
+    rangeEndDecoration: dart.finalFieldType(decoration.Decoration),
+    withinRangeTextStyle: dart.finalFieldType(text_style.TextStyle),
+    withinRangeDecoration: dart.finalFieldType(decoration.Decoration),
+    outsideTextStyle: dart.finalFieldType(text_style.TextStyle),
+    outsideDecoration: dart.finalFieldType(decoration.Decoration),
+    disabledTextStyle: dart.finalFieldType(text_style.TextStyle),
+    disabledDecoration: dart.finalFieldType(decoration.Decoration),
+    holidayTextStyle: dart.finalFieldType(text_style.TextStyle),
+    holidayDecoration: dart.finalFieldType(decoration.Decoration),
+    weekendTextStyle: dart.finalFieldType(text_style.TextStyle),
+    weekendDecoration: dart.finalFieldType(decoration.Decoration),
+    defaultTextStyle: dart.finalFieldType(text_style.TextStyle),
+    defaultDecoration: dart.finalFieldType(decoration.Decoration),
+    rowDecoration: dart.finalFieldType(decoration.Decoration)
+  }));
+  const top$ = PositionedOffset_top;
+  const bottom$ = PositionedOffset_bottom;
+  const start$ = PositionedOffset_start;
+  const end$ = PositionedOffset_end;
+  calendar_style.PositionedOffset = class PositionedOffset extends core.Object {
+    get top() {
+      return this[top$];
+    }
+    set top(value) {
+      super.top = value;
+    }
+    get bottom() {
+      return this[bottom$];
+    }
+    set bottom(value) {
+      super.bottom = value;
+    }
+    get start() {
+      return this[start$];
+    }
+    set start(value) {
+      super.start = value;
+    }
+    get end() {
+      return this[end$];
+    }
+    set end(value) {
+      super.end = value;
+    }
+  };
+  (calendar_style.PositionedOffset.new = function(opts) {
+    let top = opts && 'top' in opts ? opts.top : null;
+    let bottom = opts && 'bottom' in opts ? opts.bottom : null;
+    let start = opts && 'start' in opts ? opts.start : null;
+    let end = opts && 'end' in opts ? opts.end : null;
+    this[top$] = top;
+    this[bottom$] = bottom;
+    this[start$] = start;
+    this[end$] = end;
+    ;
+  }).prototype = calendar_style.PositionedOffset.prototype;
+  dart.addTypeTests(calendar_style.PositionedOffset);
+  dart.addTypeCaches(calendar_style.PositionedOffset);
+  dart.setLibraryUri(calendar_style.PositionedOffset, I[1]);
+  dart.setFieldSignature(calendar_style.PositionedOffset, () => ({
+    __proto__: dart.getFields(calendar_style.PositionedOffset.__proto__),
+    top: dart.finalFieldType(dart.nullable(core.double)),
+    bottom: dart.finalFieldType(dart.nullable(core.double)),
+    start: dart.finalFieldType(dart.nullable(core.double)),
+    end: dart.finalFieldType(dart.nullable(core.double))
+  }));
+  dart.trackLibraries("packages/table_calendar/src/customization/calendar_style.dart", {
+    "package:table_calendar/src/customization/calendar_style.dart": calendar_style
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["calendar_style.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAQY;;;;;;IAKC;;;;;;IAIA;;;;;;IAME;;;;;;IAKC;;;;;;IAKD;;;;;;IAGU;;;;;;IAIC;;;;;;IAGP;;;;;;IAGA;;;;;;IAGA;;;;;;IAKJ;;;;;;IAGD;;;;;;IAKD;;;;;;IAGA;;;;;;IAGK;;;;;;IAGC;;;;;;IAGD;;;;;;IAGC;;;;;;IAGD;;;;;;IAGC;;;;;;IAGD;;;;;;IAGC;;;;;;IAGD;;;;;;IAGC;;;;;;IAID;;;;;;IAIC;;;;;;IAMD;;;;;;IAMC;;;;;;IAGD;;;;;;IAGC;;;;;;IAGD;;;;;;IAGC;;;;;;IAGD;;;;;;IAGC;;;;;;IAGA;;;;;;;;QAIV;;QACA;;QACA;;QACA;;QACA;QACA;;QACA;;QACA;;QACA;;QACA;;QACA;;QACA;;QACA;;QACA;;QACA;;QAIA;;QAIA;;QAIA;;QAIA;;QAIA;;QAIA;;QAIA;;QAIA;;QAIA;;QACA;;QACA;;QACA;;QACA;;QACA;;QACA;;QACA;;QAMA;;QACA;;QACA;;QACA;;QACA;;IAnEA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IAIA;IAIA;IAIA;IAIA;IAIA;IAIA;IAIA;IAIA;IAIA;IACA;IACA;IACA;IACA;IACA;IACA;IACA;IAMA;IACA;IACA;IACA;IACA;;EACL;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAMY;;;;;;IAGA;;;;;;IAGA;;;;;;IAGA;;;;;;;;QAGe;QAAU;QAAa;QAAY;IAAnC;IAAU;IAAa;IAAY;;EAAK","file":"../../../../../../../../packages/table_calendar/src/customization/calendar_style.dart.lib.js"}');
+  // Exports:
+  return {
+    src__customization__calendar_style: calendar_style
+  };
+}));
+
+//# sourceMappingURL=calendar_style.dart.lib.js.map

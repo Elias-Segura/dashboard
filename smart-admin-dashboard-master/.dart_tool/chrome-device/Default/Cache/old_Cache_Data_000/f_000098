@@ -1,0 +1,2269 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/foundation/key.dart', 'packages/flutter/src/material/material_state.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/material/checkbox.dart', 'packages/flutter/src/rendering/table.dart', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/widgets/implicit_animations.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/widgets/icon_data.dart', 'packages/flutter/src/material/dropdown.dart', 'packages/flutter/src/painting/box_border.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/flutter/src/painting/decoration.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/vector_math/vector_math_64.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/painting/matrix_utils.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/animation/curves.dart'], (function load__packages__flutter__src__material__data_table_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__foundation__key$46dart, packages__flutter__src__material__material_state$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__material__checkbox$46dart, packages__flutter__src__rendering__table$46dart, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__widgets__implicit_animations$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__widgets__icon_data$46dart, packages__flutter__src__material__dropdown$46dart, packages__flutter__src__painting__box_border$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__flutter__src__painting__decoration$46dart, packages__flutter__src__painting__strut_style$46dart, packages__vector_math__vector_math_64$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__painting__matrix_utils$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__animation__curves$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const _interceptors = dart_sdk._interceptors;
+  const collection = dart_sdk.collection;
+  const _internal = dart_sdk._internal;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const table = packages__flutter__src__widgets__widget_span$46dart.src__widgets__table;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const debug = packages__flutter__src__widgets__widget_span$46dart.src__widgets__debug;
+  const ticker_provider = packages__flutter__src__widgets__widget_span$46dart.src__widgets__ticker_provider;
+  const key = packages__flutter__src__foundation__key$46dart.src__foundation__key;
+  const material_state = packages__flutter__src__material__material_state$46dart.src__material__material_state;
+  const theme$ = packages__flutter__src__material__icon_button$46dart.src__material__theme;
+  const tooltip$ = packages__flutter__src__material__icon_button$46dart.src__material__tooltip;
+  const ink_well = packages__flutter__src__material__icon_button$46dart.src__material__ink_well;
+  const debug$ = packages__flutter__src__material__icon_button$46dart.src__material__debug;
+  const divider = packages__flutter__src__material__icon_button$46dart.src__material__divider;
+  const material = packages__flutter__src__material__icon_button$46dart.src__material__material;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const checkbox = packages__flutter__src__material__checkbox$46dart.src__material__checkbox;
+  const table$ = packages__flutter__src__rendering__table$46dart.src__rendering__table;
+  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
+  const implicit_animations = packages__flutter__src__widgets__implicit_animations$46dart.src__widgets__implicit_animations;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icon_data = packages__flutter__src__widgets__icon_data$46dart.src__widgets__icon_data;
+  const dropdown = packages__flutter__src__material__dropdown$46dart.src__material__dropdown;
+  const box_border = packages__flutter__src__painting__box_border$46dart.src__painting__box_border;
+  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
+  const decoration = packages__flutter__src__painting__decoration$46dart.src__painting__decoration;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const vector_math_64 = packages__vector_math__vector_math_64$46dart.vector_math_64;
+  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
+  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
+  const matrix_utils = packages__flutter__src__painting__matrix_utils$46dart.src__painting__matrix_utils;
+  const animations = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animations;
+  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
+  const tween = packages__flutter__src__animation__listener_helpers$46dart.src__animation__tween;
+  const animation_controller = packages__flutter__src__animation__animation_controller$46dart.src__animation__animation_controller;
+  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
+  var data_table = Object.create(dart.library);
+  var $any = dartx.any;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $length = dartx.length;
+  var $_get = dartx._get;
+  var $addAll = dartx.addAll;
+  var $where = dartx.where;
+  var $_set = dartx._set;
+  var $asMap = dartx.asMap;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    intN: () => (T.intN = dart.constFn(dart.nullable(core.int)))(),
+    ValueKeyOfintN: () => (T.ValueKeyOfintN = dart.constFn(key.ValueKey$(T.intN())))(),
+    DataCellTobool: () => (T.DataCellTobool = dart.constFn(dart.fnType(core.bool, [data_table.DataCell])))(),
+    DataRowTobool: () => (T.DataRowTobool = dart.constFn(dart.fnType(core.bool, [data_table.DataRow])))(),
+    DataColumnTobool: () => (T.DataColumnTobool = dart.constFn(dart.fnType(core.bool, [data_table.DataColumn])))(),
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
+    ColorN: () => (T.ColorN = dart.constFn(dart.nullable(ui.Color)))(),
+    SetOfMaterialState: () => (T.SetOfMaterialState = dart.constFn(core.Set$(material_state.MaterialState)))(),
+    SetOfMaterialStateToColorN: () => (T.SetOfMaterialStateToColorN = dart.constFn(dart.fnType(T.ColorN(), [T.SetOfMaterialState()])))(),
+    JSArrayOfDataRow: () => (T.JSArrayOfDataRow = dart.constFn(_interceptors.JSArray$(data_table.DataRow)))(),
+    ListOfTableColumnWidth: () => (T.ListOfTableColumnWidth = dart.constFn(core.List$(table$.TableColumnWidth)))(),
+    ListOfTableRow: () => (T.ListOfTableRow = dart.constFn(core.List$(table.TableRow)))(),
+    LinkedHashSetOfMaterialState: () => (T.LinkedHashSetOfMaterialState = dart.constFn(collection.LinkedHashSet$(material_state.MaterialState)))(),
+    ListOfWidget: () => (T.ListOfWidget = dart.constFn(core.List$(framework.Widget)))(),
+    intToTableRow: () => (T.intToTableRow = dart.constFn(dart.fnType(table.TableRow, [core.int])))(),
+    boolN: () => (T.boolN = dart.constFn(dart.nullable(core.bool)))(),
+    boolNTovoid: () => (T.boolNTovoid = dart.constFn(dart.fnType(dart.void, [T.boolN()])))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    VoidToRect: () => (T.VoidToRect = dart.constFn(dart.fnType(ui.Rect, [])))(),
+    TweenOfdouble: () => (T.TweenOfdouble = dart.constFn(tween.Tween$(core.double)))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 51,
+        [_Location_line]: 213,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 63,
+        [_Location_line]: 213,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.constList([C[4] || CT.C4, C[5] || CT.C5], widget_inspector._Location);
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[3] || CT.C3,
+        [_Location_name]: null,
+        [_Location_column]: 42,
+        [_Location_line]: 213,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: basic.SizedBox.prototype,
+        [Widget__location]: C[2] || CT.C2,
+        [Widget_key]: null,
+        [SingleChildRenderObjectWidget_child]: null,
+        [SizedBox_height]: 0,
+        [SizedBox_width]: 0
+      });
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: data_table.DataCell.prototype,
+        [onTap$]: null,
+        [showEditIcon$]: false,
+        [placeholder$]: false,
+        [child$]: C[1] || CT.C1
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "activeColor",
+        [_Location_column]: 13,
+        [_Location_line]: 722,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "checkColor",
+        [_Location_column]: 13,
+        [_Location_line]: 723,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "value",
+        [_Location_column]: 13,
+        [_Location_line]: 724,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onChanged",
+        [_Location_column]: 13,
+        [_Location_line]: 725,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "tristate",
+        [_Location_column]: 13,
+        [_Location_line]: 726,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[8] || CT.C8, C[9] || CT.C9, C[10] || CT.C10, C[11] || CT.C11, C[12] || CT.C12], widget_inspector._Location);
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 720,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 720,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.constList([C[15] || CT.C15], widget_inspector._Location);
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[14] || CT.C14,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 719,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 9,
+        [_Location_line]: 715,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 719,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.constList([C[18] || CT.C18, C[19] || CT.C19], widget_inspector._Location);
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[17] || CT.C17,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 714,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "container",
+        [_Location_column]: 7,
+        [_Location_line]: 713,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 714,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.constList([C[22] || CT.C22, C[23] || CT.C23], widget_inspector._Location);
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[21] || CT.C21,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 712,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 9,
+        [_Location_line]: 733,
+        [_Location_file]: null
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 734,
+        [_Location_file]: null
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "overlayColor",
+        [_Location_column]: 9,
+        [_Location_line]: 735,
+        [_Location_file]: null
+      });
+    },
+    get C25() {
+      return C[25] = dart.constList([C[26] || CT.C26, C[27] || CT.C27, C[28] || CT.C28], widget_inspector._Location);
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[25] || CT.C25,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 732,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "verticalAlignment",
+        [_Location_column]: 7,
+        [_Location_line]: 739,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 740,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.constList([C[31] || CT.C31, C[32] || CT.C32], widget_inspector._Location);
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[30] || CT.C30,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 738,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "visible",
+        [_Location_column]: 15,
+        [_Location_line]: 763,
+        [_Location_file]: null
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "up",
+        [_Location_column]: 15,
+        [_Location_line]: 764,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "duration",
+        [_Location_column]: 15,
+        [_Location_line]: 765,
+        [_Location_file]: null
+      });
+    },
+    get C34() {
+      return C[34] = dart.constList([C[35] || CT.C35, C[36] || CT.C36, C[37] || CT.C37], widget_inspector._Location);
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[34] || CT.C34,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 762,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 28,
+        [_Location_line]: 767,
+        [_Location_file]: null
+      });
+    },
+    get C40() {
+      return C[40] = dart.constList([C[41] || CT.C41], widget_inspector._Location);
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[40] || CT.C40,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 767,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: basic.SizedBox.prototype,
+        [Widget__location]: C[39] || CT.C39,
+        [Widget_key]: null,
+        [SingleChildRenderObjectWidget_child]: null,
+        [SizedBox_height]: null,
+        [SizedBox_width]: 2
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textDirection",
+        [_Location_column]: 7,
+        [_Location_line]: 757,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 7,
+        [_Location_line]: 758,
+        [_Location_file]: null
+      });
+    },
+    get C43() {
+      return C[43] = dart.constList([C[44] || CT.C44, C[45] || CT.C45], widget_inspector._Location);
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[43] || CT.C43,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 756,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 9,
+        [_Location_line]: 783,
+        [_Location_file]: null
+      });
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "softWrap",
+        [_Location_column]: 9,
+        [_Location_line]: 784,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "duration",
+        [_Location_column]: 9,
+        [_Location_line]: 785,
+        [_Location_file]: null
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 786,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.constList([C[48] || CT.C48, C[49] || CT.C49, C[50] || CT.C50, C[51] || CT.C51], widget_inspector._Location);
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[47] || CT.C47,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 782,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 7,
+        [_Location_line]: 779,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 7,
+        [_Location_line]: 780,
+        [_Location_file]: null
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "alignment",
+        [_Location_column]: 7,
+        [_Location_line]: 781,
+        [_Location_file]: null
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 782,
+        [_Location_file]: null
+      });
+    },
+    get C53() {
+      return C[53] = dart.constList([C[54] || CT.C54, C[55] || CT.C55, C[56] || CT.C56, C[57] || CT.C57], widget_inspector._Location);
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[53] || CT.C53,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 778,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "message",
+        [_Location_column]: 9,
+        [_Location_line]: 791,
+        [_Location_file]: null
+      });
+    },
+    get C61() {
+      return C[61] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 792,
+        [_Location_file]: null
+      });
+    },
+    get C59() {
+      return C[59] = dart.constList([C[60] || CT.C60, C[61] || CT.C61], widget_inspector._Location);
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[59] || CT.C59,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 790,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 7,
+        [_Location_line]: 799,
+        [_Location_file]: null
+      });
+    },
+    get C65() {
+      return C[65] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "overlayColor",
+        [_Location_column]: 7,
+        [_Location_line]: 800,
+        [_Location_file]: null
+      });
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 801,
+        [_Location_file]: null
+      });
+    },
+    get C63() {
+      return C[63] = dart.constList([C[64] || CT.C64, C[65] || CT.C65, C[66] || CT.C66], widget_inspector._Location);
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[63] || CT.C63,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 798,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 38,
+        [_Location_line]: 819,
+        [_Location_file]: null
+      });
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 44,
+        [_Location_line]: 819,
+        [_Location_file]: null
+      });
+    },
+    get C69() {
+      return C[69] = dart.constList([C[70] || CT.C70, C[71] || CT.C71], widget_inspector._Location);
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[69] || CT.C69,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 819,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 59109
+      });
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: icon.Icon.prototype,
+        [Widget__location]: C[68] || CT.C68,
+        [Widget_key]: null,
+        [Icon_textDirection]: null,
+        [Icon_semanticLabel]: null,
+        [Icon_color]: null,
+        [Icon_size]: 18,
+        [Icon_icon]: C[72] || CT.C72
+      });
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 24,
+        [_Location_line]: 820,
+        [_Location_file]: null
+      });
+    },
+    get C74() {
+      return C[74] = dart.constList([C[75] || CT.C75], widget_inspector._Location);
+    },
+    get C73() {
+      return C[73] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[74] || CT.C74,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 820,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C78() {
+      return C[78] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textDirection",
+        [_Location_column]: 9,
+        [_Location_line]: 822,
+        [_Location_file]: null
+      });
+    },
+    get C79() {
+      return C[79] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 9,
+        [_Location_line]: 823,
+        [_Location_file]: null
+      });
+    },
+    get C77() {
+      return C[77] = dart.constList([C[78] || CT.C78, C[79] || CT.C79], widget_inspector._Location);
+    },
+    get C76() {
+      return C[76] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[77] || CT.C77,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 821,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C82() {
+      return C[82] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 44,
+        [_Location_line]: 841,
+        [_Location_file]: null
+      });
+    },
+    get C81() {
+      return C[81] = dart.constList([C[82] || CT.C82], widget_inspector._Location);
+    },
+    get C80() {
+      return C[80] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[81] || CT.C81,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 841,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C85() {
+      return C[85] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 9,
+        [_Location_line]: 838,
+        [_Location_file]: null
+      });
+    },
+    get C86() {
+      return C[86] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 841,
+        [_Location_file]: null
+      });
+    },
+    get C84() {
+      return C[84] = dart.constList([C[85] || CT.C85, C[86] || CT.C86], widget_inspector._Location);
+    },
+    get C83() {
+      return C[83] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[84] || CT.C84,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 837,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C89() {
+      return C[89] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 7,
+        [_Location_line]: 834,
+        [_Location_file]: null
+      });
+    },
+    get C90() {
+      return C[90] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 7,
+        [_Location_line]: 835,
+        [_Location_file]: null
+      });
+    },
+    get C91() {
+      return C[91] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "alignment",
+        [_Location_column]: 7,
+        [_Location_line]: 836,
+        [_Location_file]: null
+      });
+    },
+    get C92() {
+      return C[92] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 837,
+        [_Location_file]: null
+      });
+    },
+    get C88() {
+      return C[88] = dart.constList([C[89] || CT.C89, C[90] || CT.C90, C[91] || CT.C91, C[92] || CT.C92], widget_inspector._Location);
+    },
+    get C87() {
+      return C[87] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[88] || CT.C88,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 833,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C95() {
+      return C[95] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 9,
+        [_Location_line]: 846,
+        [_Location_file]: null
+      });
+    },
+    get C96() {
+      return C[96] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 847,
+        [_Location_file]: null
+      });
+    },
+    get C97() {
+      return C[97] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "overlayColor",
+        [_Location_column]: 9,
+        [_Location_line]: 848,
+        [_Location_file]: null
+      });
+    },
+    get C94() {
+      return C[94] = dart.constList([C[95] || CT.C95, C[96] || CT.C96, C[97] || CT.C97], widget_inspector._Location);
+    },
+    get C93() {
+      return C[93] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[94] || CT.C94,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 845,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C100() {
+      return C[100] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 9,
+        [_Location_line]: 852,
+        [_Location_file]: null
+      });
+    },
+    get C101() {
+      return C[101] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 853,
+        [_Location_file]: null
+      });
+    },
+    get C102() {
+      return C[102] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "overlayColor",
+        [_Location_column]: 9,
+        [_Location_line]: 854,
+        [_Location_file]: null
+      });
+    },
+    get C99() {
+      return C[99] = dart.constList([C[100] || CT.C100, C[101] || CT.C101, C[102] || CT.C102], widget_inspector._Location);
+    },
+    get C98() {
+      return C[98] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[99] || CT.C99,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 851,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C103() {
+      return C[103] = dart.const({
+        __proto__: data_table._NullTableColumnWidth.prototype
+      });
+    },
+    get C106() {
+      return C[106] = dart.constList([], widget_inspector._Location);
+    },
+    get C105() {
+      return C[105] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[106] || CT.C106,
+        [_Location_name]: null,
+        [_Location_column]: 68,
+        [_Location_line]: 921,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C104() {
+      return C[104] = dart.const({
+        __proto__: data_table._NullWidget.prototype,
+        [Widget__location]: C[105] || CT.C105,
+        [Widget_key]: null
+      });
+    },
+    get C107() {
+      return C[107] = dart.const({
+        __proto__: table$.IntrinsicColumnWidth.prototype,
+        [IntrinsicColumnWidth__flex]: 1
+      });
+    },
+    get C108() {
+      return C[108] = dart.const({
+        __proto__: table$.IntrinsicColumnWidth.prototype,
+        [IntrinsicColumnWidth__flex]: null
+      });
+    },
+    get C111() {
+      return C[111] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "columnWidths",
+        [_Location_column]: 11,
+        [_Location_line]: 1017,
+        [_Location_file]: null
+      });
+    },
+    get C112() {
+      return C[112] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 11,
+        [_Location_line]: 1018,
+        [_Location_file]: null
+      });
+    },
+    get C110() {
+      return C[110] = dart.constList([C[111] || CT.C111, C[112] || CT.C112], widget_inspector._Location);
+    },
+    get C109() {
+      return C[109] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[110] || CT.C110,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 1016,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C115() {
+      return C[115] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "type",
+        [_Location_column]: 9,
+        [_Location_line]: 1015,
+        [_Location_file]: null
+      });
+    },
+    get C116() {
+      return C[116] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 1016,
+        [_Location_file]: null
+      });
+    },
+    get C114() {
+      return C[114] = dart.constList([C[115] || CT.C115, C[116] || CT.C116], widget_inspector._Location);
+    },
+    get C113() {
+      return C[113] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[114] || CT.C114,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 1014,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C119() {
+      return C[119] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 7,
+        [_Location_line]: 1013,
+        [_Location_file]: null
+      });
+    },
+    get C120() {
+      return C[120] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 1014,
+        [_Location_file]: null
+      });
+    },
+    get C118() {
+      return C[118] = dart.constList([C[119] || CT.C119, C[120] || CT.C120], widget_inspector._Location);
+    },
+    get C117() {
+      return C[117] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[118] || CT.C118,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 1012,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C121() {
+      return C[121] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 150000
+      });
+    },
+    get C125() {
+      return C[125] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 17,
+        [_Location_line]: 1215,
+        [_Location_file]: null
+      });
+    },
+    get C126() {
+      return C[126] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 11,
+        [_Location_line]: 1216,
+        [_Location_file]: null
+      });
+    },
+    get C124() {
+      return C[124] = dart.constList([C[125] || CT.C125, C[126] || CT.C126], widget_inspector._Location);
+    },
+    get C123() {
+      return C[123] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[124] || CT.C124,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 1214,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C127() {
+      return C[127] = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: false,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 58804
+      });
+    },
+    get C122() {
+      return C[122] = dart.const({
+        __proto__: icon.Icon.prototype,
+        [Widget__location]: C[123] || CT.C123,
+        [Widget_key]: null,
+        [Icon_textDirection]: null,
+        [Icon_semanticLabel]: null,
+        [Icon_color]: null,
+        [Icon_size]: 16,
+        [Icon_icon]: C[127] || CT.C127
+      });
+    },
+    get C130() {
+      return C[130] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "transform",
+        [_Location_column]: 9,
+        [_Location_line]: 1211,
+        [_Location_file]: null
+      });
+    },
+    get C131() {
+      return C[131] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "alignment",
+        [_Location_column]: 9,
+        [_Location_line]: 1213,
+        [_Location_file]: null
+      });
+    },
+    get C132() {
+      return C[132] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 1214,
+        [_Location_file]: null
+      });
+    },
+    get C129() {
+      return C[129] = dart.constList([C[130] || CT.C130, C[131] || CT.C131, C[132] || CT.C132], widget_inspector._Location);
+    },
+    get C128() {
+      return C[128] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[129] || CT.C129,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 1210,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    },
+    get C135() {
+      return C[135] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "opacity",
+        [_Location_column]: 7,
+        [_Location_line]: 1209,
+        [_Location_file]: null
+      });
+    },
+    get C136() {
+      return C[136] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 1210,
+        [_Location_file]: null
+      });
+    },
+    get C134() {
+      return C[134] = dart.constList([C[135] || CT.C135, C[136] || CT.C136], widget_inspector._Location);
+    },
+    get C133() {
+      return C[133] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[134] || CT.C134,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 1208,
+        [_Location_file]: "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart"
+      });
+    }
+  }, false);
+  var C = Array(137).fill(void 0);
+  var I = [
+    "file:///C:/flutter/packages/flutter/lib/src/material/data_table.dart",
+    "package:flutter/src/material/data_table.dart"
+  ];
+  var label$ = dart.privateName(data_table, "DataColumn.label");
+  var tooltip$0 = dart.privateName(data_table, "DataColumn.tooltip");
+  var numeric$ = dart.privateName(data_table, "DataColumn.numeric");
+  var onSort$ = dart.privateName(data_table, "DataColumn.onSort");
+  var _debugInteractive = dart.privateName(data_table, "_debugInteractive");
+  data_table.DataColumn = class DataColumn extends core.Object {
+    get label() {
+      return this[label$];
+    }
+    set label(value) {
+      super.label = value;
+    }
+    get tooltip() {
+      return this[tooltip$0];
+    }
+    set tooltip(value) {
+      super.tooltip = value;
+    }
+    get numeric() {
+      return this[numeric$];
+    }
+    set numeric(value) {
+      super.numeric = value;
+    }
+    get onSort() {
+      return this[onSort$];
+    }
+    set onSort(value) {
+      super.onSort = value;
+    }
+    get [_debugInteractive]() {
+      return this.onSort != null;
+    }
+  };
+  (data_table.DataColumn.new = function(opts) {
+    let label = opts && 'label' in opts ? opts.label : null;
+    if (label == null) dart.nullFailed(I[0], 39, 19, "label");
+    let tooltip = opts && 'tooltip' in opts ? opts.tooltip : null;
+    let numeric = opts && 'numeric' in opts ? opts.numeric : false;
+    if (numeric == null) dart.nullFailed(I[0], 41, 10, "numeric");
+    let onSort = opts && 'onSort' in opts ? opts.onSort : null;
+    this[label$] = label;
+    this[tooltip$0] = tooltip;
+    this[numeric$] = numeric;
+    this[onSort$] = onSort;
+    if (!(label != null)) dart.assertFailed(null, I[0], 43, 15, "label != null");
+    ;
+  }).prototype = data_table.DataColumn.prototype;
+  dart.addTypeTests(data_table.DataColumn);
+  dart.addTypeCaches(data_table.DataColumn);
+  dart.setGetterSignature(data_table.DataColumn, () => ({
+    __proto__: dart.getGetters(data_table.DataColumn.__proto__),
+    [_debugInteractive]: core.bool
+  }));
+  dart.setLibraryUri(data_table.DataColumn, I[1]);
+  dart.setFieldSignature(data_table.DataColumn, () => ({
+    __proto__: dart.getFields(data_table.DataColumn.__proto__),
+    label: dart.finalFieldType(framework.Widget),
+    tooltip: dart.finalFieldType(dart.nullable(core.String)),
+    numeric: dart.finalFieldType(core.bool),
+    onSort: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [core.int, core.bool])))
+  }));
+  var key$ = dart.privateName(data_table, "DataRow.key");
+  var onSelectChanged$ = dart.privateName(data_table, "DataRow.onSelectChanged");
+  var selected$ = dart.privateName(data_table, "DataRow.selected");
+  var cells$ = dart.privateName(data_table, "DataRow.cells");
+  var color$ = dart.privateName(data_table, "DataRow.color");
+  data_table.DataRow = class DataRow extends core.Object {
+    get key() {
+      return this[key$];
+    }
+    set key(value) {
+      super.key = value;
+    }
+    get onSelectChanged() {
+      return this[onSelectChanged$];
+    }
+    set onSelectChanged(value) {
+      super.onSelectChanged = value;
+    }
+    get selected() {
+      return this[selected$];
+    }
+    set selected(value) {
+      super.selected = value;
+    }
+    get cells() {
+      return this[cells$];
+    }
+    set cells(value) {
+      super.cells = value;
+    }
+    get color() {
+      return this[color$];
+    }
+    set color(value) {
+      super.color = value;
+    }
+    get [_debugInteractive]() {
+      return this.onSelectChanged != null || dart.test(this.cells[$any](dart.fn(cell => {
+        if (cell == null) dart.nullFailed(I[0], 186, 80, "cell");
+        return cell[_debugInteractive];
+      }, T.DataCellTobool())));
+    }
+  };
+  (data_table.DataRow.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let selected = opts && 'selected' in opts ? opts.selected : false;
+    if (selected == null) dart.nullFailed(I[0], 96, 10, "selected");
+    let onSelectChanged = opts && 'onSelectChanged' in opts ? opts.onSelectChanged : null;
+    let color = opts && 'color' in opts ? opts.color : null;
+    let cells = opts && 'cells' in opts ? opts.cells : null;
+    if (cells == null) dart.nullFailed(I[0], 99, 19, "cells");
+    this[key$] = key;
+    this[selected$] = selected;
+    this[onSelectChanged$] = onSelectChanged;
+    this[color$] = color;
+    this[cells$] = cells;
+    if (!(cells != null)) dart.assertFailed(null, I[0], 100, 15, "cells != null");
+    ;
+  }).prototype = data_table.DataRow.prototype;
+  (data_table.DataRow.byIndex = function(opts) {
+    let index = opts && 'index' in opts ? opts.index : null;
+    let selected = opts && 'selected' in opts ? opts.selected : false;
+    if (selected == null) dart.nullFailed(I[0], 108, 10, "selected");
+    let onSelectChanged = opts && 'onSelectChanged' in opts ? opts.onSelectChanged : null;
+    let color = opts && 'color' in opts ? opts.color : null;
+    let cells = opts && 'cells' in opts ? opts.cells : null;
+    if (cells == null) dart.nullFailed(I[0], 111, 19, "cells");
+    this[selected$] = selected;
+    this[onSelectChanged$] = onSelectChanged;
+    this[color$] = color;
+    this[cells$] = cells;
+    if (!(cells != null)) dart.assertFailed(null, I[0], 112, 15, "cells != null");
+    this[key$] = new (T.ValueKeyOfintN()).new(index);
+    ;
+  }).prototype = data_table.DataRow.prototype;
+  dart.addTypeTests(data_table.DataRow);
+  dart.addTypeCaches(data_table.DataRow);
+  dart.setGetterSignature(data_table.DataRow, () => ({
+    __proto__: dart.getGetters(data_table.DataRow.__proto__),
+    [_debugInteractive]: core.bool
+  }));
+  dart.setLibraryUri(data_table.DataRow, I[1]);
+  dart.setFieldSignature(data_table.DataRow, () => ({
+    __proto__: dart.getFields(data_table.DataRow.__proto__),
+    key: dart.finalFieldType(dart.nullable(key.LocalKey)),
+    onSelectChanged: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [dart.nullable(core.bool)]))),
+    selected: dart.finalFieldType(core.bool),
+    cells: dart.finalFieldType(core.List$(data_table.DataCell)),
+    color: dart.finalFieldType(dart.nullable(material_state.MaterialStateProperty$(dart.nullable(ui.Color))))
+  }));
+  var child$ = dart.privateName(data_table, "DataCell.child");
+  var placeholder$ = dart.privateName(data_table, "DataCell.placeholder");
+  var showEditIcon$ = dart.privateName(data_table, "DataCell.showEditIcon");
+  var onTap$ = dart.privateName(data_table, "DataCell.onTap");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var Widget__location = dart.privateName(framework, "Widget._location");
+  var Widget_key = dart.privateName(framework, "Widget.key");
+  var SingleChildRenderObjectWidget_child = dart.privateName(framework, "SingleChildRenderObjectWidget.child");
+  var SizedBox_height = dart.privateName(basic, "SizedBox.height");
+  var SizedBox_width = dart.privateName(basic, "SizedBox.width");
+  data_table.DataCell = class DataCell extends core.Object {
+    get child() {
+      return this[child$];
+    }
+    set child(value) {
+      super.child = value;
+    }
+    get placeholder() {
+      return this[placeholder$];
+    }
+    set placeholder(value) {
+      super.placeholder = value;
+    }
+    get showEditIcon() {
+      return this[showEditIcon$];
+    }
+    set showEditIcon(value) {
+      super.showEditIcon = value;
+    }
+    get onTap() {
+      return this[onTap$];
+    }
+    set onTap(value) {
+      super.onTap = value;
+    }
+    get [_debugInteractive]() {
+      return this.onTap != null;
+    }
+  };
+  (data_table.DataCell.new = function(child, opts) {
+    if (child == null) dart.nullFailed(I[0], 206, 10, "child");
+    let placeholder = opts && 'placeholder' in opts ? opts.placeholder : false;
+    if (placeholder == null) dart.nullFailed(I[0], 207, 10, "placeholder");
+    let showEditIcon = opts && 'showEditIcon' in opts ? opts.showEditIcon : false;
+    if (showEditIcon == null) dart.nullFailed(I[0], 208, 10, "showEditIcon");
+    let onTap = opts && 'onTap' in opts ? opts.onTap : null;
+    this[child$] = child;
+    this[placeholder$] = placeholder;
+    this[showEditIcon$] = showEditIcon;
+    this[onTap$] = onTap;
+    if (!(child != null)) dart.assertFailed(null, I[0], 210, 15, "child != null");
+    ;
+  }).prototype = data_table.DataCell.prototype;
+  dart.addTypeTests(data_table.DataCell);
+  dart.addTypeCaches(data_table.DataCell);
+  dart.setGetterSignature(data_table.DataCell, () => ({
+    __proto__: dart.getGetters(data_table.DataCell.__proto__),
+    [_debugInteractive]: core.bool
+  }));
+  dart.setLibraryUri(data_table.DataCell, I[1]);
+  dart.setFieldSignature(data_table.DataCell, () => ({
+    __proto__: dart.getFields(data_table.DataCell.__proto__),
+    child: dart.finalFieldType(framework.Widget),
+    placeholder: dart.finalFieldType(core.bool),
+    showEditIcon: dart.finalFieldType(core.bool),
+    onTap: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [])))
+  }));
+  dart.defineLazy(data_table.DataCell, {
+    /*data_table.DataCell.empty*/get empty() {
+      return C[0] || CT.C0;
+    }
+  }, false);
+  var columns$ = dart.privateName(data_table, "DataTable.columns");
+  var sortColumnIndex$ = dart.privateName(data_table, "DataTable.sortColumnIndex");
+  var sortAscending$ = dart.privateName(data_table, "DataTable.sortAscending");
+  var onSelectAll$ = dart.privateName(data_table, "DataTable.onSelectAll");
+  var decoration$ = dart.privateName(data_table, "DataTable.decoration");
+  var dataRowColor$ = dart.privateName(data_table, "DataTable.dataRowColor");
+  var dataRowHeight$ = dart.privateName(data_table, "DataTable.dataRowHeight");
+  var dataTextStyle$ = dart.privateName(data_table, "DataTable.dataTextStyle");
+  var headingRowColor$ = dart.privateName(data_table, "DataTable.headingRowColor");
+  var headingRowHeight$ = dart.privateName(data_table, "DataTable.headingRowHeight");
+  var headingTextStyle$ = dart.privateName(data_table, "DataTable.headingTextStyle");
+  var horizontalMargin$ = dart.privateName(data_table, "DataTable.horizontalMargin");
+  var columnSpacing$ = dart.privateName(data_table, "DataTable.columnSpacing");
+  var showCheckboxColumn$ = dart.privateName(data_table, "DataTable.showCheckboxColumn");
+  var rows$ = dart.privateName(data_table, "DataTable.rows");
+  var dividerThickness$ = dart.privateName(data_table, "DataTable.dividerThickness");
+  var showBottomBorder$ = dart.privateName(data_table, "DataTable.showBottomBorder");
+  var _onlyTextColumn = dart.privateName(data_table, "_onlyTextColumn");
+  var _handleSelectAll = dart.privateName(data_table, "_handleSelectAll");
+  var _buildCheckbox = dart.privateName(data_table, "_buildCheckbox");
+  var _buildHeadingCell = dart.privateName(data_table, "_buildHeadingCell");
+  var Icon_textDirection = dart.privateName(icon, "Icon.textDirection");
+  var Icon_semanticLabel = dart.privateName(icon, "Icon.semanticLabel");
+  var Icon_color = dart.privateName(icon, "Icon.color");
+  var Icon_size = dart.privateName(icon, "Icon.size");
+  var IconData_matchTextDirection = dart.privateName(icon_data, "IconData.matchTextDirection");
+  var IconData_fontPackage = dart.privateName(icon_data, "IconData.fontPackage");
+  var IconData_fontFamily = dart.privateName(icon_data, "IconData.fontFamily");
+  var IconData_codePoint = dart.privateName(icon_data, "IconData.codePoint");
+  var Icon_icon = dart.privateName(icon, "Icon.icon");
+  var _buildDataCell = dart.privateName(data_table, "_buildDataCell");
+  var IntrinsicColumnWidth__flex = dart.privateName(table$, "IntrinsicColumnWidth._flex");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  data_table.DataTable = class DataTable extends framework.StatelessWidget {
+    get columns() {
+      return this[columns$];
+    }
+    set columns(value) {
+      super.columns = value;
+    }
+    get sortColumnIndex() {
+      return this[sortColumnIndex$];
+    }
+    set sortColumnIndex(value) {
+      super.sortColumnIndex = value;
+    }
+    get sortAscending() {
+      return this[sortAscending$];
+    }
+    set sortAscending(value) {
+      super.sortAscending = value;
+    }
+    get onSelectAll() {
+      return this[onSelectAll$];
+    }
+    set onSelectAll(value) {
+      super.onSelectAll = value;
+    }
+    get decoration() {
+      return this[decoration$];
+    }
+    set decoration(value) {
+      super.decoration = value;
+    }
+    get dataRowColor() {
+      return this[dataRowColor$];
+    }
+    set dataRowColor(value) {
+      super.dataRowColor = value;
+    }
+    get dataRowHeight() {
+      return this[dataRowHeight$];
+    }
+    set dataRowHeight(value) {
+      super.dataRowHeight = value;
+    }
+    get dataTextStyle() {
+      return this[dataTextStyle$];
+    }
+    set dataTextStyle(value) {
+      super.dataTextStyle = value;
+    }
+    get headingRowColor() {
+      return this[headingRowColor$];
+    }
+    set headingRowColor(value) {
+      super.headingRowColor = value;
+    }
+    get headingRowHeight() {
+      return this[headingRowHeight$];
+    }
+    set headingRowHeight(value) {
+      super.headingRowHeight = value;
+    }
+    get headingTextStyle() {
+      return this[headingTextStyle$];
+    }
+    set headingTextStyle(value) {
+      super.headingTextStyle = value;
+    }
+    get horizontalMargin() {
+      return this[horizontalMargin$];
+    }
+    set horizontalMargin(value) {
+      super.horizontalMargin = value;
+    }
+    get columnSpacing() {
+      return this[columnSpacing$];
+    }
+    set columnSpacing(value) {
+      super.columnSpacing = value;
+    }
+    get showCheckboxColumn() {
+      return this[showCheckboxColumn$];
+    }
+    set showCheckboxColumn(value) {
+      super.showCheckboxColumn = value;
+    }
+    get rows() {
+      return this[rows$];
+    }
+    set rows(value) {
+      super.rows = value;
+    }
+    get dividerThickness() {
+      return this[dividerThickness$];
+    }
+    set dividerThickness(value) {
+      super.dividerThickness = value;
+    }
+    get showBottomBorder() {
+      return this[showBottomBorder$];
+    }
+    set showBottomBorder(value) {
+      super.showBottomBorder = value;
+    }
+    static _initOnlyTextColumn(columns) {
+      if (columns == null) dart.nullFailed(I[0], 648, 52, "columns");
+      let result = null;
+      for (let index = 0; index < dart.notNull(columns[$length]); index = index + 1) {
+        let column = columns[$_get](index);
+        if (!dart.test(column.numeric)) {
+          if (result != null) return null;
+          result = index;
+        }
+      }
+      return result;
+    }
+    get [_debugInteractive]() {
+      return dart.test(this.columns[$any](dart.fn(column => {
+        if (column == null) dart.nullFailed(I[0], 662, 36, "column");
+        return column[_debugInteractive];
+      }, T.DataColumnTobool()))) || dart.test(this.rows[$any](dart.fn(row => {
+        if (row == null) dart.nullFailed(I[0], 663, 30, "row");
+        return row[_debugInteractive];
+      }, T.DataRowTobool())));
+    }
+    [_handleSelectAll](checked, someChecked) {
+      let t0;
+      if (someChecked == null) dart.nullFailed(I[0], 668, 45, "someChecked");
+      let effectiveChecked = dart.test(someChecked) || dart.test((t0 = checked, t0 == null ? false : t0));
+      if (this.onSelectAll != null) {
+        dart.nullCheck(this.onSelectAll)(effectiveChecked);
+      } else {
+        for (let row of this.rows) {
+          if (row.onSelectChanged != null && row.selected !== effectiveChecked) dart.nullCheck(row.onSelectChanged)(effectiveChecked);
+        }
+      }
+    }
+    [_buildCheckbox](opts) {
+      let t0, t0$;
+      let context = opts && 'context' in opts ? opts.context : null;
+      if (context == null) dart.nullFailed(I[0], 701, 27, "context");
+      let checked = opts && 'checked' in opts ? opts.checked : null;
+      let onRowTap = opts && 'onRowTap' in opts ? opts.onRowTap : null;
+      let onCheckboxChanged = opts && 'onCheckboxChanged' in opts ? opts.onCheckboxChanged : null;
+      let overlayColor = opts && 'overlayColor' in opts ? opts.overlayColor : null;
+      let tristate = opts && 'tristate' in opts ? opts.tristate : null;
+      if (tristate == null) dart.nullFailed(I[0], 706, 19, "tristate");
+      let themeData = theme$.Theme.of(context);
+      let effectiveHorizontalMargin = (t0$ = (t0 = this.horizontalMargin, t0 == null ? themeData.dataTableTheme.horizontalMargin : t0), t0$ == null ? 24 : t0$);
+      let contents = new basic.Semantics.new({container: true, child: new basic.Padding.new({padding: new edge_insets.EdgeInsetsDirectional.only({start: effectiveHorizontalMargin, end: dart.notNull(effectiveHorizontalMargin) / 2.0}), child: new basic.Center.new({child: new checkbox.Checkbox.new({activeColor: themeData.colorScheme.primary, checkColor: themeData.colorScheme.onPrimary, value: checked, onChanged: onCheckboxChanged, tristate: tristate, $creationLocationd_0dea112b090073317d4: C[6] || CT.C6}), $creationLocationd_0dea112b090073317d4: C[13] || CT.C13}), $creationLocationd_0dea112b090073317d4: C[16] || CT.C16}), $creationLocationd_0dea112b090073317d4: C[20] || CT.C20});
+      if (onRowTap != null) {
+        contents = new data_table.TableRowInkWell.new({onTap: onRowTap, child: contents, overlayColor: overlayColor, $creationLocationd_0dea112b090073317d4: C[24] || CT.C24});
+      }
+      return new table.TableCell.new({verticalAlignment: table$.TableCellVerticalAlignment.fill, child: contents, $creationLocationd_0dea112b090073317d4: C[29] || CT.C29});
+    }
+    [_buildHeadingCell](opts) {
+      let t1, t1$, t1$0, t1$1;
+      let context = opts && 'context' in opts ? opts.context : null;
+      if (context == null) dart.nullFailed(I[0], 745, 27, "context");
+      let padding = opts && 'padding' in opts ? opts.padding : null;
+      if (padding == null) dart.nullFailed(I[0], 746, 33, "padding");
+      let label = opts && 'label' in opts ? opts.label : null;
+      if (label == null) dart.nullFailed(I[0], 747, 21, "label");
+      let tooltip = opts && 'tooltip' in opts ? opts.tooltip : null;
+      let numeric = opts && 'numeric' in opts ? opts.numeric : null;
+      if (numeric == null) dart.nullFailed(I[0], 749, 19, "numeric");
+      let onSort = opts && 'onSort' in opts ? opts.onSort : null;
+      let sorted = opts && 'sorted' in opts ? opts.sorted : null;
+      if (sorted == null) dart.nullFailed(I[0], 751, 19, "sorted");
+      let ascending = opts && 'ascending' in opts ? opts.ascending : null;
+      if (ascending == null) dart.nullFailed(I[0], 752, 19, "ascending");
+      let overlayColor = opts && 'overlayColor' in opts ? opts.overlayColor : null;
+      let themeData = theme$.Theme.of(context);
+      label = new basic.Row.new({textDirection: dart.test(numeric) ? ui.TextDirection.rtl : null, children: (() => {
+          let t0 = T.JSArrayOfWidget().of([label]);
+          if (onSort != null) t0[$addAll](T.JSArrayOfWidget().of([new data_table._SortArrow.new({visible: sorted, up: dart.test(sorted) ? ascending : null, duration: data_table.DataTable._sortArrowAnimationDuration, $creationLocationd_0dea112b090073317d4: C[33] || CT.C33}), C[38] || CT.C38]));
+          return t0;
+        })(), $creationLocationd_0dea112b090073317d4: C[42] || CT.C42});
+      let effectiveHeadingTextStyle = (t1$ = (t1 = this.headingTextStyle, t1 == null ? themeData.dataTableTheme.headingTextStyle : t1), t1$ == null ? dart.nullCheck(themeData.textTheme.subtitle2) : t1$);
+      let effectiveHeadingRowHeight = (t1$1 = (t1$0 = this.headingRowHeight, t1$0 == null ? themeData.dataTableTheme.headingRowHeight : t1$0), t1$1 == null ? 56 : t1$1);
+      label = new container.Container.new({padding: padding, height: effectiveHeadingRowHeight, alignment: dart.test(numeric) ? alignment.Alignment.centerRight : alignment.AlignmentDirectional.centerStart, child: new implicit_animations.AnimatedDefaultTextStyle.new({style: effectiveHeadingTextStyle, softWrap: false, duration: data_table.DataTable._sortArrowAnimationDuration, child: label, $creationLocationd_0dea112b090073317d4: C[46] || CT.C46}), $creationLocationd_0dea112b090073317d4: C[52] || CT.C52});
+      if (tooltip != null) {
+        label = new tooltip$.Tooltip.new({message: tooltip, child: label, $creationLocationd_0dea112b090073317d4: C[58] || CT.C58});
+      }
+      label = new ink_well.InkWell.new({onTap: onSort, overlayColor: overlayColor, child: label, $creationLocationd_0dea112b090073317d4: C[62] || CT.C62});
+      return label;
+    }
+    [_buildDataCell](opts) {
+      let t1, t1$, t1$0, t1$1;
+      let context = opts && 'context' in opts ? opts.context : null;
+      if (context == null) dart.nullFailed(I[0], 807, 27, "context");
+      let padding = opts && 'padding' in opts ? opts.padding : null;
+      if (padding == null) dart.nullFailed(I[0], 808, 33, "padding");
+      let label = opts && 'label' in opts ? opts.label : null;
+      if (label == null) dart.nullFailed(I[0], 809, 21, "label");
+      let numeric = opts && 'numeric' in opts ? opts.numeric : null;
+      if (numeric == null) dart.nullFailed(I[0], 810, 19, "numeric");
+      let placeholder = opts && 'placeholder' in opts ? opts.placeholder : null;
+      if (placeholder == null) dart.nullFailed(I[0], 811, 19, "placeholder");
+      let showEditIcon = opts && 'showEditIcon' in opts ? opts.showEditIcon : null;
+      if (showEditIcon == null) dart.nullFailed(I[0], 812, 19, "showEditIcon");
+      let onTap = opts && 'onTap' in opts ? opts.onTap : null;
+      let onSelectChanged = opts && 'onSelectChanged' in opts ? opts.onSelectChanged : null;
+      let overlayColor = opts && 'overlayColor' in opts ? opts.overlayColor : null;
+      let themeData = theme$.Theme.of(context);
+      if (dart.test(showEditIcon)) {
+        let icon = C[67] || CT.C67;
+        label = new basic.Expanded.new({child: label, $creationLocationd_0dea112b090073317d4: C[73] || CT.C73});
+        label = new basic.Row.new({textDirection: dart.test(numeric) ? ui.TextDirection.rtl : null, children: T.JSArrayOfWidget().of([label, icon]), $creationLocationd_0dea112b090073317d4: C[76] || CT.C76});
+      }
+      let effectiveDataTextStyle = (t1$ = (t1 = this.dataTextStyle, t1 == null ? themeData.dataTableTheme.dataTextStyle : t1), t1$ == null ? dart.nullCheck(themeData.textTheme.bodyText2) : t1$);
+      let effectiveDataRowHeight = (t1$1 = (t1$0 = this.dataRowHeight, t1$0 == null ? themeData.dataTableTheme.dataRowHeight : t1$0), t1$1 == null ? 48 : t1$1);
+      label = new container.Container.new({padding: padding, height: effectiveDataRowHeight, alignment: dart.test(numeric) ? alignment.Alignment.centerRight : alignment.AlignmentDirectional.centerStart, child: new text.DefaultTextStyle.new({style: effectiveDataTextStyle.copyWith({color: dart.test(placeholder) ? dart.nullCheck(effectiveDataTextStyle.color).withOpacity(0.6) : null}), child: new dropdown.DropdownButtonHideUnderline.new({child: label, $creationLocationd_0dea112b090073317d4: C[80] || CT.C80}), $creationLocationd_0dea112b090073317d4: C[83] || CT.C83}), $creationLocationd_0dea112b090073317d4: C[87] || CT.C87});
+      if (onTap != null) {
+        label = new ink_well.InkWell.new({onTap: onTap, child: label, overlayColor: overlayColor, $creationLocationd_0dea112b090073317d4: C[93] || CT.C93});
+      } else if (onSelectChanged != null) {
+        label = new data_table.TableRowInkWell.new({onTap: onSelectChanged, child: label, overlayColor: overlayColor, $creationLocationd_0dea112b090073317d4: C[98] || CT.C98});
+      }
+      return label;
+    }
+    build(context) {
+      let t1, t1$, t1$0, t1$1, t1$2, t1$3, t2, t2$, t2$0;
+      if (context == null) dart.nullFailed(I[0], 861, 29, "context");
+      if (!(!dart.test(this[_debugInteractive]) || dart.test(debug$.debugCheckHasMaterial(context)))) dart.assertFailed(null, I[0], 862, 12, "!_debugInteractive || debugCheckHasMaterial(context)");
+      let theme = theme$.Theme.of(context);
+      let effectiveHeadingRowColor = (t1 = this.headingRowColor, t1 == null ? theme.dataTableTheme.headingRowColor : t1);
+      let effectiveDataRowColor = (t1$ = this.dataRowColor, t1$ == null ? theme.dataTableTheme.dataRowColor : t1$);
+      let defaultRowColor = material_state.MaterialStateProperty.resolveWith(T.ColorN(), dart.fn(states => {
+        if (states == null) dart.nullFailed(I[0], 870, 27, "states");
+        if (dart.test(states.contains(material_state.MaterialState.selected))) return theme.colorScheme.primary.withOpacity(0.08);
+        return null;
+      }, T.SetOfMaterialStateToColorN()));
+      let anyRowSelectable = this.rows[$any](dart.fn(row => {
+        if (row == null) dart.nullFailed(I[0], 876, 53, "row");
+        return row.onSelectChanged != null;
+      }, T.DataRowTobool()));
+      let displayCheckboxColumn = dart.test(this.showCheckboxColumn) && dart.test(anyRowSelectable);
+      let rowsWithCheckbox = displayCheckboxColumn ? this.rows[$where](dart.fn(row => {
+        if (row == null) dart.nullFailed(I[0], 879, 27, "row");
+        return row.onSelectChanged != null;
+      }, T.DataRowTobool())) : T.JSArrayOfDataRow().of([]);
+      let rowsChecked = rowsWithCheckbox[$where](dart.fn(row => {
+        if (row == null) dart.nullFailed(I[0], 880, 75, "row");
+        return row.selected;
+      }, T.DataRowTobool()));
+      let allChecked = displayCheckboxColumn && rowsChecked[$length] == rowsWithCheckbox[$length];
+      let anyChecked = displayCheckboxColumn && dart.test(rowsChecked[$isNotEmpty]);
+      let someChecked = anyChecked && !allChecked;
+      let effectiveHorizontalMargin = (t1$1 = (t1$0 = this.horizontalMargin, t1$0 == null ? theme.dataTableTheme.horizontalMargin : t1$0), t1$1 == null ? 24 : t1$1);
+      let effectiveColumnSpacing = (t1$3 = (t1$2 = this.columnSpacing, t1$2 == null ? theme.dataTableTheme.columnSpacing : t1$2), t1$3 == null ? 56 : t1$3);
+      let tableColumns = T.ListOfTableColumnWidth().filled(dart.notNull(this.columns[$length]) + (displayCheckboxColumn ? 1 : 0), C[103] || CT.C103);
+      let tableRows = T.ListOfTableRow().generate(dart.notNull(this.rows[$length]) + 1, dart.fn(index => {
+        let t2, t2$, t2$0, t2$1, t2$2, t2$3;
+        if (index == null) dart.nullFailed(I[0], 894, 12, "index");
+        let isSelected = dart.notNull(index) > 0 && dart.test(this.rows[$_get](dart.notNull(index) - 1).selected);
+        let isDisabled = dart.notNull(index) > 0 && dart.test(anyRowSelectable) && this.rows[$_get](dart.notNull(index) - 1).onSelectChanged == null;
+        let states = (() => {
+          let t1 = T.LinkedHashSetOfMaterialState().new();
+          if (isSelected) t1.add(material_state.MaterialState.selected);
+          if (isDisabled) t1.add(material_state.MaterialState.disabled);
+          return t1;
+        })();
+        let resolvedDataRowColor = dart.notNull(index) > 0 ? (t2$ = (t2 = this.rows[$_get](dart.notNull(index) - 1).color, t2 == null ? effectiveDataRowColor : t2), t2$ == null ? null : t2$.resolve(states)) : null;
+        let resolvedHeadingRowColor = (t2$0 = effectiveHeadingRowColor, t2$0 == null ? null : t2$0.resolve(T.LinkedHashSetOfMaterialState().new()));
+        let rowColor = dart.notNull(index) > 0 ? resolvedDataRowColor : resolvedHeadingRowColor;
+        let borderSide = divider.Divider.createBorderSide(context, {width: (t2$2 = (t2$1 = this.dividerThickness, t2$1 == null ? theme.dataTableTheme.dividerThickness : t2$1), t2$2 == null ? 1 : t2$2)});
+        let border = dart.test(this.showBottomBorder) ? new box_border.Border.new({bottom: borderSide}) : index === 0 ? null : new box_border.Border.new({top: borderSide});
+        return new table.TableRow.new({key: index === 0 ? data_table.DataTable._headingRowKey : this.rows[$_get](dart.notNull(index) - 1).key, decoration: new box_decoration.BoxDecoration.new({border: border, color: (t2$3 = rowColor, t2$3 == null ? defaultRowColor.resolve(states) : t2$3)}), children: T.ListOfWidget().filled(tableColumns[$length], C[104] || CT.C104)});
+      }, T.intToTableRow()));
+      let rowIndex = null;
+      let displayColumnIndex = 0;
+      if (displayCheckboxColumn) {
+        tableColumns[$_set](0, new table$.FixedColumnWidth.new(dart.notNull(effectiveHorizontalMargin) + 18 + dart.notNull(effectiveHorizontalMargin) / 2.0));
+        dart.nullCheck(tableRows[$_get](0).children)[$_set](0, this[_buildCheckbox]({context: context, checked: someChecked ? null : allChecked, onRowTap: null, onCheckboxChanged: dart.fn(checked => this[_handleSelectAll](checked, someChecked), T.boolNTovoid()), overlayColor: null, tristate: true}));
+        rowIndex = 1;
+        for (let row of this.rows) {
+          dart.nullCheck(tableRows[$_get](rowIndex).children)[$_set](0, this[_buildCheckbox]({context: context, checked: row.selected, onRowTap: dart.fn(() => row.onSelectChanged != null ? dart.nullCheck(row.onSelectChanged)(!dart.test(row.selected)) : null, T.VoidTovoid()), onCheckboxChanged: row.onSelectChanged, overlayColor: (t2 = row.color, t2 == null ? effectiveDataRowColor : t2), tristate: false}));
+          rowIndex = dart.notNull(rowIndex) + 1;
+        }
+        displayColumnIndex = displayColumnIndex + 1;
+      }
+      for (let dataColumnIndex = 0; dataColumnIndex < dart.notNull(this.columns[$length]); dataColumnIndex = dataColumnIndex + 1) {
+        let column = this.columns[$_get](dataColumnIndex);
+        let paddingStart = null;
+        if (dataColumnIndex === 0 && displayCheckboxColumn) {
+          paddingStart = dart.notNull(effectiveHorizontalMargin) / 2.0;
+        } else if (dataColumnIndex === 0 && !displayCheckboxColumn) {
+          paddingStart = effectiveHorizontalMargin;
+        } else {
+          paddingStart = dart.notNull(effectiveColumnSpacing) / 2.0;
+        }
+        let paddingEnd = null;
+        if (dataColumnIndex === dart.notNull(this.columns[$length]) - 1) {
+          paddingEnd = effectiveHorizontalMargin;
+        } else {
+          paddingEnd = dart.notNull(effectiveColumnSpacing) / 2.0;
+        }
+        let padding = new edge_insets.EdgeInsetsDirectional.only({start: paddingStart, end: paddingEnd});
+        if (dataColumnIndex === this[_onlyTextColumn]) {
+          tableColumns[$_set](displayColumnIndex, C[107] || CT.C107);
+        } else {
+          tableColumns[$_set](displayColumnIndex, C[108] || CT.C108);
+        }
+        dart.nullCheck(tableRows[$_get](0).children)[$_set](displayColumnIndex, this[_buildHeadingCell]({context: context, padding: padding, label: column.label, tooltip: column.tooltip, numeric: column.numeric, onSort: column.onSort != null ? dart.fn(() => dart.nullCheck(column.onSort)(dataColumnIndex, this.sortColumnIndex !== dataColumnIndex || !dart.test(this.sortAscending)), T.VoidTovoid()) : null, sorted: dataColumnIndex === this.sortColumnIndex, ascending: this.sortAscending, overlayColor: effectiveHeadingRowColor}));
+        rowIndex = 1;
+        for (let row of this.rows) {
+          let cell = row.cells[$_get](dataColumnIndex);
+          dart.nullCheck(tableRows[$_get](rowIndex).children)[$_set](displayColumnIndex, this[_buildDataCell]({context: context, padding: padding, label: cell.child, numeric: column.numeric, placeholder: cell.placeholder, showEditIcon: cell.showEditIcon, onTap: cell.onTap, onSelectChanged: dart.fn(() => row.onSelectChanged != null ? dart.nullCheck(row.onSelectChanged)(!dart.test(row.selected)) : null, T.VoidTovoid()), overlayColor: (t2$ = row.color, t2$ == null ? effectiveDataRowColor : t2$)}));
+          rowIndex = dart.notNull(rowIndex) + 1;
+        }
+        displayColumnIndex = displayColumnIndex + 1;
+      }
+      return new container.Container.new({decoration: (t2$0 = this.decoration, t2$0 == null ? theme.dataTableTheme.decoration : t2$0), child: new material.Material.new({type: material.MaterialType.transparency, child: new table.Table.new({columnWidths: tableColumns[$asMap](), children: tableRows, $creationLocationd_0dea112b090073317d4: C[109] || CT.C109}), $creationLocationd_0dea112b090073317d4: C[113] || CT.C113}), $creationLocationd_0dea112b090073317d4: C[117] || CT.C117});
+    }
+  };
+  (data_table.DataTable.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let columns = opts && 'columns' in opts ? opts.columns : null;
+    if (columns == null) dart.nullFailed(I[0], 418, 19, "columns");
+    let sortColumnIndex = opts && 'sortColumnIndex' in opts ? opts.sortColumnIndex : null;
+    let sortAscending = opts && 'sortAscending' in opts ? opts.sortAscending : true;
+    if (sortAscending == null) dart.nullFailed(I[0], 420, 10, "sortAscending");
+    let onSelectAll = opts && 'onSelectAll' in opts ? opts.onSelectAll : null;
+    let decoration = opts && 'decoration' in opts ? opts.decoration : null;
+    let dataRowColor = opts && 'dataRowColor' in opts ? opts.dataRowColor : null;
+    let dataRowHeight = opts && 'dataRowHeight' in opts ? opts.dataRowHeight : null;
+    let dataTextStyle = opts && 'dataTextStyle' in opts ? opts.dataTextStyle : null;
+    let headingRowColor = opts && 'headingRowColor' in opts ? opts.headingRowColor : null;
+    let headingRowHeight = opts && 'headingRowHeight' in opts ? opts.headingRowHeight : null;
+    let headingTextStyle = opts && 'headingTextStyle' in opts ? opts.headingTextStyle : null;
+    let horizontalMargin = opts && 'horizontalMargin' in opts ? opts.horizontalMargin : null;
+    let columnSpacing = opts && 'columnSpacing' in opts ? opts.columnSpacing : null;
+    let showCheckboxColumn = opts && 'showCheckboxColumn' in opts ? opts.showCheckboxColumn : true;
+    if (showCheckboxColumn == null) dart.nullFailed(I[0], 431, 10, "showCheckboxColumn");
+    let showBottomBorder = opts && 'showBottomBorder' in opts ? opts.showBottomBorder : false;
+    if (showBottomBorder == null) dart.nullFailed(I[0], 432, 10, "showBottomBorder");
+    let dividerThickness = opts && 'dividerThickness' in opts ? opts.dividerThickness : null;
+    let rows = opts && 'rows' in opts ? opts.rows : null;
+    if (rows == null) dart.nullFailed(I[0], 434, 19, "rows");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[columns$] = columns;
+    this[sortColumnIndex$] = sortColumnIndex;
+    this[sortAscending$] = sortAscending;
+    this[onSelectAll$] = onSelectAll;
+    this[decoration$] = decoration;
+    this[dataRowColor$] = dataRowColor;
+    this[dataRowHeight$] = dataRowHeight;
+    this[dataTextStyle$] = dataTextStyle;
+    this[headingRowColor$] = headingRowColor;
+    this[headingRowHeight$] = headingRowHeight;
+    this[headingTextStyle$] = headingTextStyle;
+    this[horizontalMargin$] = horizontalMargin;
+    this[columnSpacing$] = columnSpacing;
+    this[showCheckboxColumn$] = showCheckboxColumn;
+    this[showBottomBorder$] = showBottomBorder;
+    this[dividerThickness$] = dividerThickness;
+    this[rows$] = rows;
+    if (!(columns != null)) dart.assertFailed(null, I[0], 435, 15, "columns != null");
+    if (!dart.test(columns[$isNotEmpty])) dart.assertFailed(null, I[0], 436, 15, "columns.isNotEmpty");
+    if (!(sortColumnIndex == null || dart.notNull(sortColumnIndex) >= 0 && dart.notNull(sortColumnIndex) < dart.notNull(columns[$length]))) dart.assertFailed(null, I[0], 437, 15, "sortColumnIndex == null || (sortColumnIndex >= 0 && sortColumnIndex < columns.length)");
+    if (!(sortAscending != null)) dart.assertFailed(null, I[0], 438, 15, "sortAscending != null");
+    if (!(showCheckboxColumn != null)) dart.assertFailed(null, I[0], 439, 15, "showCheckboxColumn != null");
+    if (!(rows != null)) dart.assertFailed(null, I[0], 440, 15, "rows != null");
+    if (!!dart.test(rows[$any](dart.fn(row => {
+      if (row == null) dart.nullFailed(I[0], 441, 34, "row");
+      return row.cells[$length] != columns[$length];
+    }, T.DataRowTobool())))) dart.assertFailed(null, I[0], 441, 15, "!rows.any((DataRow row) => row.cells.length != columns.length)");
+    if (!(dividerThickness == null || dart.notNull(dividerThickness) >= 0)) dart.assertFailed(null, I[0], 442, 15, "dividerThickness == null || dividerThickness >= 0");
+    this[_onlyTextColumn] = data_table.DataTable._initOnlyTextColumn(columns);
+    data_table.DataTable.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = data_table.DataTable.prototype;
+  dart.addTypeTests(data_table.DataTable);
+  dart.addTypeCaches(data_table.DataTable);
+  dart.setMethodSignature(data_table.DataTable, () => ({
+    __proto__: dart.getMethods(data_table.DataTable.__proto__),
+    [_handleSelectAll]: dart.fnType(dart.void, [dart.nullable(core.bool), core.bool]),
+    [_buildCheckbox]: dart.fnType(framework.Widget, [], {}, {checked: dart.nullable(core.bool), context: framework.BuildContext, onCheckboxChanged: dart.nullable(dart.fnType(dart.void, [dart.nullable(core.bool)])), onRowTap: dart.nullable(dart.fnType(dart.void, [])), overlayColor: dart.nullable(material_state.MaterialStateProperty$(dart.nullable(ui.Color))), tristate: core.bool}),
+    [_buildHeadingCell]: dart.fnType(framework.Widget, [], {}, {ascending: core.bool, context: framework.BuildContext, label: framework.Widget, numeric: core.bool, onSort: dart.nullable(dart.fnType(dart.void, [])), overlayColor: dart.nullable(material_state.MaterialStateProperty$(dart.nullable(ui.Color))), padding: edge_insets.EdgeInsetsGeometry, sorted: core.bool, tooltip: dart.nullable(core.String)}),
+    [_buildDataCell]: dart.fnType(framework.Widget, [], {}, {context: framework.BuildContext, label: framework.Widget, numeric: core.bool, onSelectChanged: dart.nullable(dart.fnType(dart.void, [])), onTap: dart.nullable(dart.fnType(dart.void, [])), overlayColor: dart.nullable(material_state.MaterialStateProperty$(dart.nullable(ui.Color))), padding: edge_insets.EdgeInsetsGeometry, placeholder: core.bool, showEditIcon: core.bool}),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setGetterSignature(data_table.DataTable, () => ({
+    __proto__: dart.getGetters(data_table.DataTable.__proto__),
+    [_debugInteractive]: core.bool
+  }));
+  dart.setLibraryUri(data_table.DataTable, I[1]);
+  dart.setFieldSignature(data_table.DataTable, () => ({
+    __proto__: dart.getFields(data_table.DataTable.__proto__),
+    columns: dart.finalFieldType(core.List$(data_table.DataColumn)),
+    sortColumnIndex: dart.finalFieldType(dart.nullable(core.int)),
+    sortAscending: dart.finalFieldType(core.bool),
+    onSelectAll: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [dart.nullable(core.bool)]))),
+    decoration: dart.finalFieldType(dart.nullable(decoration.Decoration)),
+    dataRowColor: dart.finalFieldType(dart.nullable(material_state.MaterialStateProperty$(dart.nullable(ui.Color)))),
+    dataRowHeight: dart.finalFieldType(dart.nullable(core.double)),
+    dataTextStyle: dart.finalFieldType(dart.nullable(text_style.TextStyle)),
+    headingRowColor: dart.finalFieldType(dart.nullable(material_state.MaterialStateProperty$(dart.nullable(ui.Color)))),
+    headingRowHeight: dart.finalFieldType(dart.nullable(core.double)),
+    headingTextStyle: dart.finalFieldType(dart.nullable(text_style.TextStyle)),
+    horizontalMargin: dart.finalFieldType(dart.nullable(core.double)),
+    columnSpacing: dart.finalFieldType(dart.nullable(core.double)),
+    showCheckboxColumn: dart.finalFieldType(core.bool),
+    rows: dart.finalFieldType(core.List$(data_table.DataRow)),
+    dividerThickness: dart.finalFieldType(dart.nullable(core.double)),
+    showBottomBorder: dart.finalFieldType(core.bool),
+    [_onlyTextColumn]: dart.finalFieldType(dart.nullable(core.int))
+  }));
+  dart.defineLazy(data_table.DataTable, {
+    /*data_table.DataTable._headingRowKey*/get _headingRowKey() {
+      return new framework.UniqueKey.new();
+    },
+    /*data_table.DataTable._headingRowHeight*/get _headingRowHeight() {
+      return 56;
+    },
+    /*data_table.DataTable._horizontalMargin*/get _horizontalMargin() {
+      return 24;
+    },
+    /*data_table.DataTable._columnSpacing*/get _columnSpacing() {
+      return 56;
+    },
+    /*data_table.DataTable._sortArrowPadding*/get _sortArrowPadding() {
+      return 2;
+    },
+    /*data_table.DataTable._dividerThickness*/get _dividerThickness() {
+      return 1;
+    },
+    /*data_table.DataTable._sortArrowAnimationDuration*/get _sortArrowAnimationDuration() {
+      return C[121] || CT.C121;
+    }
+  }, false);
+  data_table.TableRowInkWell = class TableRowInkWell extends ink_well.InkResponse {
+    getRectCallback(referenceBox) {
+      if (referenceBox == null) dart.nullFailed(I[0], 1067, 42, "referenceBox");
+      return dart.fn(() => {
+        let cell = referenceBox;
+        let table = cell.parent;
+        let transform = vector_math_64.Matrix4.identity();
+        while (object.RenderObject.is(table) && !table$.RenderTable.is(table)) {
+          table.applyPaintTransform(cell, transform);
+          if (!dart.equals(table, cell.parent)) dart.assertFailed(null, I[0], 1074, 16, "table == cell.parent");
+          cell = table;
+          table = table.parent;
+        }
+        if (table$.RenderTable.is(table)) {
+          let cellParentData = table$.TableCellParentData.as(dart.nullCheck(cell.parentData));
+          if (!(cellParentData.y != null)) dart.assertFailed(null, I[0], 1080, 16, "cellParentData.y != null");
+          let rect = table.getRowBox(dart.nullCheck(cellParentData.y));
+          table.applyPaintTransform(cell, transform);
+          let offset = matrix_utils.MatrixUtils.getAsTranslation(transform);
+          if (offset != null) return rect.shift(offset._negate());
+        }
+        return ui.Rect.zero;
+      }, T.VoidToRect());
+    }
+    debugCheckContext(context) {
+      if (context == null) dart.nullFailed(I[0], 1094, 39, "context");
+      if (!dart.test(debug.debugCheckHasTable(context))) dart.assertFailed(null, I[0], 1095, 12, "debugCheckHasTable(context)");
+      return super.debugCheckContext(context);
+    }
+  };
+  (data_table.TableRowInkWell.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let child = opts && 'child' in opts ? opts.child : null;
+    let onTap = opts && 'onTap' in opts ? opts.onTap : null;
+    let onDoubleTap = opts && 'onDoubleTap' in opts ? opts.onDoubleTap : null;
+    let onLongPress = opts && 'onLongPress' in opts ? opts.onLongPress : null;
+    let onHighlightChanged = opts && 'onHighlightChanged' in opts ? opts.onHighlightChanged : null;
+    let overlayColor = opts && 'overlayColor' in opts ? opts.overlayColor : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    data_table.TableRowInkWell.__proto__.new.call(this, {key: key, child: child, onTap: onTap, onDoubleTap: onDoubleTap, onLongPress: onLongPress, onHighlightChanged: onHighlightChanged, containedInkWell: true, highlightShape: box_border.BoxShape.rectangle, overlayColor: overlayColor, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = data_table.TableRowInkWell.prototype;
+  dart.addTypeTests(data_table.TableRowInkWell);
+  dart.addTypeCaches(data_table.TableRowInkWell);
+  dart.setMethodSignature(data_table.TableRowInkWell, () => ({
+    __proto__: dart.getMethods(data_table.TableRowInkWell.__proto__),
+    getRectCallback: dart.fnType(dart.fnType(ui.Rect, []), [box.RenderBox])
+  }));
+  dart.setLibraryUri(data_table.TableRowInkWell, I[1]);
+  var visible$ = dart.privateName(data_table, "_SortArrow.visible");
+  var up$ = dart.privateName(data_table, "_SortArrow.up");
+  var duration$ = dart.privateName(data_table, "_SortArrow.duration");
+  data_table._SortArrow = class _SortArrow extends framework.StatefulWidget {
+    get visible() {
+      return this[visible$];
+    }
+    set visible(value) {
+      super.visible = value;
+    }
+    get up() {
+      return this[up$];
+    }
+    set up(value) {
+      super.up = value;
+    }
+    get duration() {
+      return this[duration$];
+    }
+    set duration(value) {
+      super.duration = value;
+    }
+    createState() {
+      return new data_table._SortArrowState.new();
+    }
+  };
+  (data_table._SortArrow.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let visible = opts && 'visible' in opts ? opts.visible : null;
+    if (visible == null) dart.nullFailed(I[0], 1103, 19, "visible");
+    let up = opts && 'up' in opts ? opts.up : null;
+    let duration = opts && 'duration' in opts ? opts.duration : null;
+    if (duration == null) dart.nullFailed(I[0], 1105, 19, "duration");
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[visible$] = visible;
+    this[up$] = up;
+    this[duration$] = duration;
+    data_table._SortArrow.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = data_table._SortArrow.prototype;
+  dart.addTypeTests(data_table._SortArrow);
+  dart.addTypeCaches(data_table._SortArrow);
+  dart.setMethodSignature(data_table._SortArrow, () => ({
+    __proto__: dart.getMethods(data_table._SortArrow.__proto__),
+    createState: dart.fnType(data_table._SortArrowState, [])
+  }));
+  dart.setLibraryUri(data_table._SortArrow, I[1]);
+  dart.setFieldSignature(data_table._SortArrow, () => ({
+    __proto__: dart.getFields(data_table._SortArrow.__proto__),
+    visible: dart.finalFieldType(core.bool),
+    up: dart.finalFieldType(dart.nullable(core.bool)),
+    duration: dart.finalFieldType(core.Duration)
+  }));
+  var ___SortArrowState__opacityController = dart.privateName(data_table, "_#_SortArrowState#_opacityController");
+  var ___SortArrowState__opacityAnimation = dart.privateName(data_table, "_#_SortArrowState#_opacityAnimation");
+  var ___SortArrowState__orientationController = dart.privateName(data_table, "_#_SortArrowState#_orientationController");
+  var ___SortArrowState__orientationAnimation = dart.privateName(data_table, "_#_SortArrowState#_orientationAnimation");
+  var _orientationOffset = dart.privateName(data_table, "_orientationOffset");
+  var _up = dart.privateName(data_table, "_up");
+  var _opacityController = dart.privateName(data_table, "_opacityController");
+  var _opacityAnimation = dart.privateName(data_table, "_opacityAnimation");
+  var _orientationController = dart.privateName(data_table, "_orientationController");
+  var _orientationAnimation = dart.privateName(data_table, "_orientationAnimation");
+  var _rebuild = dart.privateName(data_table, "_rebuild");
+  var _resetOrientationAnimation = dart.privateName(data_table, "_resetOrientationAnimation");
+  const State_TickerProviderStateMixin$36 = class State_TickerProviderStateMixin extends framework.State$(data_table._SortArrow) {};
+  (State_TickerProviderStateMixin$36.new = function() {
+    ticker_provider.TickerProviderStateMixin$(data_table._SortArrow)[dart.mixinNew].call(this);
+    State_TickerProviderStateMixin$36.__proto__.new.call(this);
+  }).prototype = State_TickerProviderStateMixin$36.prototype;
+  dart.applyMixin(State_TickerProviderStateMixin$36, ticker_provider.TickerProviderStateMixin$(data_table._SortArrow));
+  data_table._SortArrowState = class _SortArrowState extends State_TickerProviderStateMixin$36 {
+    get [_opacityController]() {
+      let t2;
+      t2 = this[___SortArrowState__opacityController];
+      return t2 == null ? dart.throw(new _internal.LateError.fieldNI("_opacityController")) : t2;
+    }
+    set [_opacityController](t2) {
+      if (t2 == null) dart.nullFailed(I[0], 1119, 28, "null");
+      this[___SortArrowState__opacityController] = t2;
+    }
+    get [_opacityAnimation]() {
+      let t3;
+      t3 = this[___SortArrowState__opacityAnimation];
+      return t3 == null ? dart.throw(new _internal.LateError.fieldNI("_opacityAnimation")) : t3;
+    }
+    set [_opacityAnimation](t3) {
+      if (t3 == null) dart.nullFailed(I[0], 1120, 26, "null");
+      this[___SortArrowState__opacityAnimation] = t3;
+    }
+    get [_orientationController]() {
+      let t4;
+      t4 = this[___SortArrowState__orientationController];
+      return t4 == null ? dart.throw(new _internal.LateError.fieldNI("_orientationController")) : t4;
+    }
+    set [_orientationController](t4) {
+      if (t4 == null) dart.nullFailed(I[0], 1122, 28, "null");
+      this[___SortArrowState__orientationController] = t4;
+    }
+    get [_orientationAnimation]() {
+      let t5;
+      t5 = this[___SortArrowState__orientationAnimation];
+      return t5 == null ? dart.throw(new _internal.LateError.fieldNI("_orientationAnimation")) : t5;
+    }
+    set [_orientationAnimation](t5) {
+      if (t5 == null) dart.nullFailed(I[0], 1123, 26, "null");
+      this[___SortArrowState__orientationAnimation] = t5;
+    }
+    initState() {
+      let t6, t6$;
+      super.initState();
+      this[_opacityAnimation] = (t6 = new animations.CurvedAnimation.new({parent: this[_opacityController] = new animation_controller.AnimationController.new({duration: this.widget.duration, vsync: this}), curve: curves.Curves.fastOutSlowIn}), (() => {
+        t6.addListener(dart.bind(this, _rebuild));
+        return t6;
+      })());
+      this[_opacityController].value = dart.test(this.widget.visible) ? 1.0 : 0.0;
+      this[_orientationController] = new animation_controller.AnimationController.new({duration: this.widget.duration, vsync: this});
+      this[_orientationAnimation] = (t6$ = this[_orientationController].drive(core.double, data_table._SortArrowState._turnTween), (() => {
+        t6$.addListener(dart.bind(this, _rebuild));
+        t6$.addStatusListener(dart.bind(this, _resetOrientationAnimation));
+        return t6$;
+      })());
+      if (dart.test(this.widget.visible)) this[_orientationOffset] = dart.nullCheck(this.widget.up) ? 0.0 : 3.141592653589793;
+    }
+    [_rebuild]() {
+      this.setState(dart.fn(() => {
+      }, T.VoidTovoid()));
+    }
+    [_resetOrientationAnimation](status) {
+      if (status == null) dart.nullFailed(I[0], 1160, 51, "status");
+      if (status == animation.AnimationStatus.completed) {
+        if (!(this[_orientationAnimation].value === 3.141592653589793)) dart.assertFailed(null, I[0], 1162, 14, "_orientationAnimation.value == math.pi");
+        this[_orientationOffset] = dart.notNull(this[_orientationOffset]) + 3.141592653589793;
+        this[_orientationController].value = 0.0;
+      }
+    }
+    didUpdateWidget(oldWidget) {
+      let t6;
+      data_table._SortArrow.as(oldWidget);
+      if (oldWidget == null) dart.nullFailed(I[0], 1169, 35, "oldWidget");
+      super.didUpdateWidget(oldWidget);
+      let skipArrow = false;
+      let newUp = (t6 = this.widget.up, t6 == null ? this[_up] : t6);
+      if (oldWidget.visible != this.widget.visible) {
+        if (dart.test(this.widget.visible) && this[_opacityController].status == animation.AnimationStatus.dismissed) {
+          this[_orientationController].stop();
+          this[_orientationController].value = 0.0;
+          this[_orientationOffset] = dart.nullCheck(newUp) ? 0.0 : 3.141592653589793;
+          skipArrow = true;
+        }
+        if (dart.test(this.widget.visible)) {
+          this[_opacityController].forward();
+        } else {
+          this[_opacityController].reverse();
+        }
+      }
+      if (this[_up] != newUp && !skipArrow) {
+        if (this[_orientationController].status == animation.AnimationStatus.dismissed) {
+          this[_orientationController].forward();
+        } else {
+          this[_orientationController].reverse();
+        }
+      }
+      this[_up] = newUp;
+    }
+    dispose() {
+      this[_opacityController].dispose();
+      this[_orientationController].dispose();
+      super.dispose();
+    }
+    build(context) {
+      let t6;
+      if (context == null) dart.nullFailed(I[0], 1207, 29, "context");
+      return new basic.Opacity.new({opacity: this[_opacityAnimation].value, child: new basic.Transform.new({transform: (t6 = vector_math_64.Matrix4.rotationZ(dart.notNull(this[_orientationOffset]) + dart.notNull(this[_orientationAnimation].value)), (() => {
+            t6.setTranslationRaw(0.0, -1.5, 0.0);
+            return t6;
+          })()), alignment: alignment.Alignment.center, child: C[122] || CT.C122, $creationLocationd_0dea112b090073317d4: C[128] || CT.C128}), $creationLocationd_0dea112b090073317d4: C[133] || CT.C133});
+    }
+  };
+  (data_table._SortArrowState.new = function() {
+    this[___SortArrowState__opacityController] = null;
+    this[___SortArrowState__opacityAnimation] = null;
+    this[___SortArrowState__orientationController] = null;
+    this[___SortArrowState__orientationAnimation] = null;
+    this[_orientationOffset] = 0.0;
+    this[_up] = null;
+    data_table._SortArrowState.__proto__.new.call(this);
+    ;
+  }).prototype = data_table._SortArrowState.prototype;
+  dart.addTypeTests(data_table._SortArrowState);
+  dart.addTypeCaches(data_table._SortArrowState);
+  dart.setMethodSignature(data_table._SortArrowState, () => ({
+    __proto__: dart.getMethods(data_table._SortArrowState.__proto__),
+    [_rebuild]: dart.fnType(dart.void, []),
+    [_resetOrientationAnimation]: dart.fnType(dart.void, [animation.AnimationStatus]),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setGetterSignature(data_table._SortArrowState, () => ({
+    __proto__: dart.getGetters(data_table._SortArrowState.__proto__),
+    [_opacityController]: animation_controller.AnimationController,
+    [_opacityAnimation]: animation.Animation$(core.double),
+    [_orientationController]: animation_controller.AnimationController,
+    [_orientationAnimation]: animation.Animation$(core.double)
+  }));
+  dart.setSetterSignature(data_table._SortArrowState, () => ({
+    __proto__: dart.getSetters(data_table._SortArrowState.__proto__),
+    [_opacityController]: animation_controller.AnimationController,
+    [_opacityAnimation]: animation.Animation$(core.double),
+    [_orientationController]: animation_controller.AnimationController,
+    [_orientationAnimation]: animation.Animation$(core.double)
+  }));
+  dart.setLibraryUri(data_table._SortArrowState, I[1]);
+  dart.setFieldSignature(data_table._SortArrowState, () => ({
+    __proto__: dart.getFields(data_table._SortArrowState.__proto__),
+    [___SortArrowState__opacityController]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
+    [___SortArrowState__opacityAnimation]: dart.fieldType(dart.nullable(animation.Animation$(core.double))),
+    [___SortArrowState__orientationController]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
+    [___SortArrowState__orientationAnimation]: dart.fieldType(dart.nullable(animation.Animation$(core.double))),
+    [_orientationOffset]: dart.fieldType(core.double),
+    [_up]: dart.fieldType(dart.nullable(core.bool))
+  }));
+  dart.defineLazy(data_table._SortArrowState, {
+    /*data_table._SortArrowState._turnTween*/get _turnTween() {
+      return new (T.TweenOfdouble()).new({begin: 0.0, end: 3.141592653589793}).chain(new tween.CurveTween.new({curve: curves.Curves.easeIn}));
+    },
+    /*data_table._SortArrowState._arrowIconBaselineOffset*/get _arrowIconBaselineOffset() {
+      return -1.5;
+    },
+    /*data_table._SortArrowState._arrowIconSize*/get _arrowIconSize() {
+      return 16;
+    }
+  }, false);
+  data_table._NullTableColumnWidth = class _NullTableColumnWidth extends table$.TableColumnWidth {
+    maxIntrinsicWidth(cells, containerWidth) {
+      if (cells == null) dart.nullFailed(I[0], 1227, 48, "cells");
+      if (containerWidth == null) dart.nullFailed(I[0], 1227, 62, "containerWidth");
+      return dart.throw(new core.UnimplementedError.new());
+    }
+    minIntrinsicWidth(cells, containerWidth) {
+      if (cells == null) dart.nullFailed(I[0], 1230, 48, "cells");
+      if (containerWidth == null) dart.nullFailed(I[0], 1230, 62, "containerWidth");
+      return dart.throw(new core.UnimplementedError.new());
+    }
+  };
+  (data_table._NullTableColumnWidth.new = function() {
+    data_table._NullTableColumnWidth.__proto__.new.call(this);
+    ;
+  }).prototype = data_table._NullTableColumnWidth.prototype;
+  dart.addTypeTests(data_table._NullTableColumnWidth);
+  dart.addTypeCaches(data_table._NullTableColumnWidth);
+  dart.setMethodSignature(data_table._NullTableColumnWidth, () => ({
+    __proto__: dart.getMethods(data_table._NullTableColumnWidth.__proto__),
+    maxIntrinsicWidth: dart.fnType(core.double, [core.Iterable$(box.RenderBox), core.double]),
+    minIntrinsicWidth: dart.fnType(core.double, [core.Iterable$(box.RenderBox), core.double])
+  }));
+  dart.setLibraryUri(data_table._NullTableColumnWidth, I[1]);
+  data_table._NullWidget = class _NullWidget extends framework.Widget {
+    createElement() {
+      return dart.throw(new core.UnimplementedError.new());
+    }
+  };
+  (data_table._NullWidget.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    data_table._NullWidget.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = data_table._NullWidget.prototype;
+  dart.addTypeTests(data_table._NullWidget);
+  dart.addTypeCaches(data_table._NullWidget);
+  dart.setMethodSignature(data_table._NullWidget, () => ({
+    __proto__: dart.getMethods(data_table._NullWidget.__proto__),
+    createElement: dart.fnType(framework.Element, [])
+  }));
+  dart.setLibraryUri(data_table._NullWidget, I[1]);
+  dart.trackLibraries("packages/flutter/src/material/data_table.dart", {
+    "package:flutter/src/material/data_table.dart": data_table
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["data_table.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;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","file":"../../../../../../packages/flutter/src/material/data_table.dart.lib.js"}');
+  // Exports:
+  return {
+    src__material__data_table: data_table
+  };
+}));
+
+//# sourceMappingURL=data_table.dart.lib.js.map

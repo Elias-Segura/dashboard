@@ -1,0 +1,578 @@
+define(['dart_sdk', 'packages/flutter/src/rendering/proxy_box.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/gestures/drag_details.dart'], (function load__packages__simple_gesture_detector__simple_gesture_detector_dart(dart_sdk, packages__flutter__src__rendering__proxy_box$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__gestures__drag_details$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const proxy_box = packages__flutter__src__rendering__proxy_box$46dart.src__rendering__proxy_box;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const gesture_detector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__gesture_detector;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const drag_details = packages__flutter__src__gestures__drag_details$46dart.src__gestures__drag_details;
+  var simple_gesture_detector = Object.create(dart.library);
+  var $abs = dartx.abs;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    _: () => T
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: simple_gesture_detector.SwipeDirection.prototype,
+        [_name$]: "SwipeDirection.left",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: simple_gesture_detector.SwipeDirection.prototype,
+        [_name$]: "SwipeDirection.right",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: simple_gesture_detector.SwipeDirection.prototype,
+        [_name$]: "SwipeDirection.up",
+        index: 2
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: simple_gesture_detector.SwipeDirection.prototype,
+        [_name$]: "SwipeDirection.down",
+        index: 3
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3], simple_gesture_detector.SwipeDirection);
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: simple_gesture_detector.SwipeDetectionBehavior.prototype,
+        [_name$]: "SwipeDetectionBehavior.singularOnEnd",
+        index: 1
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: simple_gesture_detector.SimpleSwipeConfig.prototype,
+        [SimpleSwipeConfig_swipeDetectionBehavior]: C[6] || CT.C6,
+        [SimpleSwipeConfig_horizontalThreshold]: 50,
+        [SimpleSwipeConfig_verticalThreshold]: 50
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: proxy_box.HitTestBehavior.prototype,
+        [_name]: "HitTestBehavior.deferToChild",
+        index: 0
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "behavior",
+        [_Location_column]: 7,
+        [_Location_line]: 183,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 184,
+        [_Location_file]: null
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 7,
+        [_Location_line]: 185,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onLongPress",
+        [_Location_column]: 7,
+        [_Location_line]: 186,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onDoubleTap",
+        [_Location_column]: 7,
+        [_Location_line]: 187,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onVerticalDragStart",
+        [_Location_column]: 7,
+        [_Location_line]: 188,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onVerticalDragUpdate",
+        [_Location_column]: 7,
+        [_Location_line]: 190,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onVerticalDragEnd",
+        [_Location_column]: 7,
+        [_Location_line]: 192,
+        [_Location_file]: null
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onHorizontalDragStart",
+        [_Location_column]: 7,
+        [_Location_line]: 194,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onHorizontalDragUpdate",
+        [_Location_column]: 7,
+        [_Location_line]: 196,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onHorizontalDragEnd",
+        [_Location_column]: 7,
+        [_Location_line]: 198,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.constList([C[10] || CT.C10, C[11] || CT.C11, C[12] || CT.C12, C[13] || CT.C13, C[14] || CT.C14, C[15] || CT.C15, C[16] || CT.C16, C[17] || CT.C17, C[18] || CT.C18, C[19] || CT.C19, C[20] || CT.C20], widget_inspector._Location);
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[9] || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 182,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/simple_gesture_detector-0.2.0/lib/simple_gesture_detector.dart"
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: simple_gesture_detector.SwipeDetectionBehavior.prototype,
+        [_name$]: "SwipeDetectionBehavior.singular",
+        index: 0
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: simple_gesture_detector.SwipeDetectionBehavior.prototype,
+        [_name$]: "SwipeDetectionBehavior.continuous",
+        index: 2
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: simple_gesture_detector.SwipeDetectionBehavior.prototype,
+        [_name$]: "SwipeDetectionBehavior.continuousDistinct",
+        index: 3
+      });
+    },
+    get C24() {
+      return C[24] = dart.constList([C[21] || CT.C21, C[6] || CT.C6, C[22] || CT.C22, C[23] || CT.C23], simple_gesture_detector.SwipeDetectionBehavior);
+    }
+  }, false);
+  var C = Array(25).fill(void 0);
+  var I = [
+    "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/simple_gesture_detector-0.2.0/lib/simple_gesture_detector.dart",
+    "package:simple_gesture_detector/simple_gesture_detector.dart"
+  ];
+  var _name$ = dart.privateName(simple_gesture_detector, "_name");
+  simple_gesture_detector.SwipeDirection = class SwipeDirection extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (simple_gesture_detector.SwipeDirection.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 12, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 12, 6, "_name");
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = simple_gesture_detector.SwipeDirection.prototype;
+  dart.addTypeTests(simple_gesture_detector.SwipeDirection);
+  dart.addTypeCaches(simple_gesture_detector.SwipeDirection);
+  dart.setLibraryUri(simple_gesture_detector.SwipeDirection, I[1]);
+  dart.setFieldSignature(simple_gesture_detector.SwipeDirection, () => ({
+    __proto__: dart.getFields(simple_gesture_detector.SwipeDirection.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(simple_gesture_detector.SwipeDirection, ['toString']);
+  simple_gesture_detector.SwipeDirection.left = C[0] || CT.C0;
+  simple_gesture_detector.SwipeDirection.right = C[1] || CT.C1;
+  simple_gesture_detector.SwipeDirection.up = C[2] || CT.C2;
+  simple_gesture_detector.SwipeDirection.down = C[3] || CT.C3;
+  simple_gesture_detector.SwipeDirection.values = C[4] || CT.C4;
+  var child$ = dart.privateName(simple_gesture_detector, "SimpleGestureDetector.child");
+  var swipeConfig$ = dart.privateName(simple_gesture_detector, "SimpleGestureDetector.swipeConfig");
+  var behavior$ = dart.privateName(simple_gesture_detector, "SimpleGestureDetector.behavior");
+  var onVerticalSwipe$ = dart.privateName(simple_gesture_detector, "SimpleGestureDetector.onVerticalSwipe");
+  var onHorizontalSwipe$ = dart.privateName(simple_gesture_detector, "SimpleGestureDetector.onHorizontalSwipe");
+  var onTap$ = dart.privateName(simple_gesture_detector, "SimpleGestureDetector.onTap");
+  var onDoubleTap$ = dart.privateName(simple_gesture_detector, "SimpleGestureDetector.onDoubleTap");
+  var onLongPress$ = dart.privateName(simple_gesture_detector, "SimpleGestureDetector.onLongPress");
+  var SimpleSwipeConfig_swipeDetectionBehavior = dart.privateName(simple_gesture_detector, "SimpleSwipeConfig.swipeDetectionBehavior");
+  var SimpleSwipeConfig_horizontalThreshold = dart.privateName(simple_gesture_detector, "SimpleSwipeConfig.horizontalThreshold");
+  var SimpleSwipeConfig_verticalThreshold = dart.privateName(simple_gesture_detector, "SimpleSwipeConfig.verticalThreshold");
+  var _name = dart.privateName(proxy_box, "_name");
+  simple_gesture_detector.SimpleGestureDetector = class SimpleGestureDetector extends framework.StatefulWidget {
+    get child() {
+      return this[child$];
+    }
+    set child(value) {
+      super.child = value;
+    }
+    get swipeConfig() {
+      return this[swipeConfig$];
+    }
+    set swipeConfig(value) {
+      super.swipeConfig = value;
+    }
+    get behavior() {
+      return this[behavior$];
+    }
+    set behavior(value) {
+      super.behavior = value;
+    }
+    get onVerticalSwipe() {
+      return this[onVerticalSwipe$];
+    }
+    set onVerticalSwipe(value) {
+      super.onVerticalSwipe = value;
+    }
+    get onHorizontalSwipe() {
+      return this[onHorizontalSwipe$];
+    }
+    set onHorizontalSwipe(value) {
+      super.onHorizontalSwipe = value;
+    }
+    get onTap() {
+      return this[onTap$];
+    }
+    set onTap(value) {
+      super.onTap = value;
+    }
+    get onDoubleTap() {
+      return this[onDoubleTap$];
+    }
+    set onDoubleTap(value) {
+      super.onDoubleTap = value;
+    }
+    get onLongPress() {
+      return this[onLongPress$];
+    }
+    set onLongPress(value) {
+      super.onLongPress = value;
+    }
+    createState() {
+      return new simple_gesture_detector._SimpleGestureDetectorState.new();
+    }
+  };
+  (simple_gesture_detector.SimpleGestureDetector.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let child = opts && 'child' in opts ? opts.child : null;
+    if (child == null) dart.nullFailed(I[0], 43, 19, "child");
+    let swipeConfig = opts && 'swipeConfig' in opts ? opts.swipeConfig : C[5] || CT.C5;
+    if (swipeConfig == null) dart.nullFailed(I[0], 44, 10, "swipeConfig");
+    let behavior = opts && 'behavior' in opts ? opts.behavior : C[7] || CT.C7;
+    if (behavior == null) dart.nullFailed(I[0], 45, 10, "behavior");
+    let onVerticalSwipe = opts && 'onVerticalSwipe' in opts ? opts.onVerticalSwipe : null;
+    let onHorizontalSwipe = opts && 'onHorizontalSwipe' in opts ? opts.onHorizontalSwipe : null;
+    let onTap = opts && 'onTap' in opts ? opts.onTap : null;
+    let onDoubleTap = opts && 'onDoubleTap' in opts ? opts.onDoubleTap : null;
+    let onLongPress = opts && 'onLongPress' in opts ? opts.onLongPress : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[child$] = child;
+    this[swipeConfig$] = swipeConfig;
+    this[behavior$] = behavior;
+    this[onVerticalSwipe$] = onVerticalSwipe;
+    this[onHorizontalSwipe$] = onHorizontalSwipe;
+    this[onTap$] = onTap;
+    this[onDoubleTap$] = onDoubleTap;
+    this[onLongPress$] = onLongPress;
+    simple_gesture_detector.SimpleGestureDetector.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = simple_gesture_detector.SimpleGestureDetector.prototype;
+  dart.addTypeTests(simple_gesture_detector.SimpleGestureDetector);
+  dart.addTypeCaches(simple_gesture_detector.SimpleGestureDetector);
+  dart.setMethodSignature(simple_gesture_detector.SimpleGestureDetector, () => ({
+    __proto__: dart.getMethods(simple_gesture_detector.SimpleGestureDetector.__proto__),
+    createState: dart.fnType(simple_gesture_detector._SimpleGestureDetectorState, [])
+  }));
+  dart.setLibraryUri(simple_gesture_detector.SimpleGestureDetector, I[1]);
+  dart.setFieldSignature(simple_gesture_detector.SimpleGestureDetector, () => ({
+    __proto__: dart.getFields(simple_gesture_detector.SimpleGestureDetector.__proto__),
+    child: dart.finalFieldType(framework.Widget),
+    swipeConfig: dart.finalFieldType(simple_gesture_detector.SimpleSwipeConfig),
+    behavior: dart.finalFieldType(proxy_box.HitTestBehavior),
+    onVerticalSwipe: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [simple_gesture_detector.SwipeDirection]))),
+    onHorizontalSwipe: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [simple_gesture_detector.SwipeDirection]))),
+    onTap: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, []))),
+    onDoubleTap: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, []))),
+    onLongPress: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [])))
+  }));
+  var _initialSwipeOffset = dart.privateName(simple_gesture_detector, "_initialSwipeOffset");
+  var _finalSwipeOffset = dart.privateName(simple_gesture_detector, "_finalSwipeOffset");
+  var _previousDirection = dart.privateName(simple_gesture_detector, "_previousDirection");
+  var _onVerticalDragStart = dart.privateName(simple_gesture_detector, "_onVerticalDragStart");
+  var _onVerticalDragUpdate = dart.privateName(simple_gesture_detector, "_onVerticalDragUpdate");
+  var _onVerticalDragEnd = dart.privateName(simple_gesture_detector, "_onVerticalDragEnd");
+  var _onHorizontalDragStart = dart.privateName(simple_gesture_detector, "_onHorizontalDragStart");
+  var _onHorizontalDragUpdate = dart.privateName(simple_gesture_detector, "_onHorizontalDragUpdate");
+  var _onHorizontalDragEnd = dart.privateName(simple_gesture_detector, "_onHorizontalDragEnd");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  simple_gesture_detector._SimpleGestureDetectorState = class _SimpleGestureDetectorState extends framework.State$(simple_gesture_detector.SimpleGestureDetector) {
+    [_onVerticalDragStart](details) {
+      if (details == null) dart.nullFailed(I[0], 62, 46, "details");
+      this[_initialSwipeOffset] = details.globalPosition;
+    }
+    [_onVerticalDragUpdate](details) {
+      if (details == null) dart.nullFailed(I[0], 66, 48, "details");
+      this[_finalSwipeOffset] = details.globalPosition;
+      if (this.widget.swipeConfig.swipeDetectionBehavior == simple_gesture_detector.SwipeDetectionBehavior.singularOnEnd) {
+        return;
+      }
+      let initialOffset = this[_initialSwipeOffset];
+      let finalOffset = this[_finalSwipeOffset];
+      if (initialOffset != null && finalOffset != null) {
+        let offsetDifference = dart.notNull(initialOffset.dy) - dart.notNull(finalOffset.dy);
+        if (offsetDifference[$abs]() > dart.notNull(this.widget.swipeConfig.verticalThreshold)) {
+          this[_initialSwipeOffset] = this.widget.swipeConfig.swipeDetectionBehavior == simple_gesture_detector.SwipeDetectionBehavior.singular ? null : this[_finalSwipeOffset];
+          let direction = offsetDifference > 0 ? simple_gesture_detector.SwipeDirection.up : simple_gesture_detector.SwipeDirection.down;
+          if (this.widget.swipeConfig.swipeDetectionBehavior == simple_gesture_detector.SwipeDetectionBehavior.continuous || this[_previousDirection] == null || direction != this[_previousDirection]) {
+            this[_previousDirection] = direction;
+            dart.nullCheck(this.widget.onVerticalSwipe)(direction);
+          }
+        }
+      }
+    }
+    [_onVerticalDragEnd](details) {
+      if (details == null) dart.nullFailed(I[0], 100, 42, "details");
+      if (this.widget.swipeConfig.swipeDetectionBehavior == simple_gesture_detector.SwipeDetectionBehavior.singularOnEnd) {
+        let initialOffset = this[_initialSwipeOffset];
+        let finalOffset = this[_finalSwipeOffset];
+        if (initialOffset != null && finalOffset != null) {
+          let offsetDifference = dart.notNull(initialOffset.dy) - dart.notNull(finalOffset.dy);
+          if (offsetDifference[$abs]() > dart.notNull(this.widget.swipeConfig.verticalThreshold)) {
+            let direction = offsetDifference > 0 ? simple_gesture_detector.SwipeDirection.up : simple_gesture_detector.SwipeDirection.down;
+            dart.nullCheck(this.widget.onVerticalSwipe)(direction);
+          }
+        }
+      }
+      this[_initialSwipeOffset] = null;
+      this[_previousDirection] = null;
+    }
+    [_onHorizontalDragStart](details) {
+      if (details == null) dart.nullFailed(I[0], 121, 48, "details");
+      this[_initialSwipeOffset] = details.globalPosition;
+    }
+    [_onHorizontalDragUpdate](details) {
+      if (details == null) dart.nullFailed(I[0], 125, 50, "details");
+      this[_finalSwipeOffset] = details.globalPosition;
+      if (this.widget.swipeConfig.swipeDetectionBehavior == simple_gesture_detector.SwipeDetectionBehavior.singularOnEnd) {
+        return;
+      }
+      let initialOffset = this[_initialSwipeOffset];
+      let finalOffset = this[_finalSwipeOffset];
+      if (initialOffset != null && finalOffset != null) {
+        let offsetDifference = dart.notNull(initialOffset.dx) - dart.notNull(finalOffset.dx);
+        if (offsetDifference[$abs]() > dart.notNull(this.widget.swipeConfig.horizontalThreshold)) {
+          this[_initialSwipeOffset] = this.widget.swipeConfig.swipeDetectionBehavior == simple_gesture_detector.SwipeDetectionBehavior.singular ? null : this[_finalSwipeOffset];
+          let direction = offsetDifference > 0 ? simple_gesture_detector.SwipeDirection.left : simple_gesture_detector.SwipeDirection.right;
+          if (this.widget.swipeConfig.swipeDetectionBehavior == simple_gesture_detector.SwipeDetectionBehavior.continuous || this[_previousDirection] == null || direction != this[_previousDirection]) {
+            this[_previousDirection] = direction;
+            dart.nullCheck(this.widget.onHorizontalSwipe)(direction);
+          }
+        }
+      }
+    }
+    [_onHorizontalDragEnd](details) {
+      if (details == null) dart.nullFailed(I[0], 159, 44, "details");
+      if (this.widget.swipeConfig.swipeDetectionBehavior == simple_gesture_detector.SwipeDetectionBehavior.singularOnEnd) {
+        let initialOffset = this[_initialSwipeOffset];
+        let finalOffset = this[_finalSwipeOffset];
+        if (initialOffset != null && finalOffset != null) {
+          let offsetDifference = dart.notNull(initialOffset.dx) - dart.notNull(finalOffset.dx);
+          if (offsetDifference[$abs]() > dart.notNull(this.widget.swipeConfig.horizontalThreshold)) {
+            let direction = offsetDifference > 0 ? simple_gesture_detector.SwipeDirection.left : simple_gesture_detector.SwipeDirection.right;
+            dart.nullCheck(this.widget.onHorizontalSwipe)(direction);
+          }
+        }
+      }
+      this[_initialSwipeOffset] = null;
+      this[_previousDirection] = null;
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 181, 29, "context");
+      return new gesture_detector.GestureDetector.new({behavior: this.widget.behavior, child: this.widget.child, onTap: this.widget.onTap, onLongPress: this.widget.onLongPress, onDoubleTap: this.widget.onDoubleTap, onVerticalDragStart: this.widget.onVerticalSwipe != null ? dart.bind(this, _onVerticalDragStart) : null, onVerticalDragUpdate: this.widget.onVerticalSwipe != null ? dart.bind(this, _onVerticalDragUpdate) : null, onVerticalDragEnd: this.widget.onVerticalSwipe != null ? dart.bind(this, _onVerticalDragEnd) : null, onHorizontalDragStart: this.widget.onHorizontalSwipe != null ? dart.bind(this, _onHorizontalDragStart) : null, onHorizontalDragUpdate: this.widget.onHorizontalSwipe != null ? dart.bind(this, _onHorizontalDragUpdate) : null, onHorizontalDragEnd: this.widget.onHorizontalSwipe != null ? dart.bind(this, _onHorizontalDragEnd) : null, $creationLocationd_0dea112b090073317d4: C[8] || CT.C8});
+    }
+  };
+  (simple_gesture_detector._SimpleGestureDetectorState.new = function() {
+    this[_initialSwipeOffset] = null;
+    this[_finalSwipeOffset] = null;
+    this[_previousDirection] = null;
+    simple_gesture_detector._SimpleGestureDetectorState.__proto__.new.call(this);
+    ;
+  }).prototype = simple_gesture_detector._SimpleGestureDetectorState.prototype;
+  dart.addTypeTests(simple_gesture_detector._SimpleGestureDetectorState);
+  dart.addTypeCaches(simple_gesture_detector._SimpleGestureDetectorState);
+  dart.setMethodSignature(simple_gesture_detector._SimpleGestureDetectorState, () => ({
+    __proto__: dart.getMethods(simple_gesture_detector._SimpleGestureDetectorState.__proto__),
+    [_onVerticalDragStart]: dart.fnType(dart.void, [drag_details.DragStartDetails]),
+    [_onVerticalDragUpdate]: dart.fnType(dart.void, [drag_details.DragUpdateDetails]),
+    [_onVerticalDragEnd]: dart.fnType(dart.void, [drag_details.DragEndDetails]),
+    [_onHorizontalDragStart]: dart.fnType(dart.void, [drag_details.DragStartDetails]),
+    [_onHorizontalDragUpdate]: dart.fnType(dart.void, [drag_details.DragUpdateDetails]),
+    [_onHorizontalDragEnd]: dart.fnType(dart.void, [drag_details.DragEndDetails]),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(simple_gesture_detector._SimpleGestureDetectorState, I[1]);
+  dart.setFieldSignature(simple_gesture_detector._SimpleGestureDetectorState, () => ({
+    __proto__: dart.getFields(simple_gesture_detector._SimpleGestureDetectorState.__proto__),
+    [_initialSwipeOffset]: dart.fieldType(dart.nullable(ui.Offset)),
+    [_finalSwipeOffset]: dart.fieldType(dart.nullable(ui.Offset)),
+    [_previousDirection]: dart.fieldType(dart.nullable(simple_gesture_detector.SwipeDirection))
+  }));
+  simple_gesture_detector.SwipeDetectionBehavior = class SwipeDetectionBehavior extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (simple_gesture_detector.SwipeDetectionBehavior.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 205, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 205, 6, "_name");
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = simple_gesture_detector.SwipeDetectionBehavior.prototype;
+  dart.addTypeTests(simple_gesture_detector.SwipeDetectionBehavior);
+  dart.addTypeCaches(simple_gesture_detector.SwipeDetectionBehavior);
+  dart.setLibraryUri(simple_gesture_detector.SwipeDetectionBehavior, I[1]);
+  dart.setFieldSignature(simple_gesture_detector.SwipeDetectionBehavior, () => ({
+    __proto__: dart.getFields(simple_gesture_detector.SwipeDetectionBehavior.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(simple_gesture_detector.SwipeDetectionBehavior, ['toString']);
+  simple_gesture_detector.SwipeDetectionBehavior.singular = C[21] || CT.C21;
+  simple_gesture_detector.SwipeDetectionBehavior.singularOnEnd = C[6] || CT.C6;
+  simple_gesture_detector.SwipeDetectionBehavior.continuous = C[22] || CT.C22;
+  simple_gesture_detector.SwipeDetectionBehavior.continuousDistinct = C[23] || CT.C23;
+  simple_gesture_detector.SwipeDetectionBehavior.values = C[24] || CT.C24;
+  const verticalThreshold$ = SimpleSwipeConfig_verticalThreshold;
+  const horizontalThreshold$ = SimpleSwipeConfig_horizontalThreshold;
+  const swipeDetectionBehavior$ = SimpleSwipeConfig_swipeDetectionBehavior;
+  simple_gesture_detector.SimpleSwipeConfig = class SimpleSwipeConfig extends core.Object {
+    get verticalThreshold() {
+      return this[verticalThreshold$];
+    }
+    set verticalThreshold(value) {
+      super.verticalThreshold = value;
+    }
+    get horizontalThreshold() {
+      return this[horizontalThreshold$];
+    }
+    set horizontalThreshold(value) {
+      super.horizontalThreshold = value;
+    }
+    get swipeDetectionBehavior() {
+      return this[swipeDetectionBehavior$];
+    }
+    set swipeDetectionBehavior(value) {
+      super.swipeDetectionBehavior = value;
+    }
+  };
+  (simple_gesture_detector.SimpleSwipeConfig.new = function(opts) {
+    let verticalThreshold = opts && 'verticalThreshold' in opts ? opts.verticalThreshold : 50;
+    if (verticalThreshold == null) dart.nullFailed(I[0], 232, 10, "verticalThreshold");
+    let horizontalThreshold = opts && 'horizontalThreshold' in opts ? opts.horizontalThreshold : 50;
+    if (horizontalThreshold == null) dart.nullFailed(I[0], 233, 10, "horizontalThreshold");
+    let swipeDetectionBehavior = opts && 'swipeDetectionBehavior' in opts ? opts.swipeDetectionBehavior : C[6] || CT.C6;
+    if (swipeDetectionBehavior == null) dart.nullFailed(I[0], 234, 10, "swipeDetectionBehavior");
+    this[verticalThreshold$] = verticalThreshold;
+    this[horizontalThreshold$] = horizontalThreshold;
+    this[swipeDetectionBehavior$] = swipeDetectionBehavior;
+    ;
+  }).prototype = simple_gesture_detector.SimpleSwipeConfig.prototype;
+  dart.addTypeTests(simple_gesture_detector.SimpleSwipeConfig);
+  dart.addTypeCaches(simple_gesture_detector.SimpleSwipeConfig);
+  dart.setLibraryUri(simple_gesture_detector.SimpleSwipeConfig, I[1]);
+  dart.setFieldSignature(simple_gesture_detector.SimpleSwipeConfig, () => ({
+    __proto__: dart.getFields(simple_gesture_detector.SimpleSwipeConfig.__proto__),
+    verticalThreshold: dart.finalFieldType(core.double),
+    horizontalThreshold: dart.finalFieldType(core.double),
+    swipeDetectionBehavior: dart.finalFieldType(simple_gesture_detector.SwipeDetectionBehavior)
+  }));
+  dart.trackLibraries("packages/simple_gesture_detector/simple_gesture_detector.dart", {
+    "package:simple_gesture_detector/simple_gesture_detector.dart": simple_gesture_detector
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["simple_gesture_detector.dart"],"names":[],"mappings":"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","file":"../../../../../../packages/simple_gesture_detector/simple_gesture_detector.dart.lib.js"}');
+  // Exports:
+  return {
+    simple_gesture_detector: simple_gesture_detector
+  };
+}));
+
+//# sourceMappingURL=simple_gesture_detector.dart.lib.js.map

@@ -1,0 +1,807 @@
+define(['dart_sdk', 'packages/table_calendar/src/shared/utils.dart', 'packages/flutter/src/widgets/page_view.dart', 'packages/table_calendar/src/widgets/calendar_page.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/material/date.dart', 'packages/flutter/src/painting/decoration.dart', 'packages/flutter/src/rendering/layer.dart'], (function load__packages__table_calendar__src__widgets__calendar_core_dart(dart_sdk, packages__table_calendar__src__shared__utils$46dart, packages__flutter__src__widgets__page_view$46dart, packages__table_calendar__src__widgets__calendar_page$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__material__date$46dart, packages__flutter__src__painting__decoration$46dart, packages__flutter__src__rendering__layer$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const utils = packages__table_calendar__src__shared__utils$46dart.src__shared__utils;
+  const page_view = packages__flutter__src__widgets__page_view$46dart.src__widgets__page_view;
+  const calendar_page = packages__table_calendar__src__widgets__calendar_page$46dart.src__widgets__calendar_page;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const scroll_physics = packages__flutter__src__widgets__widget_span$46dart.src__widgets__scroll_physics;
+  const date = packages__flutter__src__material__date$46dart.src__material__date;
+  const decoration = packages__flutter__src__painting__decoration$46dart.src__painting__decoration;
+  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
+  var calendar_core = Object.create(dart.library);
+  var $truncate = dartx.truncate;
+  var $modulo = dartx['%'];
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    BuildContextAndDateTimeToSizedBox: () => (T.BuildContextAndDateTimeToSizedBox = dart.constFn(dart.fnType(basic.SizedBox, [framework.BuildContext, core.DateTime])))(),
+    BuildContextAndintToCalendarPage: () => (T.BuildContextAndintToCalendarPage = dart.constFn(dart.fnType(calendar_page.CalendarPage, [framework.BuildContext, core.int])))(),
+    intTovoid: () => (T.intTovoid = dart.constFn(dart.fnType(dart.void, [core.int])))(),
+    ListOfDateTime: () => (T.ListOfDateTime = dart.constFn(core.List$(core.DateTime)))(),
+    intToDateTime: () => (T.intToDateTime = dart.constFn(dart.fnType(core.DateTime, [core.int])))()
+  };
+  var T$Eval = Object.assign({
+    _: () => T$Eval
+  }, T);
+  var S = {
+    _: () => S
+  };
+  var S$Eval = Object.assign({
+    _: () => S$Eval
+  }, S);
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: utils.StartingDayOfWeek.prototype,
+        [_name]: "StartingDayOfWeek.sunday",
+        index: 6
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: utils.CalendarFormat.prototype,
+        [_name]: "CalendarFormat.month",
+        index: 0
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 15,
+        [_Location_line]: 79,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 80,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.constList([C[4] || CT.C4, C[5] || CT.C5], widget_inspector._Location);
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[3] || CT.C3,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 78,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/table_calendar-3.0.0/lib/src/widgets/calendar_core.dart"
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 15,
+        [_Location_line]: 94,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 95,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[8] || CT.C8, C[9] || CT.C9], widget_inspector._Location);
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 93,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/table_calendar-3.0.0/lib/src/widgets/calendar_core.dart"
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "visibleDays",
+        [_Location_column]: 11,
+        [_Location_line]: 73,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "dowVisible",
+        [_Location_column]: 11,
+        [_Location_line]: 74,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "dowDecoration",
+        [_Location_column]: 11,
+        [_Location_line]: 75,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "rowDecoration",
+        [_Location_column]: 11,
+        [_Location_line]: 76,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "dowBuilder",
+        [_Location_column]: 11,
+        [_Location_line]: 77,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "dayBuilder",
+        [_Location_column]: 11,
+        [_Location_line]: 83,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.constList([C[12] || CT.C12, C[13] || CT.C13, C[14] || CT.C14, C[15] || CT.C15, C[16] || CT.C16, C[17] || CT.C17], widget_inspector._Location);
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 72,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/table_calendar-3.0.0/lib/src/widgets/calendar_core.dart"
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "controller",
+        [_Location_column]: 7,
+        [_Location_line]: 58,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "physics",
+        [_Location_column]: 7,
+        [_Location_line]: 59,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemCount",
+        [_Location_column]: 7,
+        [_Location_line]: 60,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemBuilder",
+        [_Location_column]: 7,
+        [_Location_line]: 61,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPageChanged",
+        [_Location_column]: 7,
+        [_Location_line]: 100,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.constList([C[20] || CT.C20, C[21] || CT.C21, C[22] || CT.C22, C[23] || CT.C23, C[24] || CT.C24], widget_inspector._Location);
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[19] || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 57,
+        [_Location_file]: "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/table_calendar-3.0.0/lib/src/widgets/calendar_core.dart"
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: utils.CalendarFormat.prototype,
+        [_name]: "CalendarFormat.twoWeeks",
+        index: 1
+      });
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: utils.CalendarFormat.prototype,
+        [_name]: "CalendarFormat.week",
+        index: 2
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 604800000000.0
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 1209600000000.0
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 3628800000000.0
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 86400000000.0
+      });
+    }
+  }, false);
+  var C = Array(31).fill(void 0);
+  var I = [
+    "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/table_calendar-3.0.0/lib/src/widgets/calendar_core.dart",
+    "package:table_calendar/src/widgets/calendar_core.dart"
+  ];
+  var focusedDay$ = dart.privateName(calendar_core, "CalendarCore.focusedDay");
+  var firstDay$ = dart.privateName(calendar_core, "CalendarCore.firstDay");
+  var lastDay$ = dart.privateName(calendar_core, "CalendarCore.lastDay");
+  var calendarFormat$ = dart.privateName(calendar_core, "CalendarCore.calendarFormat");
+  var dowBuilder$ = dart.privateName(calendar_core, "CalendarCore.dowBuilder");
+  var dayBuilder$ = dart.privateName(calendar_core, "CalendarCore.dayBuilder");
+  var sixWeekMonthsEnforced$ = dart.privateName(calendar_core, "CalendarCore.sixWeekMonthsEnforced");
+  var dowVisible$ = dart.privateName(calendar_core, "CalendarCore.dowVisible");
+  var dowDecoration$ = dart.privateName(calendar_core, "CalendarCore.dowDecoration");
+  var rowDecoration$ = dart.privateName(calendar_core, "CalendarCore.rowDecoration");
+  var dowHeight$ = dart.privateName(calendar_core, "CalendarCore.dowHeight");
+  var rowHeight$ = dart.privateName(calendar_core, "CalendarCore.rowHeight");
+  var constraints$ = dart.privateName(calendar_core, "CalendarCore.constraints");
+  var previousIndex$ = dart.privateName(calendar_core, "CalendarCore.previousIndex");
+  var startingDayOfWeek$ = dart.privateName(calendar_core, "CalendarCore.startingDayOfWeek");
+  var pageController$ = dart.privateName(calendar_core, "CalendarCore.pageController");
+  var scrollPhysics$ = dart.privateName(calendar_core, "CalendarCore.scrollPhysics");
+  var onPageChanged$ = dart.privateName(calendar_core, "CalendarCore.onPageChanged");
+  var _name = dart.privateName(utils, "_name");
+  var _getPageCount = dart.privateName(calendar_core, "_getPageCount");
+  var _getBaseDay = dart.privateName(calendar_core, "_getBaseDay");
+  var _getVisibleRange = dart.privateName(calendar_core, "_getVisibleRange");
+  var _daysInRange = dart.privateName(calendar_core, "_daysInRange");
+  var _getRowCount = dart.privateName(calendar_core, "_getRowCount");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var _getFocusedDay = dart.privateName(calendar_core, "_getFocusedDay");
+  var _getMonthCount = dart.privateName(calendar_core, "_getMonthCount");
+  var _getTwoWeekCount = dart.privateName(calendar_core, "_getTwoWeekCount");
+  var _getWeekCount = dart.privateName(calendar_core, "_getWeekCount");
+  var _firstDayOfWeek = dart.privateName(calendar_core, "_firstDayOfWeek");
+  var _daysInMonth = dart.privateName(calendar_core, "_daysInMonth");
+  var _daysInTwoWeeks = dart.privateName(calendar_core, "_daysInTwoWeeks");
+  var _daysInWeek = dart.privateName(calendar_core, "_daysInWeek");
+  var _getDaysBefore = dart.privateName(calendar_core, "_getDaysBefore");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  var _firstDayOfMonth = dart.privateName(calendar_core, "_firstDayOfMonth");
+  var _lastDayOfMonth = dart.privateName(calendar_core, "_lastDayOfMonth");
+  var _getDaysAfter = dart.privateName(calendar_core, "_getDaysAfter");
+  calendar_core.CalendarCore = class CalendarCore extends framework.StatelessWidget {
+    get focusedDay() {
+      return this[focusedDay$];
+    }
+    set focusedDay(value) {
+      super.focusedDay = value;
+    }
+    get firstDay() {
+      return this[firstDay$];
+    }
+    set firstDay(value) {
+      super.firstDay = value;
+    }
+    get lastDay() {
+      return this[lastDay$];
+    }
+    set lastDay(value) {
+      super.lastDay = value;
+    }
+    get calendarFormat() {
+      return this[calendarFormat$];
+    }
+    set calendarFormat(value) {
+      super.calendarFormat = value;
+    }
+    get dowBuilder() {
+      return this[dowBuilder$];
+    }
+    set dowBuilder(value) {
+      super.dowBuilder = value;
+    }
+    get dayBuilder() {
+      return this[dayBuilder$];
+    }
+    set dayBuilder(value) {
+      super.dayBuilder = value;
+    }
+    get sixWeekMonthsEnforced() {
+      return this[sixWeekMonthsEnforced$];
+    }
+    set sixWeekMonthsEnforced(value) {
+      super.sixWeekMonthsEnforced = value;
+    }
+    get dowVisible() {
+      return this[dowVisible$];
+    }
+    set dowVisible(value) {
+      super.dowVisible = value;
+    }
+    get dowDecoration() {
+      return this[dowDecoration$];
+    }
+    set dowDecoration(value) {
+      super.dowDecoration = value;
+    }
+    get rowDecoration() {
+      return this[rowDecoration$];
+    }
+    set rowDecoration(value) {
+      super.rowDecoration = value;
+    }
+    get dowHeight() {
+      return this[dowHeight$];
+    }
+    set dowHeight(value) {
+      super.dowHeight = value;
+    }
+    get rowHeight() {
+      return this[rowHeight$];
+    }
+    set rowHeight(value) {
+      super.rowHeight = value;
+    }
+    get constraints() {
+      return this[constraints$];
+    }
+    set constraints(value) {
+      super.constraints = value;
+    }
+    get previousIndex() {
+      return this[previousIndex$];
+    }
+    set previousIndex(value) {
+      super.previousIndex = value;
+    }
+    get startingDayOfWeek() {
+      return this[startingDayOfWeek$];
+    }
+    set startingDayOfWeek(value) {
+      super.startingDayOfWeek = value;
+    }
+    get pageController() {
+      return this[pageController$];
+    }
+    set pageController(value) {
+      super.pageController = value;
+    }
+    get scrollPhysics() {
+      return this[scrollPhysics$];
+    }
+    set scrollPhysics(value) {
+      super.scrollPhysics = value;
+    }
+    get onPageChanged() {
+      return this[onPageChanged$];
+    }
+    set onPageChanged(value) {
+      super.onPageChanged = value;
+    }
+    build(context) {
+      if (context == null) dart.nullFailed(I[0], 56, 29, "context");
+      return new page_view.PageView.builder({controller: this.pageController, physics: this.scrollPhysics, itemCount: this[_getPageCount](this.calendarFormat, this.firstDay, this.lastDay), itemBuilder: dart.fn((context, index) => {
+          if (context == null) dart.nullFailed(I[0], 61, 21, "context");
+          if (index == null) dart.nullFailed(I[0], 61, 30, "index");
+          let baseDay = this[_getBaseDay](this.calendarFormat, index);
+          let visibleRange = this[_getVisibleRange](this.calendarFormat, baseDay);
+          let visibleDays = this[_daysInRange](visibleRange.start, visibleRange.end);
+          let actualDowHeight = dart.test(this.dowVisible) ? dart.nullCheck(this.dowHeight) : 0.0;
+          let constrainedRowHeight = dart.test(this.constraints.hasBoundedHeight) ? (dart.notNull(this.constraints.maxHeight) - actualDowHeight) / dart.notNull(this[_getRowCount](this.calendarFormat, baseDay)) : null;
+          return new calendar_page.CalendarPage.new({visibleDays: visibleDays, dowVisible: this.dowVisible, dowDecoration: this.dowDecoration, rowDecoration: this.rowDecoration, dowBuilder: dart.fn((context, day) => {
+              let t0;
+              if (context == null) dart.nullFailed(I[0], 77, 24, "context");
+              if (day == null) dart.nullFailed(I[0], 77, 33, "day");
+              return new basic.SizedBox.new({height: this.dowHeight, child: (t0 = this.dowBuilder, t0 == null ? null : t0(context, day)), $creationLocationd_0dea112b090073317d4: C[2] || CT.C2});
+            }, T.BuildContextAndDateTimeToSizedBox()), dayBuilder: dart.fn((context, day) => {
+              let t0, t2, t1, t0$;
+              if (context == null) dart.nullFailed(I[0], 83, 24, "context");
+              if (day == null) dart.nullFailed(I[0], 83, 33, "day");
+              let baseDay = null;
+              let previousFocusedDay = this.focusedDay;
+              if (previousFocusedDay == null || this.previousIndex == null) {
+                baseDay = this[_getBaseDay](this.calendarFormat, index);
+              } else {
+                baseDay = this[_getFocusedDay](this.calendarFormat, previousFocusedDay, index);
+              }
+              return new basic.SizedBox.new({height: (t0 = constrainedRowHeight, t0 == null ? this.rowHeight : t0), child: (t0$ = context, t1 = day, t2 = baseDay, this.dayBuilder(t0$, t1, t2)), $creationLocationd_0dea112b090073317d4: C[6] || CT.C6});
+            }, T.BuildContextAndDateTimeToSizedBox()), $creationLocationd_0dea112b090073317d4: C[10] || CT.C10});
+        }, T.BuildContextAndintToCalendarPage()), onPageChanged: dart.fn(index => {
+          let t1, t0;
+          if (index == null) dart.nullFailed(I[0], 100, 23, "index");
+          let baseDay = null;
+          let previousFocusedDay = this.focusedDay;
+          if (previousFocusedDay == null || this.previousIndex == null) {
+            baseDay = this[_getBaseDay](this.calendarFormat, index);
+          } else {
+            baseDay = this[_getFocusedDay](this.calendarFormat, previousFocusedDay, index);
+          }
+          t0 = index;
+          t1 = baseDay;
+          return this.onPageChanged(t0, t1);
+        }, T.intTovoid()), $creationLocationd_0dea112b090073317d4: C[18] || CT.C18});
+    }
+    [_getPageCount](format, first, last) {
+      if (format == null) dart.nullFailed(I[0], 114, 36, "format");
+      if (first == null) dart.nullFailed(I[0], 114, 53, "first");
+      if (last == null) dart.nullFailed(I[0], 114, 69, "last");
+      switch (format) {
+        case C[1] || CT.C1:
+        {
+          return dart.notNull(this[_getMonthCount](first, last)) + 1;
+        }
+        case C[25] || CT.C25:
+        {
+          return dart.notNull(this[_getTwoWeekCount](first, last)) + 1;
+        }
+        case C[26] || CT.C26:
+        {
+          return dart.notNull(this[_getWeekCount](first, last)) + 1;
+        }
+        default:
+        {
+          return dart.notNull(this[_getMonthCount](first, last)) + 1;
+        }
+      }
+    }
+    [_getMonthCount](first, last) {
+      if (first == null) dart.nullFailed(I[0], 127, 31, "first");
+      if (last == null) dart.nullFailed(I[0], 127, 47, "last");
+      let yearDif = dart.notNull(last.year) - dart.notNull(first.year);
+      let monthDif = dart.notNull(last.month) - dart.notNull(first.month);
+      return yearDif * 12 + monthDif;
+    }
+    [_getWeekCount](first, last) {
+      if (first == null) dart.nullFailed(I[0], 134, 30, "first");
+      if (last == null) dart.nullFailed(I[0], 134, 46, "last");
+      return (dart.notNull(last.difference(this[_firstDayOfWeek](first)).inDays) / 7)[$truncate]();
+    }
+    [_getTwoWeekCount](first, last) {
+      if (first == null) dart.nullFailed(I[0], 138, 33, "first");
+      if (last == null) dart.nullFailed(I[0], 138, 49, "last");
+      return (dart.notNull(last.difference(this[_firstDayOfWeek](first)).inDays) / 14)[$truncate]();
+    }
+    [_getFocusedDay](format, prevFocusedDay, pageIndex) {
+      if (format == null) dart.nullFailed(I[0], 143, 22, "format");
+      if (prevFocusedDay == null) dart.nullFailed(I[0], 143, 39, "prevFocusedDay");
+      if (pageIndex == null) dart.nullFailed(I[0], 143, 59, "pageIndex");
+      if (pageIndex == this.previousIndex) {
+        return prevFocusedDay;
+      }
+      let pageDif = dart.notNull(pageIndex) - dart.nullCheck(this.previousIndex);
+      let day = null;
+      switch (format) {
+        case C[1] || CT.C1:
+        {
+          day = new core.DateTime.utc(prevFocusedDay.year, dart.notNull(prevFocusedDay.month) + pageDif);
+          break;
+        }
+        case C[25] || CT.C25:
+        {
+          day = new core.DateTime.utc(prevFocusedDay.year, prevFocusedDay.month, dart.notNull(prevFocusedDay.day) + pageDif * 14);
+          break;
+        }
+        case C[26] || CT.C26:
+        {
+          day = new core.DateTime.utc(prevFocusedDay.year, prevFocusedDay.month, dart.notNull(prevFocusedDay.day) + pageDif * 7);
+          break;
+        }
+      }
+      if (dart.test(day.isBefore(this.firstDay))) {
+        day = this.firstDay;
+      } else if (dart.test(day.isAfter(this.lastDay))) {
+        day = this.lastDay;
+      }
+      return day;
+    }
+    [_getBaseDay](format, pageIndex) {
+      if (format == null) dart.nullFailed(I[0], 174, 39, "format");
+      if (pageIndex == null) dart.nullFailed(I[0], 174, 51, "pageIndex");
+      let day = null;
+      switch (format) {
+        case C[1] || CT.C1:
+        {
+          day = new core.DateTime.utc(this.firstDay.year, dart.notNull(this.firstDay.month) + dart.notNull(pageIndex));
+          break;
+        }
+        case C[25] || CT.C25:
+        {
+          day = new core.DateTime.utc(this.firstDay.year, this.firstDay.month, dart.notNull(this.firstDay.day) + dart.notNull(pageIndex) * 14);
+          break;
+        }
+        case C[26] || CT.C26:
+        {
+          day = new core.DateTime.utc(this.firstDay.year, this.firstDay.month, dart.notNull(this.firstDay.day) + dart.notNull(pageIndex) * 7);
+          break;
+        }
+      }
+      if (dart.test(day.isBefore(this.firstDay))) {
+        day = this.firstDay;
+      } else if (dart.test(day.isAfter(this.lastDay))) {
+        day = this.lastDay;
+      }
+      return day;
+    }
+    [_getVisibleRange](format, focusedDay) {
+      if (format == null) dart.nullFailed(I[0], 200, 49, "format");
+      if (focusedDay == null) dart.nullFailed(I[0], 200, 66, "focusedDay");
+      switch (format) {
+        case C[1] || CT.C1:
+        {
+          return this[_daysInMonth](focusedDay);
+        }
+        case C[25] || CT.C25:
+        {
+          return this[_daysInTwoWeeks](focusedDay);
+        }
+        case C[26] || CT.C26:
+        {
+          return this[_daysInWeek](focusedDay);
+        }
+        default:
+        {
+          return this[_daysInMonth](focusedDay);
+        }
+      }
+    }
+    [_daysInWeek](focusedDay) {
+      if (focusedDay == null) dart.nullFailed(I[0], 213, 38, "focusedDay");
+      let daysBefore = this[_getDaysBefore](focusedDay);
+      let firstToDisplay = focusedDay.subtract(new core.Duration.new({days: daysBefore}));
+      let lastToDisplay = firstToDisplay.add(C[27] || CT.C27);
+      return new date.DateTimeRange.new({start: firstToDisplay, end: lastToDisplay});
+    }
+    [_daysInTwoWeeks](focusedDay) {
+      if (focusedDay == null) dart.nullFailed(I[0], 220, 42, "focusedDay");
+      let daysBefore = this[_getDaysBefore](focusedDay);
+      let firstToDisplay = focusedDay.subtract(new core.Duration.new({days: daysBefore}));
+      let lastToDisplay = firstToDisplay.add(C[28] || CT.C28);
+      return new date.DateTimeRange.new({start: firstToDisplay, end: lastToDisplay});
+    }
+    [_daysInMonth](focusedDay) {
+      if (focusedDay == null) dart.nullFailed(I[0], 227, 39, "focusedDay");
+      let first = this[_firstDayOfMonth](focusedDay);
+      let daysBefore = this[_getDaysBefore](first);
+      let firstToDisplay = first.subtract(new core.Duration.new({days: daysBefore}));
+      if (dart.test(this.sixWeekMonthsEnforced)) {
+        let end = firstToDisplay.add(C[29] || CT.C29);
+        return new date.DateTimeRange.new({start: firstToDisplay, end: end});
+      }
+      let last = this[_lastDayOfMonth](focusedDay);
+      let daysAfter = this[_getDaysAfter](last);
+      let lastToDisplay = last.add(new core.Duration.new({days: daysAfter}));
+      return new date.DateTimeRange.new({start: firstToDisplay, end: lastToDisplay});
+    }
+    [_daysInRange](first, last) {
+      if (first == null) dart.nullFailed(I[0], 244, 40, "first");
+      if (last == null) dart.nullFailed(I[0], 244, 56, "last");
+      let dayCount = dart.notNull(last.difference(first).inDays) + 1;
+      return T.ListOfDateTime().generate(dayCount, dart.fn(index => {
+        if (index == null) dart.nullFailed(I[0], 248, 8, "index");
+        return new core.DateTime.utc(first.year, first.month, dart.notNull(first.day) + dart.notNull(index));
+      }, T.intToDateTime()));
+    }
+    [_firstDayOfWeek](week) {
+      if (week == null) dart.nullFailed(I[0], 252, 37, "week");
+      let daysBefore = this[_getDaysBefore](week);
+      return week.subtract(new core.Duration.new({days: daysBefore}));
+    }
+    [_firstDayOfMonth](month) {
+      if (month == null) dart.nullFailed(I[0], 257, 38, "month");
+      return new core.DateTime.utc(month.year, month.month, 1);
+    }
+    [_lastDayOfMonth](month) {
+      if (month == null) dart.nullFailed(I[0], 261, 37, "month");
+      let date = dart.notNull(month.month) < 12 ? new core.DateTime.utc(month.year, dart.notNull(month.month) + 1, 1) : new core.DateTime.utc(dart.notNull(month.year) + 1, 1, 1);
+      return date.subtract(C[30] || CT.C30);
+    }
+    [_getRowCount](format, focusedDay) {
+      if (format == null) dart.nullFailed(I[0], 268, 35, "format");
+      if (focusedDay == null) dart.nullFailed(I[0], 268, 52, "focusedDay");
+      if (format == utils.CalendarFormat.twoWeeks) {
+        return 2;
+      } else if (format == utils.CalendarFormat.week) {
+        return 1;
+      } else if (dart.test(this.sixWeekMonthsEnforced)) {
+        return 6;
+      }
+      let first = this[_firstDayOfMonth](focusedDay);
+      let daysBefore = this[_getDaysBefore](first);
+      let firstToDisplay = first.subtract(new core.Duration.new({days: daysBefore}));
+      let last = this[_lastDayOfMonth](focusedDay);
+      let daysAfter = this[_getDaysAfter](last);
+      let lastToDisplay = last.add(new core.Duration.new({days: daysAfter}));
+      return ((dart.notNull(lastToDisplay.difference(firstToDisplay).inDays) + 1) / 7)[$truncate]();
+    }
+    [_getDaysBefore](firstDay) {
+      if (firstDay == null) dart.nullFailed(I[0], 288, 31, "firstDay");
+      return (dart.notNull(firstDay.weekday) + 7 - dart.notNull(utils.getWeekdayNumber(this.startingDayOfWeek)))[$modulo](7);
+    }
+    [_getDaysAfter](lastDay) {
+      if (lastDay == null) dart.nullFailed(I[0], 292, 30, "lastDay");
+      let invertedStartingWeekday = 8 - dart.notNull(utils.getWeekdayNumber(this.startingDayOfWeek));
+      let daysAfter = 7 - (dart.notNull(lastDay.weekday) + invertedStartingWeekday)[$modulo](7);
+      if (daysAfter === 7) {
+        daysAfter = 0;
+      }
+      return daysAfter;
+    }
+  };
+  (calendar_core.CalendarCore.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let dowBuilder = opts && 'dowBuilder' in opts ? opts.dowBuilder : null;
+    let dayBuilder = opts && 'dayBuilder' in opts ? opts.dayBuilder : null;
+    if (dayBuilder == null) dart.nullFailed(I[0], 35, 19, "dayBuilder");
+    let onPageChanged = opts && 'onPageChanged' in opts ? opts.onPageChanged : null;
+    if (onPageChanged == null) dart.nullFailed(I[0], 36, 19, "onPageChanged");
+    let firstDay = opts && 'firstDay' in opts ? opts.firstDay : null;
+    if (firstDay == null) dart.nullFailed(I[0], 37, 19, "firstDay");
+    let lastDay = opts && 'lastDay' in opts ? opts.lastDay : null;
+    if (lastDay == null) dart.nullFailed(I[0], 38, 19, "lastDay");
+    let constraints = opts && 'constraints' in opts ? opts.constraints : null;
+    if (constraints == null) dart.nullFailed(I[0], 39, 19, "constraints");
+    let dowHeight = opts && 'dowHeight' in opts ? opts.dowHeight : null;
+    let rowHeight = opts && 'rowHeight' in opts ? opts.rowHeight : null;
+    let startingDayOfWeek = opts && 'startingDayOfWeek' in opts ? opts.startingDayOfWeek : C[0] || CT.C0;
+    if (startingDayOfWeek == null) dart.nullFailed(I[0], 42, 10, "startingDayOfWeek");
+    let calendarFormat = opts && 'calendarFormat' in opts ? opts.calendarFormat : C[1] || CT.C1;
+    if (calendarFormat == null) dart.nullFailed(I[0], 43, 10, "calendarFormat");
+    let pageController = opts && 'pageController' in opts ? opts.pageController : null;
+    let focusedDay = opts && 'focusedDay' in opts ? opts.focusedDay : null;
+    let previousIndex = opts && 'previousIndex' in opts ? opts.previousIndex : null;
+    let sixWeekMonthsEnforced = opts && 'sixWeekMonthsEnforced' in opts ? opts.sixWeekMonthsEnforced : false;
+    if (sixWeekMonthsEnforced == null) dart.nullFailed(I[0], 47, 10, "sixWeekMonthsEnforced");
+    let dowVisible = opts && 'dowVisible' in opts ? opts.dowVisible : true;
+    if (dowVisible == null) dart.nullFailed(I[0], 48, 10, "dowVisible");
+    let dowDecoration = opts && 'dowDecoration' in opts ? opts.dowDecoration : null;
+    let rowDecoration = opts && 'rowDecoration' in opts ? opts.rowDecoration : null;
+    let scrollPhysics = opts && 'scrollPhysics' in opts ? opts.scrollPhysics : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[dowBuilder$] = dowBuilder;
+    this[dayBuilder$] = dayBuilder;
+    this[onPageChanged$] = onPageChanged;
+    this[firstDay$] = firstDay;
+    this[lastDay$] = lastDay;
+    this[constraints$] = constraints;
+    this[dowHeight$] = dowHeight;
+    this[rowHeight$] = rowHeight;
+    this[startingDayOfWeek$] = startingDayOfWeek;
+    this[calendarFormat$] = calendarFormat;
+    this[pageController$] = pageController;
+    this[focusedDay$] = focusedDay;
+    this[previousIndex$] = previousIndex;
+    this[sixWeekMonthsEnforced$] = sixWeekMonthsEnforced;
+    this[dowVisible$] = dowVisible;
+    this[dowDecoration$] = dowDecoration;
+    this[rowDecoration$] = rowDecoration;
+    this[scrollPhysics$] = scrollPhysics;
+    if (!(!dart.test(dowVisible) || dowHeight != null && dowBuilder != null)) dart.assertFailed(null, I[0], 52, 16, "!dowVisible || (dowHeight != null && dowBuilder != null)");
+    calendar_core.CalendarCore.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = calendar_core.CalendarCore.prototype;
+  dart.addTypeTests(calendar_core.CalendarCore);
+  dart.addTypeCaches(calendar_core.CalendarCore);
+  dart.setMethodSignature(calendar_core.CalendarCore, () => ({
+    __proto__: dart.getMethods(calendar_core.CalendarCore.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext]),
+    [_getPageCount]: dart.fnType(core.int, [utils.CalendarFormat, core.DateTime, core.DateTime]),
+    [_getMonthCount]: dart.fnType(core.int, [core.DateTime, core.DateTime]),
+    [_getWeekCount]: dart.fnType(core.int, [core.DateTime, core.DateTime]),
+    [_getTwoWeekCount]: dart.fnType(core.int, [core.DateTime, core.DateTime]),
+    [_getFocusedDay]: dart.fnType(core.DateTime, [utils.CalendarFormat, core.DateTime, core.int]),
+    [_getBaseDay]: dart.fnType(core.DateTime, [utils.CalendarFormat, core.int]),
+    [_getVisibleRange]: dart.fnType(date.DateTimeRange, [utils.CalendarFormat, core.DateTime]),
+    [_daysInWeek]: dart.fnType(date.DateTimeRange, [core.DateTime]),
+    [_daysInTwoWeeks]: dart.fnType(date.DateTimeRange, [core.DateTime]),
+    [_daysInMonth]: dart.fnType(date.DateTimeRange, [core.DateTime]),
+    [_daysInRange]: dart.fnType(core.List$(core.DateTime), [core.DateTime, core.DateTime]),
+    [_firstDayOfWeek]: dart.fnType(core.DateTime, [core.DateTime]),
+    [_firstDayOfMonth]: dart.fnType(core.DateTime, [core.DateTime]),
+    [_lastDayOfMonth]: dart.fnType(core.DateTime, [core.DateTime]),
+    [_getRowCount]: dart.fnType(core.int, [utils.CalendarFormat, core.DateTime]),
+    [_getDaysBefore]: dart.fnType(core.int, [core.DateTime]),
+    [_getDaysAfter]: dart.fnType(core.int, [core.DateTime])
+  }));
+  dart.setLibraryUri(calendar_core.CalendarCore, I[1]);
+  dart.setFieldSignature(calendar_core.CalendarCore, () => ({
+    __proto__: dart.getFields(calendar_core.CalendarCore.__proto__),
+    focusedDay: dart.finalFieldType(dart.nullable(core.DateTime)),
+    firstDay: dart.finalFieldType(core.DateTime),
+    lastDay: dart.finalFieldType(core.DateTime),
+    calendarFormat: dart.finalFieldType(utils.CalendarFormat),
+    dowBuilder: dart.finalFieldType(dart.nullable(dart.fnType(dart.nullable(framework.Widget), [framework.BuildContext, core.DateTime]))),
+    dayBuilder: dart.finalFieldType(dart.fnType(dart.nullable(framework.Widget), [framework.BuildContext, core.DateTime, core.DateTime])),
+    sixWeekMonthsEnforced: dart.finalFieldType(core.bool),
+    dowVisible: dart.finalFieldType(core.bool),
+    dowDecoration: dart.finalFieldType(dart.nullable(decoration.Decoration)),
+    rowDecoration: dart.finalFieldType(dart.nullable(decoration.Decoration)),
+    dowHeight: dart.finalFieldType(dart.nullable(core.double)),
+    rowHeight: dart.finalFieldType(dart.nullable(core.double)),
+    constraints: dart.finalFieldType(box.BoxConstraints),
+    previousIndex: dart.finalFieldType(dart.nullable(core.int)),
+    startingDayOfWeek: dart.finalFieldType(utils.StartingDayOfWeek),
+    pageController: dart.finalFieldType(dart.nullable(page_view.PageController)),
+    scrollPhysics: dart.finalFieldType(dart.nullable(scroll_physics.ScrollPhysics)),
+    onPageChanged: dart.finalFieldType(dart.fnType(dart.void, [core.int, core.DateTime]))
+  }));
+  dart.trackLibraries("packages/table_calendar/src/widgets/calendar_core.dart", {
+    "package:table_calendar/src/widgets/calendar_core.dart": calendar_core
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["calendar_core.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/table_calendar/src/widgets/calendar_core.dart.lib.js"}');
+  // Exports:
+  return {
+    src__widgets__calendar_core: calendar_core
+  };
+}));
+
+//# sourceMappingURL=calendar_core.dart.lib.js.map
